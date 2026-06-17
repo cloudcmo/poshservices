@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Posh Services — Find M&amp;S, Waitrose &amp; Pret on your motorway route</title>
+  <meta name="description" content="Find M&amp;S Food, Waitrose and Pret on your UK motorway journey, with dog-friendly options." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  <h1>Posh Services 🛣️</h1>
+  <p>Find M&amp;S Food, Waitrose &amp; Pret on your motorway route</p>
+</header>
+
+<div id="map"></div>
+
+<main>
+
+  <div id="api-key-warning">
+    ⚠️ <strong>API key not configured.</strong> Open <code>config.js</code> and replace the placeholder with your Google Maps API key.
+  </div>
+
+  <!-- Route inputs -->
+  <div class="card">
+    <div class="input-group">
+      <label for="start">Starting from</label>
+      <input type="text" id="start" placeholder="e.g. Bristol" autocomplete="off" />
+    </div>
+    <div class="input-group">
+      <label for="destination">Heading to</label>
+      <input type="text" id="destination" placeholder="e.g. Edinburgh" autocomplete="off" />
+    </div>
+  </div>
+
+  <!-- Brand filters -->
+  <div class="card">
+    <div class="filters">
+      <p class="filters-label">Show stops that have <em>any</em> of these</p>
+      <p class="filters-hint">Tick one or more — services with at least one will show up. Leave all unticked to see every service on your route.</p>
+      <div class="checkboxes">
+        <label class="checkbox-pill"><input type="checkbox" id="filter-ms" /> M&amp;S Food</label>
+        <label class="checkbox-pill"><input type="checkbox" id="filter-waitrose" /> Waitrose</label>
+        <label class="checkbox-pill"><input type="checkbox" id="filter-pret" /> Pret</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dog-friendly filter -->
+  <div class="card card-dog">
+    <div class="filters filters-dog">
+      <p class="filters-label">🐕 Dog friendly stops</p>
+      <p class="filters-hint">Only show services with good outdoor space for dogs</p>
+      <div class="checkboxes">
+        <label class="checkbox-pill"><input type="checkbox" id="filter-dog" /> Must be dog friendly</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stop interval -->
+  <div class="card">
+    <div class="interval-row">
+      <label for="interval">Suggest a stop every</label>
+      <select id="interval">
+        <option value="0">— don't suggest —</option>
+        <option value="60">60 minutes</option>
+        <option value="75">75 minutes</option>
+        <option value="90" selected>90 minutes</option>
+        <option value="105">105 minutes</option>
+        <option value="120">120 minutes</option>
+        <option value="150">150 minutes</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Search button -->
+  <button class="btn-search" id="search-btn" disabled>
+    Find Posh Stops
+  </button>
+
+  <!-- Status -->
+  <div id="status"></div>
+
+  <!-- Results -->
+  <div id="results">
+    <div id="results-inner"></div>
+  </div>
+
+</main>
+
+<!-- Load config first, then services data, then app logic -->
+<script src="config.js"></script>
+<script src="services.js"></script>
+<script src="app.js"></script>
+
+<!-- Dynamically inject Google Maps with our key -->
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    if (!window.GOOGLE_MAPS_API_KEY || GOOGLE_MAPS_API_KEY === 'YOUR_GOOGLE_MAPS_API_KEY_HERE') {
+      document.getElementById('api-key-warning').style.display = 'block';
+      return;
+    }
+    var s = document.createElement('script');
+    s.src = 'https://maps.googleapis.com/maps/api/js'
+          + '?key='       + encodeURIComponent(GOOGLE_MAPS_API_KEY)
+          + '&libraries=places,geometry'
+          + '&callback=initApp'
+          + '&loading=async';
+    s.async = true;
+    s.defer = true;
+    document.head.appendChild(s);
+  });
+</script>
+
+</body>
+</html>
