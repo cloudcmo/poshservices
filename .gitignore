@@ -1,2 +1,5 @@
+# API key — never commit this
+config.js
+
 # Mac
 .DS_Store

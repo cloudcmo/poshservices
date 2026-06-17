@@ -1,23 +1,47 @@
-#!/usr/bin/env bash
-# ─────────────────────────────────────────────────────────────────
-# deploy-staging.sh — push current work to the staging branch
-# ─────────────────────────────────────────────────────────────────
+#!/bin/bash
 set -e
+
 cd "/Users/carl/code/posh services"
 
-# Make sure we're on staging
+echo ""
+echo "Switching to staging..."
+
 git checkout staging
 
-# Stage everything (respects .gitignore)
-git add -A
+CURRENT_BRANCH=$(git branch --show-current)
 
-# Commit if there's anything new
-if git diff --cached --quiet; then
-  echo "ℹ️  Nothing new to commit on staging."
-else
-  git commit -m "Deploy to staging: $(date '+%Y-%m-%d %H:%M')"
+if [ "$CURRENT_BRANCH" != "staging" ]; then
+  echo "Error: Not on staging branch"
+  exit 1
 fi
 
+git pull origin staging
+
+echo ""
+echo "Current branch:"
+git branch --show-current
+
+git add -A
+
+if git diff --cached --quiet; then
+  echo ""
+  echo "No changes to commit."
+  exit 0
+fi
+
+echo ""
+read -p "Staging commit message: " MSG
+if [ -z "$MSG" ]; then
+  echo "No message. Aborting."
+  exit 1
+fi
+
+git commit -m "$MSG"
+
+echo ""
+echo "Pushing to STAGING..."
 git push origin staging
 
-echo "✅ Pushed to STAGING (https://staging--poshservices.netlify.app)"
+echo ""
+echo "✅ Done."
+echo "Now check your staging / preview site before promoting to main."
