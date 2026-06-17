@@ -89,7 +89,7 @@ window.searchRoute = function () {
 function displayResults(directionsResult, filters, intervalMinutes) {
   const route = directionsResult.routes[0];
   const leg   = route.legs[0];
-  const totalSecs  = leg.duration.value;
+  const totalSecs   = leg.duration.value;
   const totalMeters = leg.distance.value;
 
   const originAddress = leg.start_address;
@@ -192,11 +192,12 @@ function displayResults(directionsResult, filters, intervalMinutes) {
 function findServicesOnRoute(directionsResult, filters) {
   const route  = directionsResult.routes[0];
   const leg    = route.legs[0];
-  const totalSecs  = leg.duration.value;
+  const totalSecs = leg.duration.value;
 
   // Decode overview polyline into lat/lng points
+  // Note: overview_polyline is a string in the JS API (not an object)
   const routePoints = google.maps.geometry.encoding.decodePath(
-    route.overview_polyline.points
+    route.overview_polyline
   );
 
   // Build cumulative distances array (metres from start for each point)
@@ -232,8 +233,8 @@ function findServicesOnRoute(directionsResult, filters) {
     const svcLatLng = new google.maps.LatLng(svc.lat, svc.lng);
 
     // Find nearest polyline point
-    let minDist     = Infinity;
-    let closestIdx  = 0;
+    let minDist    = Infinity;
+    let closestIdx = 0;
 
     for (let i = 0; i < routePoints.length; i++) {
       const d = google.maps.geometry.spherical.computeDistanceBetween(
@@ -263,10 +264,10 @@ function findServicesOnRoute(directionsResult, filters) {
 // to the target time, but won't pick one earlier than 70% of the
 // interval since the last stop.
 function suggestStops(services, intervalSecs, totalSecs) {
-  const result    = [];
-  const minGap    = intervalSecs * 0.7;
+  const result     = [];
+  const minGap     = intervalSecs * 0.7;
   const stopCutoff = totalSecs - 30 * 60; // don't suggest a stop within 30 min of arrival
-  let   lastTime  = 0;
+  let   lastTime   = 0;
 
   for (let pass = 0; pass < 20; pass++) {
     const target = lastTime + intervalSecs;

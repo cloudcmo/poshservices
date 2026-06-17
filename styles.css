@@ -127,7 +127,7 @@ main {
 }
 
 .filters-dog {
-  background: #f0ebe3;  /* warmer tan, distinct from the green brand section */
+  background: #f0ebe3;
 }
 
 .filters-dog .filters-label,
@@ -374,7 +374,7 @@ main {
   line-height: 1.4;
 }
 
-/* ── Extras footer ───────────────────────────────────────────── */
+/* ── Results footer ──────────────────────────────────────────── */
 .results-footer {
   text-align: center;
   font-size: 0.78rem;

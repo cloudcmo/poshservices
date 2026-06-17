@@ -112,4 +112,5 @@ const SERVICES = [
 
   // ── A74(M) ───────────────────────────────────────────────────
   { id: 'gretna', name: 'Gretna', road: 'A74(M)', operator: 'Welcome Break', lat: 54.9956, lng: -3.0579, ms: false, waitrose: true, pret: false, dogFriendly: false, notes: '' },
+
 ];
