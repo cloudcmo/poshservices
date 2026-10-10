@@ -6,7 +6,8 @@
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
     "data": "node scripts/build-data.mjs",
-    "test": "node scripts/test-match.mjs"
+    "test": "node scripts/test-match.mjs",
+    "nearby": "node scripts/fetch-nearby.mjs"
   },
   "devDependencies": {
     "wrangler": "^4.149.0"

@@ -24,6 +24,8 @@ The Worker works out which services your route actually passes (on the road you 
 | `data/research/*.json` | Source research per region. Edit these, then `npm run data` |
 | `public/` | The planner page, script and styles |
 | `scripts/test-match.mjs` | Offline checks of the matching logic (`npm test`) |
+| `public/nearby-data.json` | "Off the motorway nearby" pubs, cafés and fuel per services (generated) |
+| `scripts/fetch-nearby.mjs` | Refreshes that file from OpenStreetMap (`npm run nearby`, 10 to 20 minutes) |
 
 ## Updating a service area
 
@@ -38,6 +40,7 @@ The Worker works out which services your route actually passes (on the road you 
 npm install        # once
 npm run dev        # run locally at http://localhost:8787
 npm test           # check the matching logic
+npm run nearby     # refresh the off-motorway pubs, cafés and fuel (a couple of times a year)
 npm run deploy     # publish to Cloudflare
 ```
 

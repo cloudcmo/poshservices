@@ -10,7 +10,7 @@ Status: 💡 idea · 🔜 next up · 🚧 in progress · ✅ done
 
 | Idea | Why | Effort | Status |
 | --- | --- | --- | --- |
-| "More" brand filters (Leon and friends) | Cheap win, data already there | S | 💡 |
+| "More" brand filters (Leon and friends) | Cheap win, data already there | S | ✅ |
 | Suggest a fix / suggest a place button | Keeps the data honest as people use it | M | 💡 |
 | Research pass on non-food facilities | Unlocks the most useful practical filters | M | 💡 |
 
@@ -18,7 +18,10 @@ Status: 💡 idea · 🔜 next up · 🚧 in progress · ✅ done
 
 ## Filters and facilities
 
-### "More" brand filters (feedback, Oct 2026)
+### ✅ "More" brand filters (feedback, Oct 2026)
+Built: Farm shop, Waitrose, M&S and Pret ticked by default; a **More** button adds Leon, Coco di Mama, Cornish Bakery and Wagamama (unticked). Stop signs show only the ticked brands, with everything else behind "What else?".
+
+Original notes:
 Keep the four main chips (Farm shop, Waitrose, M&S, Pret) and add a small **More** link that reveals the next tier of better food. Same "any of these" logic, so nothing changes for people who never open it.
 
 What the dataset already supports (number of services with it):
@@ -49,7 +52,7 @@ A small "Suggest something" link on each services page and at the foot of the pl
 ## Off the motorway
 
 ### ✅ Nearest pubs, cafés and fuel near the exit (Oct 2026)
-Built: "Off the motorway nearby" under each stop. Two nearest independent pubs or cafés and the nearest petrol station within 5 minutes of the nearest junction. Free OpenStreetMap data, not rated.
+Built: "Off the motorway nearby" under each stop. Two nearest independent pubs or cafés and the nearest petrol station within 5 minutes of the nearest numbered junction. Free OpenStreetMap data, not rated. Looked up once and saved with the site (`public/nearby-data.json`) because the free lookup service is too busy to rely on live; refresh with `npm run nearby` a couple of times a year.
 
 ### Ratings for off-motorway places
 Free data says what's there, not what's good. Options when ready:

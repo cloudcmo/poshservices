@@ -111,6 +111,13 @@ fieldset { border: 0; padding: 0; margin: 0; }
 }
 .chip input:checked + span { background: var(--blue); border-color: var(--blue); color: #fff; }
 .chip input:focus-visible + span { outline: 3px solid var(--gold); outline-offset: 2px; }
+.chip-more {
+  padding: 7px 13px; border-radius: 999px; border: 1.5px dashed #9aa5b6; background: #fff;
+  color: var(--blue); font-size: 15px; cursor: pointer;
+}
+.chip-more:hover { border-color: var(--blue); }
+.chips-extra { display: contents; }
+.chips-extra[hidden] { display: none !important; }
 .field.inline { display: flex; align-items: center; gap: 10px; }
 .field.inline label { margin: 0; white-space: nowrap; }
 .field.inline select { width: auto; flex: 1; }

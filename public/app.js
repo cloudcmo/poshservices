@@ -38,16 +38,14 @@
 
   // ── Filters ───────────────────────────────────────────────────
   const DEFAULT_WANT = ['farm', 'waitrose', 'ms', 'pret'];
+  const WANT_BRAND = { waitrose: 'Waitrose', ms: 'M&S', pret: 'Pret', leon: 'Leon', coco: 'Coco di Mama', cornish: 'Cornish Bakery', wagamama: 'Wagamama' };
+  const EXTRA_WANT = ['leon', 'coco', 'cornish', 'wagamama'];
   const checked = name => [...document.querySelectorAll(`input[name="${name}"]:checked`)].map(i => i.value);
 
   function matches(s) {
     const want = checked('want'), need = checked('need');
     if (want.length) {
-      const ok = want.some(w =>
-        (w === 'farm' && s.farmShop) ||
-        (w === 'waitrose' && s.brands.includes('Waitrose')) ||
-        (w === 'ms' && s.brands.includes('M&S')) ||
-        (w === 'pret' && s.brands.includes('Pret')));
+      const ok = want.some(w => (w === 'farm' ? s.farmShop : s.brands.includes(WANT_BRAND[w])));
       if (!ok) return false;
     }
     if (need.includes('dog') && s.dog < 2) return false;
@@ -264,8 +262,10 @@
   const PRIME = ['Waitrose', 'M&S', 'Pret'];
   const NEXT = ['Leon', 'Cornish Bakery', 'Coco di Mama', 'Wagamama', 'PizzaExpress', 'Nando\'s', 'Tanners', 'Warrens Bakery'];
   function tilesFor(s) {
-    const prime = PRIME.filter(b => s.brands.includes(b));
-    const rest = s.brands.filter(b => !PRIME.includes(b))
+    const extras = checked('want').filter(w => EXTRA_WANT.includes(w)).map(w => WANT_BRAND[w]);
+    const shown = [...PRIME, ...extras];
+    const prime = shown.filter(b => s.brands.includes(b));
+    const rest = s.brands.filter(b => !shown.includes(b))
       .sort((a, b) => (NEXT.includes(b) - NEXT.includes(a)) || (NEXT.indexOf(a) - NEXT.indexOf(b)));
     let html = '';
     if (s.farmShop) html += '<span class="tile tile-farm">Farm shop</span>';
@@ -311,7 +311,7 @@
           <p>${esc(s.road)}${s.junction ? `, ${esc(s.junction)}` : ''}. ${esc(sideNote)}</p>
           ${s.outdoor?.text ? `<p class="outdoor">${esc(s.outdoor.text)}</p>` : ''}
           <p class="stop-links"><a href="/services/${s.id}" target="_blank" rel="noopener">See what's there</a><button type="button" class="linkish" data-remove="${s.id}">Remove this stop</button></p>
-          <details class="nearby" data-lat="${s.lat}" data-lng="${s.lng}"><summary>Off the motorway nearby</summary><div class="nearby-body"></div></details>
+          <details class="nearby" data-id="${s.id}"><summary>Off the motorway nearby</summary><div class="nearby-body"></div></details>
         </div>
       </li>`;
       prev = s.t;
@@ -393,30 +393,29 @@
   }
 
   // ── Off the motorway nearby (loaded only when opened) ─────────
+  let nearbyData = null;
+  const gsearch = q => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
   async function loadNearby(det) {
     if (det.dataset.loaded) return;
     det.dataset.loaded = '1';
     const body = det.querySelector('.nearby-body');
     body.innerHTML = '<p class="nb-note">Looking near the exit…</p>';
     try {
-      const lat = +det.dataset.lat, lng = +det.dataset.lng;
-      const key = `nearby:${lat.toFixed(3)},${lng.toFixed(3)}`;
-      let d = null;
-      try { const c = JSON.parse(localStorage.getItem(key)); if (c && Date.now() - c.at < 30 * 86400e3) d = c.data; } catch { /* no storage */ }
-      if (!d) {
-        const { nearby } = await import('/nearby.js');
-        try { d = await nearby(lat, lng, 'https://router.project-osrm.org'); }
-        catch { throw new Error('Could not look up places near this exit right now. Try again in a minute.'); }
-        try { localStorage.setItem(key, JSON.stringify({ at: Date.now(), data: d })); } catch { /* no storage */ }
+      if (!nearbyData) {
+        const r = await fetch('/nearby-data.json');
+        if (!r.ok) throw new Error('Nearby places are not available right now.');
+        nearbyData = await r.json();
       }
+      const d = nearbyData[det.dataset.id];
+      if (!d) { body.innerHTML = '<p class="nb-note">No information for this stop yet.</p>'; return; }
       if (!d.junction) { body.innerHTML = '<p class="nb-note">No motorway exit close to this stop.</p>'; return; }
       const jn = d.junction.ref ? `junction ${esc(d.junction.ref)}` : esc(d.junction.name || 'the nearest exit');
       let html = `<p class="nb-head">Within 5 minutes of ${jn}:</p>`;
       html += d.places.length
-        ? '<ul class="nb-list">' + d.places.map(p => `<li><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.name)}</a> <span>${esc(p.kind)}, ${p.mins} min from the exit${p.notes.length ? '. ' + esc(p.notes.join(', ').replace(/^./, c => c.toUpperCase())) : ''}</span></li>`).join('') + '</ul>'
+        ? '<ul class="nb-list">' + d.places.map(p => `<li><a href="${gsearch(p.q)}" target="_blank" rel="noopener">${esc(p.name)}</a> <span>${esc(p.kind)}, ${p.mins} min from the exit${p.notes.length ? '. ' + esc(p.notes.join(', ').replace(/^./, c => c.toUpperCase())) : ''}</span></li>`).join('') + '</ul>'
         : '<p class="nb-note">No independent pubs or cafés that close.</p>';
       html += d.fuel
-        ? `<p class="nb-fuel">Fuel: <a href="${esc(d.fuel.url)}" target="_blank" rel="noopener">${esc(d.fuel.name)}</a>, ${d.fuel.mins} min from the exit${d.fuel.supermarket ? '. Supermarket fuel is usually cheaper than services' : ''}.</p>`
+        ? `<p class="nb-fuel">Fuel: <a href="${gsearch(d.fuel.q)}" target="_blank" rel="noopener">${esc(d.fuel.name)}</a>, ${d.fuel.mins} min from the exit${d.fuel.supermarket ? '. Supermarket fuel is usually cheaper than services' : ''}.</p>`
         : '<p class="nb-fuel">No petrol station within 5 minutes of this exit.</p>';
       html += '<p class="nb-small">Nearest, not rated. From OpenStreetMap, so check opening times before you turn off.</p>';
       body.innerHTML = html;
@@ -456,6 +455,14 @@
     document.querySelectorAll('input[name="want"], input[name="need"], #every').forEach(el =>
       el.addEventListener('change', () => { if (state.data) { state.picks = null; render(); } }));
 
+    const setMore = open => {
+      $('want-extra').hidden = !open;
+      $('want-more').setAttribute('aria-expanded', String(open));
+      $('want-more').textContent = open ? 'Fewer' : 'More';
+    };
+    $('want-more').addEventListener('click', () => setMore($('want-extra').hidden));
+    wire.setMore = setMore;
+
     $('reset-picks').addEventListener('click', () => { state.picks = null; render(); });
 
     document.addEventListener('click', e => {
@@ -489,6 +496,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     wire();
     const hasTrip = readUrl();
+    if (checked('want').some(w => EXTRA_WANT.includes(w))) wire.setMore(true);
     initMap();
     if (hasTrip) runPlan({ keepPicks: true });
   });
