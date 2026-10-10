@@ -44,7 +44,7 @@ const DOG_TEXT = ['Car park only', 'A bit of grass', 'Good for a dog walk', 'Lov
 
 function brandTiles(list, empty = '<span class="none">No chain brands listed</span>') {
   if (!list.length) return empty;
-  return list.map(b => `<span class="tile${['M&S', 'Waitrose', 'Pret', 'Leon'].includes(b) ? ' tile-good' : ''}">${esc(b)}</span>`).join('');
+  return list.map(b => `<span class="tile${['M&S', 'Waitrose', 'Pret'].includes(b) ? ' tile-good' : ''}">${esc(b)}</span>`).join('');
 }
 
 export function servicePage(s, sum) {
@@ -82,7 +82,7 @@ ${masthead()}
       <span class="sign-road">${esc(s.road)}${s.junction ? ` <small>${esc(s.junction)}</small>` : ''}</span>
     </div>
     ${s.aka ? `<p class="sign-aka">${esc(s.aka)}</p>` : ''}
-    <div class="tiles">${s.farmShop ? '<span class="tile tile-farm">Farm shop</span>' : ''}${brandTiles(brandsAll.slice(0, 8), '')}</div>
+    <div class="tiles">${s.farmShop ? '<span class="tile tile-farm">Farm shop</span>' : ''}${brandTiles(['Waitrose', 'M&S', 'Pret'].filter(b => brandsAll.includes(b)), '')}</div>
     <div class="sign-foot">
       <span>${pips(sum.posh)} <em>Posh ${sum.posh}</em></span>
       <span class="dogline">${dogIcon()} ${DOG_TEXT[sum.dog]}</span>
@@ -123,7 +123,7 @@ export function listPage(all, summary) {
   const rows = all.map(s => {
     const sum = byId[s.id];
     const brands = [...new Set([...s.sides.flatMap(sd => sd.brands), ...s.shared])];
-    const key = brands.filter(b => ['M&S', 'Waitrose', 'Pret', 'Leon'].includes(b));
+    const key = ['Waitrose', 'M&S', 'Pret'].filter(b => brands.includes(b));
     if (s.farmShop) key.unshift('Farm shop');
     return `<li class="row" data-name="${esc(s.name.toLowerCase())} ${esc(s.road.toLowerCase())}" data-posh="${sum.posh}" data-dog="${sum.dog}">
       <a href="/services/${s.id}">

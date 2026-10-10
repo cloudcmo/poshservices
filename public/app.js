@@ -3,7 +3,7 @@
   const $ = id => document.getElementById(id);
   const MAP_STYLE = 'https://tiles.openfreemap.org/styles/positron';
   const BLUE = '#1b4f9c';
-  const GOOD = ['Waitrose', 'M&S', 'Pret', 'Leon'];
+  const GOOD = ['Waitrose', 'M&S', 'Pret'];
   const DOG_TEXT = ['Car park only', 'A bit of grass', 'Good for a dog walk', 'Lovely walk'];
 
   const state = {
@@ -37,6 +37,7 @@
   }
 
   // ── Filters ───────────────────────────────────────────────────
+  const DEFAULT_WANT = ['farm', 'waitrose', 'ms', 'pret'];
   const checked = name => [...document.querySelectorAll(`input[name="${name}"]:checked`)].map(i => i.value);
 
   function matches(s) {
@@ -88,7 +89,7 @@
     if (state.from) { p.set('from', state.from.label); p.set('fll', `${state.from.lat.toFixed(4)},${state.from.lng.toFixed(4)}`); }
     if (state.to) { p.set('to', state.to.label); p.set('tll', `${state.to.lat.toFixed(4)},${state.to.lng.toFixed(4)}`); }
     const want = checked('want'), need = checked('need');
-    if (want.length) p.set('want', want.join(','));
+    if (want.join(',') !== DEFAULT_WANT.join(',')) p.set('want', want.length ? want.join(',') : 'none');
     if (need.length) p.set('need', need.join(','));
     if ($('every').value !== '90') p.set('every', $('every').value);
     if (state.picks) p.set('stops', state.picks.join(','));
@@ -103,7 +104,10 @@
     };
     if (p.get('from')) { $('from').value = p.get('from'); const c = ll(p.get('fll')); if (c) state.from = { label: p.get('from'), ...c }; }
     if (p.get('to')) { $('to').value = p.get('to'); const c = ll(p.get('tll')); if (c) state.to = { label: p.get('to'), ...c }; }
-    for (const v of (p.get('want') || '').split(',')) { const i = document.querySelector(`input[name="want"][value="${v}"]`); if (i) i.checked = true; }
+    if (p.has('want')) {
+      document.querySelectorAll('input[name="want"]').forEach(i => { i.checked = false; });
+      for (const v of p.get('want').split(',')) { const i = document.querySelector(`input[name="want"][value="${v}"]`); if (i) i.checked = true; }
+    }
     for (const v of (p.get('need') || '').split(',')) { const i = document.querySelector(`input[name="need"][value="${v}"]`); if (i) i.checked = true; }
     if (p.get('every') && [...$('every').options].some(o => o.value === p.get('every'))) $('every').value = p.get('every');
     if (p.get('stops')) state.picks = p.get('stops').split(',').filter(Boolean);
@@ -255,13 +259,23 @@
   }
 
   // ── Rendering the plan ────────────────────────────────────────
-  function tilesFor(s, max = 6) {
-    const list = [...s.brands].sort((a, b) => (GOOD.includes(b) - GOOD.includes(a)));
-    if (s.farmShop) list.unshift('Farm shop');
-    const shown = list.slice(0, max);
-    const more = list.length - shown.length;
-    return shown.map(b => `<span class="tile${b === 'Farm shop' ? ' tile-farm' : GOOD.includes(b) ? ' tile-good' : ''}">${esc(b)}</span>`).join('') +
-      (more > 0 ? `<span class="tile tile-more">+${more} more</span>` : '');
+  // Default view shows only the posh three (plus farm shop). Everything else
+  // sits behind a "What else?" button, nicer options first.
+  const PRIME = ['Waitrose', 'M&S', 'Pret'];
+  const NEXT = ['Leon', 'Cornish Bakery', 'Coco di Mama', 'Wagamama', 'PizzaExpress', 'Nando\'s', 'Tanners', 'Warrens Bakery'];
+  function tilesFor(s) {
+    const prime = PRIME.filter(b => s.brands.includes(b));
+    const rest = s.brands.filter(b => !PRIME.includes(b))
+      .sort((a, b) => (NEXT.includes(b) - NEXT.includes(a)) || (NEXT.indexOf(a) - NEXT.indexOf(b)));
+    let html = '';
+    if (s.farmShop) html += '<span class="tile tile-farm">Farm shop</span>';
+    html += prime.map(b => `<span class="tile tile-good">${esc(b)}</span>`).join('');
+    if (rest.length) {
+      const label = prime.length || s.farmShop ? `What else? (${rest.length})` : `No Waitrose, M&S or Pret. What's here? (${rest.length})`;
+      html += `<span class="tiles-rest" hidden>${rest.map(b => `<span class="tile">${esc(b)}</span>`).join('')}</span>`;
+      html += `<button type="button" class="tile tile-more" data-more data-label="${esc(label)}" aria-expanded="false">${label}</button>`;
+    }
+    return html;
   }
 
   function render() {
@@ -385,14 +399,21 @@
     const body = det.querySelector('.nearby-body');
     body.innerHTML = '<p class="nb-note">Looking near the exit…</p>';
     try {
-      const r = await fetch(`/api/nearby?lat=${det.dataset.lat}&lng=${det.dataset.lng}`);
-      const d = await r.json();
-      if (!r.ok || d.error) throw new Error(d.error || 'Could not look that up.');
+      const lat = +det.dataset.lat, lng = +det.dataset.lng;
+      const key = `nearby:${lat.toFixed(3)},${lng.toFixed(3)}`;
+      let d = null;
+      try { const c = JSON.parse(localStorage.getItem(key)); if (c && Date.now() - c.at < 30 * 86400e3) d = c.data; } catch { /* no storage */ }
+      if (!d) {
+        const { nearby } = await import('/nearby.js');
+        try { d = await nearby(lat, lng, 'https://router.project-osrm.org'); }
+        catch { throw new Error('Could not look up places near this exit right now. Try again in a minute.'); }
+        try { localStorage.setItem(key, JSON.stringify({ at: Date.now(), data: d })); } catch { /* no storage */ }
+      }
       if (!d.junction) { body.innerHTML = '<p class="nb-note">No motorway exit close to this stop.</p>'; return; }
       const jn = d.junction.ref ? `junction ${esc(d.junction.ref)}` : esc(d.junction.name || 'the nearest exit');
       let html = `<p class="nb-head">Within 5 minutes of ${jn}:</p>`;
       html += d.places.length
-        ? '<ul class="nb-list">' + d.places.map(p => `<li><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.name)}</a> <span>${esc(p.kind)}, ${p.mins} min from the exit${p.notes.length ? '. ' + esc(p.notes.join(', ')) : ''}</span></li>`).join('') + '</ul>'
+        ? '<ul class="nb-list">' + d.places.map(p => `<li><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.name)}</a> <span>${esc(p.kind)}, ${p.mins} min from the exit${p.notes.length ? '. ' + esc(p.notes.join(', ').replace(/^./, c => c.toUpperCase())) : ''}</span></li>`).join('') + '</ul>'
         : '<p class="nb-note">No independent pubs or cafés that close.</p>';
       html += d.fuel
         ? `<p class="nb-fuel">Fuel: <a href="${esc(d.fuel.url)}" target="_blank" rel="noopener">${esc(d.fuel.name)}</a>, ${d.fuel.mins} min from the exit${d.fuel.supermarket ? '. Supermarket fuel is usually cheaper than services' : ''}.</p>`
@@ -441,7 +462,14 @@
       const t = e.target.closest('[data-toggle-id]');
       if (t) { toggleStop(t.dataset.toggleId); return; }
       const r = e.target.closest('[data-remove]');
-      if (r) toggleStop(r.dataset.remove);
+      if (r) { toggleStop(r.dataset.remove); return; }
+      const more = e.target.closest('[data-more]');
+      if (more) {
+        const rest = more.previousElementSibling;
+        rest.hidden = !rest.hidden;
+        more.setAttribute('aria-expanded', String(!rest.hidden));
+        more.textContent = rest.hidden ? more.dataset.label : 'Show less';
+      }
     });
 
     $('share').addEventListener('click', async () => {

@@ -2,11 +2,13 @@
 // nearest independent pubs or cafés and the nearest petrol station within
 // a short drive of that exit. All from OpenStreetMap (free), with drive
 // times from OSRM.
+//
+// Runs in the visitor's browser: the public Overpass server refuses requests
+// from Cloudflare's shared servers, but answers browsers fine.
 
-const OVERPASS = ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter'];
+const OVERPASS = ['https://overpass-api.de/api/interpreter'];
 const MAX_SECS = 5 * 60;          // "within 5 minutes of the exit"
 const SEARCH_M = 4500;            // straight-line radius that can be reached in ~5 min
-const UA = 'PoshServices/1.0 (journey planner)';
 
 const SUPERMARKETS = /tesco|sainsbury|asda|morrison|costco|co-?op|waitrose/i;
 
@@ -23,7 +25,7 @@ async function overpass(query) {
     try {
       const res = await fetch(url, {
         method: 'POST',
-        headers: { 'content-type': 'application/x-www-form-urlencoded', 'user-agent': UA },
+        headers: { 'content-type': 'application/x-www-form-urlencoded' },
         body: 'data=' + encodeURIComponent(query),
       });
       if (res.ok) return (await res.json()).elements || [];
@@ -88,7 +90,7 @@ export async function nearby(lat, lng, osrmBase) {
   const targets = [...food, ...fuel];
   if (!targets.length) return { junction: j, places: [], fuel: null };
   const coords = [j, ...targets].map(p => `${p.lng.toFixed(5)},${p.lat.toFixed(5)}`).join(';');
-  const tRes = await fetch(`${osrmBase}/table/v1/driving/${coords}?sources=0&annotations=duration`, { headers: { 'user-agent': UA } });
+  const tRes = await fetch(`${osrmBase}/table/v1/driving/${coords}?sources=0&annotations=duration`);
   if (!tRes.ok) throw new Error(`osrm table ${tRes.status}`);
   const durs = (await tRes.json()).durations?.[0] || [];
   targets.forEach((p, i) => { p.secs = durs[i + 1]; });
