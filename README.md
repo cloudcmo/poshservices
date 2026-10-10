@@ -41,4 +41,6 @@ npm test           # check the matching logic
 npm run deploy     # publish to Cloudflare
 ```
 
+Future ideas and feedback are tracked in `IDEAS.md`.
+
 The previous Netlify version is kept on the `legacy-netlify` branch.
