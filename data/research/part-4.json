@@ -1,0 +1,631 @@
+[
+  {
+    "name": "South Mimms",
+    "road": "M25/A1(M)",
+    "junction": "M25 J23 / A1(M) J1",
+    "operator": "Welcome Break (BP forecourt)",
+    "postcode": "EN6 3QQ",
+    "layout": "single",
+    "linked": null,
+    "lat": 51.6869,
+    "lng": -0.223,
+    "coordSource": "wikipedia",
+    "coordConfidence": "high",
+    "sides": [
+      {
+        "dir": "both",
+        "lat": null,
+        "lng": null,
+        "brands": [
+          "Burger King",
+          "KFC",
+          "Pret",
+          "Starbucks",
+          "Subway",
+          "Taco Bell",
+          "Krispy Kreme",
+          "Waitrose",
+          "WHSmith",
+          "M&S",
+          "Wild Bean Cafe",
+          "PizzaExpress",
+          "Ramada"
+        ]
+      }
+    ],
+    "brandsUnsided": [],
+    "farmShop": false,
+    "independent": false,
+    "outdoor": {
+      "rating": 2,
+      "description": "Grass area by the hotel; gate gives access to Wash Lane Common Nature Reserve"
+    },
+    "dogArea": false,
+    "ev": true,
+    "notes": "Single off-junction site serving both roads. Waitrose is 'Little Waitrose'; M&S Food and Wild Bean Cafe are in the BP forecourt. Separate HGV-only truckstop. Hotel is Ramada (ex Days Inn).",
+    "uncertain": "No explicit dog walking or picnic area listed; nature reserve access suggests good dog walking but not confirmed as a dog area."
+  },
+  {
+    "name": "Thurrock",
+    "road": "M25",
+    "junction": "J30-31",
+    "operator": "Moto (MFG/Esso forecourt)",
+    "postcode": "RM16 3BG",
+    "layout": "single",
+    "linked": null,
+    "lat": 51.49222,
+    "lng": 0.27222,
+    "coordSource": "wikipedia",
+    "coordConfidence": "high",
+    "sides": [
+      {
+        "dir": "both",
+        "lat": null,
+        "lng": null,
+        "brands": [
+          "Burger King",
+          "Costa",
+          "Greggs",
+          "KFC",
+          "Subway",
+          "M&S",
+          "WHSmith"
+        ]
+      }
+    ],
+    "brandsUnsided": [],
+    "farmShop": false,
+    "independent": false,
+    "outdoor": {
+      "rating": 1,
+      "description": "Only a grass area at the car park entrance"
+    },
+    "dogArea": false,
+    "ev": true,
+    "notes": "Single off-junction site (signed J30 southbound/anticlockwise, J31 northbound/clockwise). Subway is in the Esso/Londis forecourt. Hotel (ex Travelodge/Ibis Budget) is closed and empty.",
+    "uncertain": ""
+  },
+  {
+    "name": "Clacket Lane",
+    "road": "M25",
+    "junction": "J5-6",
+    "operator": "Roadchef (BP forecourts)",
+    "postcode": "TN16 2ER",
+    "layout": "split",
+    "linked": false,
+    "lat": 51.271076,
+    "lng": 0.038789,
+    "coordSource": "wikipedia",
+    "coordConfidence": "high",
+    "sides": [
+      {
+        "dir": "W",
+        "lat": null,
+        "lng": null,
+        "brands": [
+          "Chozen Noodle",
+          "Costa",
+          "Leon",
+          "Krispy Kreme",
+          "WHSmith",
+          "McDonald's",
+          "Pret",
+          "Days Inn",
+          "Chaiiwala"
+        ]
+      },
+      {
+        "dir": "E",
+        "lat": null,
+        "lng": null,
+        "brands": [
+          "Chozen Noodle",
+          "Costa",
+          "Leon",
+          "Krispy Kreme",
+          "WHSmith",
+          "McDonald's",
+          "Co-op",
+          "Days Inn"
+        ]
+      }
+    ],
+    "brandsUnsided": [
+      "Wild Bean Cafe"
+    ],
+    "farmShop": false,
+    "independent": false,
+    "outdoor": {
+      "rating": 1,
+      "description": "Small grass areas by the entrances"
+    },
+    "dogArea": false,
+    "ev": true,
+    "notes": "Two separate sites, no public connection. Site uses westbound/eastbound; on the southern M25 westbound = clockwise, eastbound = anticlockwise. Eastbound McDonald's is a drive-thru. Wild Bean Cafe in the BP forecourts (side not stated, probably both).",
+    "uncertain": "Wikipedia gives one coordinate, not stated which side; it sits on the motorway between the two sites so used as centre."
+  },
+  {
+    "name": "Cobham",
+    "road": "M25",
+    "junction": "J9-10",
+    "operator": "Extra (Shell forecourt; some units run by Moto and Welcome Break)",
+    "postcode": "KT11 3DB",
+    "layout": "single",
+    "linked": null,
+    "lat": 51.3057,
+    "lng": -0.4093,
+    "coordSource": "wikipedia",
+    "coordConfidence": "high",
+    "sides": [
+      {
+        "dir": "both",
+        "lat": null,
+        "lng": null,
+        "brands": [
+          "Greggs",
+          "KFC",
+          "McDonald's",
+          "Pret",
+          "Starbucks",
+          "Krispy Kreme",
+          "M&S",
+          "WHSmith",
+          "Chopstix Noodle Bar",
+          "Nando's",
+          "Ramada"
+        ]
+      }
+    ],
+    "brandsUnsided": [],
+    "farmShop": false,
+    "independent": false,
+    "outdoor": {
+      "rating": 2,
+      "description": "Lakeside walk and outdoor terrace behind the hotel; small grass area by coach parking; children's play area"
+    },
+    "dogArea": false,
+    "ev": true,
+    "notes": "Single site between junctions serving both directions; facilities are south of the motorway with an underpass for eastbound traffic (site wording 'eastbound'; on this south-west stretch the M25 runs roughly east-west, clockwise = westbound/north-westbound, anticlockwise = eastbound). PizzaExpress closed July 2026; Wagamama planned.",
+    "uncertain": "No explicit dog walking area listed; lakeside walk may suit dogs."
+  },
+  {
+    "name": "Medway",
+    "road": "M2",
+    "junction": "J4-5",
+    "operator": "Moto (BP forecourt)",
+    "postcode": "ME8 8PQ",
+    "layout": "split",
+    "linked": true,
+    "lat": 51.3406,
+    "lng": 0.6073,
+    "coordSource": "wikipedia",
+    "coordConfidence": "high",
+    "sides": [
+      {
+        "dir": "E",
+        "lat": null,
+        "lng": null,
+        "brands": []
+      },
+      {
+        "dir": "W",
+        "lat": null,
+        "lng": null,
+        "brands": []
+      }
+    ],
+    "brandsUnsided": [
+      "Burger King",
+      "Costa",
+      "Greggs",
+      "KFC",
+      "Krispy Kreme",
+      "M&S",
+      "WHSmith",
+      "Travelodge"
+    ],
+    "farmShop": false,
+    "independent": false,
+    "outdoor": {
+      "rating": 1,
+      "description": "Westbound: small grass area by hotel car park. Eastbound: fenced grass area by entrance. Patios at both entrances and a few picnic tables"
+    },
+    "dogArea": false,
+    "ev": true,
+    "notes": "Buildings on each side connected by an overbridge (Wikipedia); motorwayservices.uk calls it a single site built upon the motorway. Showers on eastbound side.",
+    "uncertain": "Brands are not assigned to sides on motorwayservices.uk, so all listed unsided."
+  },
+  {
+    "name": "Maidstone",
+    "road": "M20",
+    "junction": "J8",
+    "operator": "Roadchef (MFG/Esso forecourt)",
+    "postcode": "ME17 1SS",
+    "layout": "single",
+    "linked": null,
+    "lat": 51.26694,
+    "lng": 0.61417,
+    "coordSource": "wikipedia",
+    "coordConfidence": "high",
+    "sides": [
+      {
+        "dir": "both",
+        "lat": null,
+        "lng": null,
+        "brands": [
+          "Chozen Noodle",
+          "Costa",
+          "Leon",
+          "McDonald's",
+          "Krispy Kreme",
+          "WHSmith",
+          "Days Inn"
+        ]
+      }
+    ],
+    "brandsUnsided": [],
+    "farmShop": false,
+    "independent": false,
+    "outdoor": {
+      "rating": 1,
+      "description": "Small grass area to the side of the building"
+    },
+    "dogArea": false,
+    "ev": true,
+    "notes": "Single site at a junction. McDonald's and a Costa are drive-thrus.",
+    "uncertain": ""
+  },
+  {
+    "name": "Folkestone (formerly Stop 24)",
+    "road": "M20",
+    "junction": "J11",
+    "operator": "Getlink/ChannelPorts (Roadchef-run units, Shell forecourt)",
+    "postcode": "CT21 4BL",
+    "layout": "single",
+    "linked": null,
+    "lat": 51.09414,
+    "lng": 1.0481984,
+    "coordSource": "motorwayservices",
+    "coordConfidence": "high",
+    "sides": [
+      {
+        "dir": "both",
+        "lat": null,
+        "lng": null,
+        "brands": [
+          "KFC",
+          "Subway",
+          "Krispy Kreme",
+          "Costa",
+          "McDonald's",
+          "WHSmith"
+        ]
+      }
+    ],
+    "brandsUnsided": [],
+    "farmShop": false,
+    "independent": false,
+    "outdoor": {
+      "rating": 1,
+      "description": "Picnic tables at front and side of building; grass verges; public footpath connections"
+    },
+    "dogArea": false,
+    "ev": true,
+    "notes": "'Stop 24' branding retired January 2025; now signed Folkestone services (site page /Folkestone). Also local food units (Burnetts Fish and Chips, The Breakfast Club, Noodle Stop etc.). Costa and McDonald's are drive-thrus. Hosts Getlink inland border facility. No hotel.",
+    "uncertain": "Wikipedia has no coordinates; used motorwayservices.uk map marker (checks out at Westenhanger by J11)."
+  },
+  {
+    "name": "Pease Pottage",
+    "road": "M23",
+    "junction": "J11",
+    "operator": "Moto (BP forecourt)",
+    "postcode": "RH11 9YA",
+    "layout": "single",
+    "linked": null,
+    "lat": 51.0834,
+    "lng": -0.1996,
+    "coordSource": "wikipedia",
+    "coordConfidence": "high",
+    "sides": [
+      {
+        "dir": "both",
+        "lat": null,
+        "lng": null,
+        "brands": [
+          "Burger King",
+          "Costa",
+          "Greggs",
+          "Krispy Kreme",
+          "M&S",
+          "WHSmith"
+        ]
+      }
+    ],
+    "brandsUnsided": [],
+    "farmShop": false,
+    "independent": false,
+    "outdoor": {
+      "rating": 1,
+      "description": "Small picnic area at the back of the car park; public footpath connections"
+    },
+    "dogArea": false,
+    "ev": true,
+    "notes": "Single site at the end of the M23 (J11, also A23/A264). No hotel.",
+    "uncertain": ""
+  },
+  {
+    "name": "Birch",
+    "road": "M62",
+    "junction": "J18-19",
+    "operator": "Moto (BP forecourt)",
+    "postcode": "OL10 2RB",
+    "layout": "split",
+    "linked": true,
+    "lat": 53.568545,
+    "lng": -2.2285067,
+    "coordSource": "motorwayservices",
+    "coordConfidence": "high",
+    "sides": [
+      {
+        "dir": "E",
+        "lat": null,
+        "lng": null,
+        "brands": [
+          "Burger King",
+          "Costa",
+          "Greggs",
+          "Krispy Kreme",
+          "KFC",
+          "Pret",
+          "Travelodge"
+        ]
+      },
+      {
+        "dir": "W",
+        "lat": null,
+        "lng": null,
+        "brands": [
+          "Burger King",
+          "Costa",
+          "Greggs",
+          "Krispy Kreme",
+          "Travelodge"
+        ]
+      }
+    ],
+    "brandsUnsided": [
+      "M&S",
+      "WHSmith"
+    ],
+    "farmShop": false,
+    "independent": false,
+    "outdoor": {
+      "rating": 1,
+      "description": "Westbound: grass area by the hotel. Eastbound: grass bank behind the building"
+    },
+    "dogArea": false,
+    "ev": true,
+    "notes": "Two sites linked by pedestrian footbridge. Travelodge on each side. Eastbound also has a Costa drive-thru.",
+    "uncertain": "Wikipedia has no coordinates; used motorwayservices.uk map marker (consistent with M62 between J18 and J19). Side of M&S and WHSmith not stated (WHSmith mentioned eastbound in trivia)."
+  },
+  {
+    "name": "Hartshead Moor",
+    "road": "M62",
+    "junction": "J25-26",
+    "operator": "Welcome Break",
+    "postcode": "HD6 4JX",
+    "layout": "split",
+    "linked": true,
+    "lat": 53.713417,
+    "lng": -1.745528,
+    "coordSource": "wikipedia",
+    "coordConfidence": "high",
+    "sides": [
+      {
+        "dir": "E",
+        "lat": null,
+        "lng": null,
+        "brands": [
+          "Starbucks",
+          "Subway",
+          "Krispy Kreme",
+          "WHSmith",
+          "Burger King",
+          "Chopstix Noodle Bar",
+          "Days Inn"
+        ]
+      },
+      {
+        "dir": "W",
+        "lat": null,
+        "lng": null,
+        "brands": [
+          "Starbucks",
+          "Subway",
+          "Krispy Kreme",
+          "WHSmith",
+          "KFC",
+          "Waitrose"
+        ]
+      }
+    ],
+    "brandsUnsided": [],
+    "farmShop": false,
+    "independent": false,
+    "outdoor": {
+      "rating": 1,
+      "description": "Grass areas behind the buildings"
+    },
+    "dogArea": false,
+    "ev": true,
+    "notes": "Two sites linked by pedestrian footbridge. Days Inn eastbound only.",
+    "uncertain": "Side of grass areas and EV chargers not stated."
+  },
+  {
+    "name": "Burtonwood",
+    "road": "M62",
+    "junction": "J8",
+    "operator": "Welcome Break",
+    "postcode": "WA5 3AX",
+    "layout": "single",
+    "linked": null,
+    "lat": 53.4171,
+    "lng": -2.637,
+    "coordSource": "wikipedia",
+    "coordConfidence": "high",
+    "sides": [
+      {
+        "dir": "both",
+        "lat": null,
+        "lng": null,
+        "brands": [
+          "KFC",
+          "Starbucks",
+          "Krispy Kreme",
+          "WHSmith"
+        ]
+      }
+    ],
+    "brandsUnsided": [],
+    "farmShop": false,
+    "independent": false,
+    "outdoor": {
+      "rating": 1,
+      "description": "Grass area around the building"
+    },
+    "dogArea": false,
+    "ev": true,
+    "notes": "Single site at a junction. No hotel listed.",
+    "uncertain": ""
+  },
+  {
+    "name": "Rivington",
+    "road": "M61",
+    "junction": "J6-8",
+    "operator": "EG On The Move (BP forecourt)",
+    "postcode": "BL6 5UZ",
+    "layout": "split",
+    "linked": true,
+    "lat": 53.6005,
+    "lng": -2.573,
+    "coordSource": "wikipedia",
+    "coordConfidence": "high",
+    "sides": [
+      {
+        "dir": "N",
+        "lat": null,
+        "lng": null,
+        "brands": [
+          "Burger King",
+          "Greggs",
+          "Starbucks",
+          "Subway"
+        ]
+      },
+      {
+        "dir": "S",
+        "lat": null,
+        "lng": null,
+        "brands": [
+          "Burger King",
+          "Greggs",
+          "Starbucks",
+          "Subway"
+        ]
+      }
+    ],
+    "brandsUnsided": [
+      "Spar"
+    ],
+    "farmShop": false,
+    "independent": false,
+    "outdoor": {
+      "rating": 2,
+      "description": "Grass areas around the car park, dog walking area, children's play area, public footpath connection (West Pennine Moors nearby)"
+    },
+    "dogArea": true,
+    "ev": true,
+    "notes": "Two sites linked by pedestrian footbridge. 'Bolton West' in the task list is the same site: Rivington was called Bolton West services under First Motorway Services and renamed Rivington in July 2009, so no separate entry was written. Rivington Lodge hotel closed 2025 and demolished. eHGV charger southbound.",
+    "uncertain": "Side of the dog walking area, play area and Spar not stated."
+  },
+  {
+    "name": "Blackburn with Darwen",
+    "road": "M65",
+    "junction": "J4",
+    "operator": "Extra (Shell forecourt)",
+    "postcode": "BB3 0DB",
+    "layout": "single",
+    "linked": null,
+    "lat": 53.714277,
+    "lng": -2.477927,
+    "coordSource": "motorwayservices",
+    "coordConfidence": "high",
+    "sides": [
+      {
+        "dir": "both",
+        "lat": null,
+        "lng": null,
+        "brands": [
+          "Costa",
+          "Chopstix Noodle Bar",
+          "Greggs",
+          "McDonald's",
+          "Travelodge"
+        ]
+      }
+    ],
+    "brandsUnsided": [],
+    "farmShop": false,
+    "independent": false,
+    "outdoor": {
+      "rating": 1,
+      "description": "Grass verges, picnic tables, public footpath connections"
+    },
+    "dogArea": false,
+    "ev": true,
+    "notes": "Single site at a junction. McDonald's is a drive-thru.",
+    "uncertain": "Wikipedia article has no coordinates; used motorwayservices.uk map marker (consistent with M65 J4)."
+  },
+  {
+    "name": "Chester",
+    "road": "M56",
+    "junction": "J14",
+    "operator": "Roadchef (Shell forecourt)",
+    "postcode": "CH2 4QZ",
+    "layout": "single",
+    "linked": null,
+    "lat": 53.2648,
+    "lng": -2.8036,
+    "coordSource": "wikipedia",
+    "coordConfidence": "high",
+    "sides": [
+      {
+        "dir": "both",
+        "lat": null,
+        "lng": null,
+        "brands": [
+          "Chozen Noodle",
+          "Costa",
+          "Leon",
+          "McDonald's",
+          "Pret",
+          "Krispy Kreme",
+          "Co-op",
+          "WHSmith",
+          "Super 8"
+        ]
+      }
+    ],
+    "brandsUnsided": [],
+    "farmShop": false,
+    "independent": false,
+    "outdoor": {
+      "rating": 1,
+      "description": "Grass areas around the building"
+    },
+    "dogArea": false,
+    "ev": true,
+    "notes": "Single site at a junction. McDonald's and a Costa are drive-thrus. Hotel is Super 8.",
+    "uncertain": "EV details on source conflict (Shell Recharge listed but history says removed); GRIDSERVE present either way."
+  }
+]

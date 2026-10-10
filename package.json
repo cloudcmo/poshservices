@@ -1,0 +1,16 @@
+{
+  "name": "poshservices",
+  "version": "1.0.0",
+  "description": "Find the good motorway services on your journey",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "data": "node scripts/build-data.mjs",
+    "test": "node scripts/test-match.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4.149.0"
+  },
+  "private": true,
+  "type": "module"
+}

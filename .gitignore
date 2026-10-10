@@ -1,5 +1,4 @@
-# API key — never commit this
-config.js
-
-# Mac
+node_modules/
+.wrangler/
+.dev.vars
 .DS_Store

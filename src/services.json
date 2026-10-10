@@ -1,0 +1,5202 @@
+[
+ {
+  "id": "abington",
+  "name": "Abington",
+  "aka": null,
+  "road": "M74",
+  "roads": [
+   "M74"
+  ],
+  "junction": "J13",
+  "operator": "Welcome Break",
+  "postcode": "ML12 6RG",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 55.5068,
+  "lng": -3.6948,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Starbucks",
+     "Krispy Kreme",
+     "WHSmith",
+     "Days Inn",
+     "Chopstix"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass lawn around car park"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Off-junction site at J13 serving both directions (M74/A74(M) transition). Also The Good Breakfast, The Phat Pasty Co. on forecourt. EV: Applegreen, GRIDSERVE, Tesla."
+ },
+ {
+  "id": "annandale-water",
+  "name": "Annandale Water",
+  "aka": null,
+  "road": "A74(M)",
+  "roads": [
+   "A74(M)"
+  ],
+  "junction": "J16",
+  "operator": "Roadchef",
+  "postcode": "DG11 1HD",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 55.2194,
+  "lng": -3.4094,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Costa",
+     "McDonald's",
+     "Chozen Noodle",
+     "Krispy Kreme",
+     "WHSmith",
+     "Days Inn",
+     "M&S",
+     "Wild Bean Cafe",
+     "Cornish Bakery"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 3,
+   "text": "Lake behind the building with a walk around it (resident geese) and a large field at the far end of the car park"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Off-junction site at J16 (Johnstonebridge) serving both directions. M&S Simply Food and Wild Bean Cafe are on the BP forecourt. GRIDSERVE HPC chargers."
+ },
+ {
+  "id": "appleby-magna",
+  "name": "Appleby Magna",
+  "aka": null,
+  "road": "M42/A42",
+  "roads": [
+   "M42",
+   "A42"
+  ],
+  "junction": "J11",
+  "operator": "Shell / McDonald's",
+  "postcode": "DE12 7AP",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 52.6876,
+  "lng": -1.54714,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "McDonald's"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass verges and a picnic area at the back of the car park"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Small junction site (Shell 'Magna' forecourt with Select/Deli by Shell, plus McDonald's drive-thru), also reachable from the A444. InstaVolt chargers in the McDonald's car park. McDonald's car park has a 90-minute limit."
+ },
+ {
+  "id": "baldock",
+  "name": "Baldock",
+  "aka": null,
+  "road": "A1(M)",
+  "roads": [
+   "A1(M)"
+  ],
+  "junction": "J10",
+  "operator": "Extra",
+  "postcode": "SG7 5TR",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 52.0137,
+  "lng": -0.2012,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Chopstix",
+     "Greggs",
+     "KFC",
+     "McDonald's",
+     "Starbucks",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "Days Inn",
+     "Harry Ramsden's",
+     "West Cornwall Pasty Co."
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Small grass area behind hotel; children's play area"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single site at J10; Shell forecourt; mixed Extra/Moto/Welcome Break units"
+ },
+ {
+  "id": "barton-park",
+  "name": "Barton Park",
+  "aka": null,
+  "road": "A1(M)",
+  "roads": [
+   "A1(M)"
+  ],
+  "junction": "J56",
+  "operator": "Moto",
+  "postcode": "DL10 6NA",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 54.4671,
+  "lng": -1.6631,
+  "coordConfidence": "medium",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": []
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Small grass bank"
+  },
+  "dogArea": false,
+  "ev": false,
+  "notes": "Exists and operating as a small forecourt-only site (BP shop, Costa Express machine, Rollover, showers); no restaurant or hotel"
+ },
+ {
+  "id": "beaconsfield",
+  "name": "Beaconsfield",
+  "aka": null,
+  "road": "M40",
+  "roads": [
+   "M40"
+  ],
+  "junction": "J2",
+  "operator": "Extra",
+  "postcode": "HP9 2SE",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 51.59,
+  "lng": -0.628,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Chopstix",
+     "Greggs",
+     "KFC",
+     "McDonald's",
+     "Starbucks",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "WYE",
+     "Ibis",
+     "Nando's",
+     "Wagamama",
+     "West Cornwall Pasty Co."
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 3,
+   "text": "Large lakeside walk behind hotel, dining terrace, picnic area, children's play area"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Off-junction site at M40 J2, also from A355. ibis budget hotel; Shell forecourt; IONITY and GRIDSERVE charging"
+ },
+ {
+  "id": "birch",
+  "name": "Birch",
+  "aka": null,
+  "road": "M62",
+  "roads": [
+   "M62"
+  ],
+  "junction": "J18-19",
+  "operator": "Moto (BP forecourt)",
+  "postcode": "OL10 2RB",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 53.56855,
+  "lng": -2.22851,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "E",
+    "label": "eastbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "Krispy Kreme",
+     "KFC",
+     "Pret",
+     "Travelodge"
+    ]
+   },
+   {
+    "dir": "W",
+    "label": "westbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "Krispy Kreme",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [
+   "M&S",
+   "WHSmith"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Westbound: grass area by the hotel. Eastbound: grass bank behind the building"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sites linked by pedestrian footbridge. Travelodge on each side. Eastbound also has a Costa drive-thru."
+ },
+ {
+  "id": "birchanger-green",
+  "name": "Birchanger Green",
+  "aka": null,
+  "road": "M11",
+  "roads": [
+   "M11"
+  ],
+  "junction": "J8",
+  "operator": "Welcome Break",
+  "postcode": "CM23 5QZ",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 51.8712,
+  "lng": 0.1957,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Chopstix",
+     "KFC",
+     "Pret",
+     "Starbucks",
+     "Subway",
+     "Taco Bell",
+     "Krispy Kreme",
+     "Waitrose",
+     "WHSmith",
+     "Days Inn",
+     "Ramada"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Outdoor exercise area; grass areas left of hotel and right of building"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single site at J8 (A120); Shell forecourt; Little Waitrose"
+ },
+ {
+  "id": "blackburn-with-darwen",
+  "name": "Blackburn with Darwen",
+  "aka": null,
+  "road": "M65",
+  "roads": [
+   "M65"
+  ],
+  "junction": "J4",
+  "operator": "Extra (Shell forecourt)",
+  "postcode": "BB3 0DB",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 53.71428,
+  "lng": -2.47793,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Costa",
+     "Chopstix",
+     "Greggs",
+     "McDonald's",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass verges, picnic tables, public footpath connections"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single site at a junction. McDonald's is a drive-thru."
+ },
+ {
+  "id": "blyth",
+  "name": "Blyth",
+  "aka": null,
+  "road": "A1(M)",
+  "roads": [
+   "A1(M)"
+  ],
+  "junction": "J34",
+  "operator": "Moto",
+  "postcode": "S81 8HG",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 53.3888,
+  "lng": -1.062,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Large grass space behind hotel"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single site at J34 (also A1, A614); Esso/ASDA Express forecourt"
+ },
+ {
+  "id": "bothwell",
+  "name": "Bothwell",
+  "aka": null,
+  "road": "M74",
+  "roads": [
+   "M74"
+  ],
+  "junction": "J4-5",
+  "operator": "Roadchef",
+  "postcode": "G71 8BG",
+  "layout": "single",
+  "linked": null,
+  "oneWay": "S",
+  "lat": 55.81306,
+  "lng": -4.06072,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Costa",
+     "WHSmith",
+     "Starbucks"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Large grass areas across site with picnic tables"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "SOUTHBOUND ONLY: one-sided site between J4 and J5 (Hamilton is the northbound counterpart). Side dir set to S rather than 'both' deliberately. Starbucks is Starbucks on the Go on the Esso/ASDA Express forecourt. No hotel. GRIDSERVE HPC chargers."
+ },
+ {
+  "id": "bridgwater",
+  "name": "Bridgwater",
+  "aka": null,
+  "road": "M5",
+  "roads": [
+   "M5"
+  ],
+  "junction": "J24",
+  "operator": "Moto",
+  "postcode": "TA6 6TS",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 51.1046,
+  "lng": -2.9957,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Small grass area behind Greggs"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Off-junction single site at J24. BP forecourt."
+ },
+ {
+  "id": "burton-in-kendal",
+  "name": "Burton-in-Kendal",
+  "aka": null,
+  "road": "M6",
+  "roads": [
+   "M6"
+  ],
+  "junction": "J35-36",
+  "operator": "Moto",
+  "postcode": "LA6 1JF",
+  "layout": "single",
+  "linked": null,
+  "oneWay": "N",
+  "lat": 54.1777,
+  "lng": -2.7348,
+  "coordConfidence": "medium",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass area around hotel"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "NORTHBOUND ONLY: one-sided site, southbound side never built (sides entry uses dir N rather than both)"
+ },
+ {
+  "id": "burtonwood",
+  "name": "Burtonwood",
+  "aka": null,
+  "road": "M62",
+  "roads": [
+   "M62"
+  ],
+  "junction": "J8",
+  "operator": "Welcome Break",
+  "postcode": "WA5 3AX",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 53.4171,
+  "lng": -2.637,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "KFC",
+     "Starbucks",
+     "Krispy Kreme",
+     "WHSmith"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass area around the building"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single site at a junction. No hotel listed."
+ },
+ {
+  "id": "cairn-lodge",
+  "name": "Cairn Lodge",
+  "aka": null,
+  "road": "M74",
+  "roads": [
+   "M74"
+  ],
+  "junction": "J11-12",
+  "operator": "Westmorland",
+  "postcode": "ML11 0RJ",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 55.58324,
+  "lng": -3.82235,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": []
+   }
+  ],
+  "shared": [],
+  "farmShop": true,
+  "independent": true,
+  "outdoor": {
+   "rating": 1,
+   "text": "Small grass area at front of building, public footpath connection, children's play area"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Westmorland (Tebay/Gloucester family) site since 2014, near Happendon/Douglas. Kitchen cafe, farm shop (new shop opened 21 June 2024), cheese and gelato counters. Shell forecourt. Westmorland Charging 150kW. No hotel."
+ },
+ {
+  "id": "cambridge",
+  "name": "Cambridge",
+  "aka": null,
+  "road": "A14",
+  "roads": [
+   "A14"
+  ],
+  "junction": "J24/J24a",
+  "operator": "Extra",
+  "postcode": "CB23 4WU",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 52.2708,
+  "lng": -0.0107,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Chopstix",
+     "Costa",
+     "KFC",
+     "McDonald's",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "Ramada",
+     "West Cornwall Pasty Co."
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Limited grass space, picnic area, children's play area"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single site at A14 J24/J24a (also A1307); Shell forecourt"
+ },
+ {
+  "id": "cardiff-gate",
+  "name": "Cardiff Gate",
+  "aka": null,
+  "road": "M4",
+  "roads": [
+   "M4"
+  ],
+  "junction": "J30",
+  "operator": "Welcome Break",
+  "postcode": "CF23 8RA",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 51.5396,
+  "lng": -3.1309,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "KFC",
+     "Starbucks",
+     "Krispy Kreme",
+     "Waitrose",
+     "WHSmith",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass verge, largest to left of main building; public footpath connections"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Off-junction single site; KFC is a drive-thru."
+ },
+ {
+  "id": "cardiff-west",
+  "name": "Cardiff West",
+  "aka": null,
+  "road": "M4",
+  "roads": [
+   "M4"
+  ],
+  "junction": "J33",
+  "operator": "Moto",
+  "postcode": "CF72 8SA",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 51.5085,
+  "lng": -3.3099,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "Krispy Kreme",
+     "WHSmith",
+     "Travelodge",
+     "Subway"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass area behind hotel; children's play area"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Off-junction single site. Forecourt by Rontec (BP, Shop'N Drive, Subway)."
+ },
+ {
+  "id": "charnock-richard",
+  "name": "Charnock Richard",
+  "aka": null,
+  "road": "M6",
+  "roads": [
+   "M6"
+  ],
+  "junction": "J27-28",
+  "operator": "Welcome Break",
+  "postcode": "PR7 5LR",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 53.6304,
+  "lng": -2.6918,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Chopstix",
+     "KFC",
+     "Starbucks",
+     "Subway",
+     "Taco Bell",
+     "Krispy Kreme",
+     "Waitrose",
+     "WHSmith"
+    ]
+   }
+  ],
+  "shared": [
+   "Ramada"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 0,
+   "text": "Very little grass space"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Main building with fast food on a bridge over the motorway, serving both directions; Ramada hotel on northbound side"
+ },
+ {
+  "id": "cherwell-valley",
+  "name": "Cherwell Valley",
+  "aka": null,
+  "road": "M40",
+  "roads": [
+   "M40"
+  ],
+  "junction": "J10",
+  "operator": "Moto",
+  "postcode": "OX27 7RD",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 51.9491,
+  "lng": -1.1986,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Chopstix",
+     "Greggs",
+     "KFC",
+     "Pret",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "WYE",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [
+   "Tanners"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 3,
+   "text": "Riverside walk, large field behind hotel, very large dog walking area reached by public footpath, children's play area"
+  },
+  "dogArea": true,
+  "ev": true,
+  "notes": "Off-junction site at M40 J10, also from A43/B430. Esso/Asda Express forecourt; Costa Drive Thru"
+ },
+ {
+  "id": "chester",
+  "name": "Chester",
+  "aka": null,
+  "road": "M56",
+  "roads": [
+   "M56"
+  ],
+  "junction": "J14",
+  "operator": "Roadchef (Shell forecourt)",
+  "postcode": "CH2 4QZ",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 53.2648,
+  "lng": -2.8036,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Chozen Noodle",
+     "Costa",
+     "Leon",
+     "McDonald's",
+     "Pret",
+     "Krispy Kreme",
+     "Co-op",
+     "WHSmith",
+     "Super 8"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass areas around the building"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single site at a junction. McDonald's and a Costa are drive-thrus. Hotel is Super 8."
+ },
+ {
+  "id": "chieveley",
+  "name": "Chieveley",
+  "aka": null,
+  "road": "M4/A34",
+  "roads": [
+   "M4",
+   "A34"
+  ],
+  "junction": "J13",
+  "operator": "Moto",
+  "postcode": "RG18 9XX",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 51.45,
+  "lng": -1.3104,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "KFC",
+     "Pret",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass area behind amenity building; children's play area"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Off-junction single site at M4 J13 / A34. BP forecourt."
+ },
+ {
+  "id": "clacket-lane",
+  "name": "Clacket Lane",
+  "aka": null,
+  "road": "M25",
+  "roads": [
+   "M25"
+  ],
+  "junction": "J5-6",
+  "operator": "Roadchef (BP forecourts)",
+  "postcode": "TN16 2ER",
+  "layout": "split",
+  "linked": false,
+  "oneWay": null,
+  "lat": 51.27108,
+  "lng": 0.03879,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "W",
+    "label": "westbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Chozen Noodle",
+     "Costa",
+     "Leon",
+     "Krispy Kreme",
+     "WHSmith",
+     "McDonald's",
+     "Pret",
+     "Days Inn",
+     "Chaiiwala"
+    ]
+   },
+   {
+    "dir": "E",
+    "label": "eastbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Chozen Noodle",
+     "Costa",
+     "Leon",
+     "Krispy Kreme",
+     "WHSmith",
+     "McDonald's",
+     "Co-op",
+     "Days Inn"
+    ]
+   }
+  ],
+  "shared": [
+   "Wild Bean Cafe"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Small grass areas by the entrances"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two separate sites, no public connection. Site uses westbound/eastbound; on the southern M25 westbound = clockwise, eastbound = anticlockwise. Eastbound McDonald's is a drive-thru. Wild Bean Cafe in the BP forecourts (side not stated, probably both)."
+ },
+ {
+  "id": "cobham",
+  "name": "Cobham",
+  "aka": null,
+  "road": "M25",
+  "roads": [
+   "M25"
+  ],
+  "junction": "J9-10",
+  "operator": "Extra (Shell forecourt; some units run by Moto and Welcome Break)",
+  "postcode": "KT11 3DB",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 51.3057,
+  "lng": -0.4093,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Greggs",
+     "KFC",
+     "McDonald's",
+     "Pret",
+     "Starbucks",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "Chopstix",
+     "Nando's",
+     "Ramada"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Lakeside walk and outdoor terrace behind the hotel; small grass area by coach parking; children's play area"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single site between junctions serving both directions; facilities are south of the motorway with an underpass for eastbound traffic (site wording 'eastbound'; on this south-west stretch the M25 runs roughly east-west, clockwise = westbound/north-westbound, anticlockwise = eastbound). PizzaExpress closed July 2026; Wagamama planned."
+ },
+ {
+  "id": "corley",
+  "name": "Corley",
+  "aka": null,
+  "road": "M6",
+  "roads": [
+   "M6"
+  ],
+  "junction": "J3-3A",
+  "operator": "Welcome Break",
+  "postcode": "CV7 8NR",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 52.4722,
+  "lng": -1.548,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Days Inn"
+    ]
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": []
+   }
+  ],
+  "shared": [
+   "Burger King",
+   "Chopstix",
+   "KFC",
+   "Starbucks",
+   "Subway",
+   "Taco Bell",
+   "Krispy Kreme",
+   "Waitrose",
+   "WHSmith",
+   "WYE"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass areas around car parks and a picnic area on both sides"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sites connected by an internal bridge. Site labels northbound side 'northwest-bound'. Taco Bell replaced northbound Subway in March 2025; Starbucks Drive Thru"
+ },
+ {
+  "id": "cullompton",
+  "name": "Cullompton",
+  "aka": null,
+  "road": "M5",
+  "roads": [
+   "M5"
+  ],
+  "junction": "J28",
+  "operator": "Extra",
+  "postcode": "EX15 1PA",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 50.8615,
+  "lng": -3.3845,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Costa",
+     "McDonald's",
+     "WHSmith",
+     "Warrens Bakery"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 0,
+   "text": "No grass space"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Small off-junction single site. Shell forecourt."
+ },
+ {
+  "id": "doncaster-north",
+  "name": "Doncaster North",
+  "aka": null,
+  "road": "M18/M180",
+  "roads": [
+   "M18",
+   "M180"
+  ],
+  "junction": "J5",
+  "operator": "Moto",
+  "postcode": "DN8 5GS",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 53.591,
+  "lng": -0.9923,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "KFC",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Large grass area behind hotel"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single site at M18 J5 / start of M180; BP forecourt; Moto Charge hub added Sept 2026"
+ },
+ {
+  "id": "donington-park",
+  "name": "Donington Park",
+  "aka": null,
+  "road": "M1",
+  "roads": [
+   "M1"
+  ],
+  "junction": "J23a/J24",
+  "operator": "Moto",
+  "postcode": "DE74 2TN",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 52.8302,
+  "lng": -1.3114,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "KFC",
+     "Pret",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 3,
+   "text": "Large field and lakeside walk behind the building with picnic tables, viewing platforms and public footpath connections"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single site at the M1/A42/A50 junction (J23a from the south, J24 from the north); Travelodge on top of building; BP forecourt"
+ },
+ {
+  "id": "durham",
+  "name": "Durham",
+  "aka": null,
+  "road": "A1(M)",
+  "roads": [
+   "A1(M)"
+  ],
+  "junction": "J61",
+  "operator": "Roadchef",
+  "postcode": "DH6 5NP",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 54.7283,
+  "lng": -1.5239,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Costa",
+     "McDonald's",
+     "Krispy Kreme",
+     "WHSmith",
+     "Super 8"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Small grass area around hotel, picnic tables, public footpath connections"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single site at J61 (A177/A688); Shell forecourt; Super 8 hotel"
+ },
+ {
+  "id": "exeter",
+  "name": "Exeter",
+  "aka": null,
+  "road": "M5",
+  "roads": [
+   "M5"
+  ],
+  "junction": "J30",
+  "operator": "Moto",
+  "postcode": "EX2 7HF",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 50.7151,
+  "lng": -3.4649,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "KFC",
+     "Pret",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "Travelodge",
+     "Chow"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Large grass bank by building entrance, used for picnics and dog walking"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Off-junction single site at J30. Over 100 EV bays (GRIDSERVE, Moto Charge, Tesla). BP forecourt."
+ },
+ {
+  "id": "ferrybridge",
+  "name": "Ferrybridge",
+  "aka": null,
+  "road": "M62/A1(M)",
+  "roads": [
+   "M62",
+   "A1(M)"
+  ],
+  "junction": "M62 J33 / A1(M) J40",
+  "operator": "Moto",
+  "postcode": "WF11 0AF",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 53.697,
+  "lng": -1.266,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "KFC",
+     "Pret",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Small grass area between main building and hotel"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single site at M62 J33 / A1(M) J40; BP forecourt"
+ },
+ {
+  "id": "fleet",
+  "name": "Fleet",
+  "aka": null,
+  "road": "M3",
+  "roads": [
+   "M3"
+  ],
+  "junction": "J4A-5",
+  "operator": "Welcome Break",
+  "postcode": "GU51 1AA",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 51.2962,
+  "lng": -0.8554,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "E",
+    "label": "eastbound",
+    "lat": null,
+    "lng": null,
+    "brands": []
+   },
+   {
+    "dir": "W",
+    "label": "westbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Days Inn"
+    ]
+   }
+  ],
+  "shared": [
+   "Burger King",
+   "KFC",
+   "Pret",
+   "Starbucks",
+   "Subway",
+   "Taco Bell",
+   "Krispy Kreme",
+   "Waitrose",
+   "WHSmith",
+   "Chopstix",
+   "PizzaExpress"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Small wooded area around car park; picnic area"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Sides called north-eastbound (E) and south-westbound (W) by source; M3 runs roughly east-west here. Linked by internal bridge. Little Waitrose."
+ },
+ {
+  "id": "folkestone",
+  "name": "Folkestone",
+  "aka": "Formerly Stop 24",
+  "road": "M20",
+  "roads": [
+   "M20"
+  ],
+  "junction": "J11",
+  "operator": "Getlink/ChannelPorts (Roadchef-run units, Shell forecourt)",
+  "postcode": "CT21 4BL",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 51.09414,
+  "lng": 1.0482,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "KFC",
+     "Subway",
+     "Krispy Kreme",
+     "Costa",
+     "McDonald's",
+     "WHSmith"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Picnic tables at front and side of building; grass verges; public footpath connections"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "'Stop 24' branding retired January 2025; now signed Folkestone services (site page /Folkestone). Also local food units (Burnetts Fish and Chips, The Breakfast Club, Noodle Stop etc.). Costa and McDonald's are drive-thrus. Hosts Getlink inland border facility. No hotel."
+ },
+ {
+  "id": "frankley",
+  "name": "Frankley",
+  "aka": null,
+  "road": "M5",
+  "roads": [
+   "M5"
+  ],
+  "junction": "J3-4",
+  "operator": "Moto",
+  "postcode": "B32 4AR",
+  "layout": "split",
+  "linked": false,
+  "oneWay": null,
+  "lat": 52.4287,
+  "lng": -2.0178,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "Krispy Kreme",
+     "M&S",
+     "KFC"
+    ]
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "Krispy Kreme",
+     "M&S",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [
+   "M&S",
+   "WHSmith",
+   "Greggs"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Small grass areas behind petrol stations and by south hotel; a couple of picnic tables southbound"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sites, no public connection. BP forecourts."
+ },
+ {
+  "id": "gloucester",
+  "name": "Gloucester",
+  "aka": null,
+  "road": "M5",
+  "roads": [
+   "M5"
+  ],
+  "junction": "J11A-12",
+  "operator": "Westmorland",
+  "postcode": "GL4 0DN",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 51.8192,
+  "lng": -2.2264,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": []
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": []
+   }
+  ],
+  "shared": [],
+  "farmShop": true,
+  "independent": true,
+  "outdoor": {
+   "rating": 3,
+   "text": "Long dog walking path, dining terrace and pond on both sides; children's play area northbound; extensive natural landscaping"
+  },
+  "dogArea": true,
+  "ev": true,
+  "notes": "Linked by pedestrian subway (plus informal gravel path). Kitchen, butchers, cheese and gelato counters. Esso forecourt."
+ },
+ {
+  "id": "gordano",
+  "name": "Gordano",
+  "aka": null,
+  "road": "M5",
+  "roads": [
+   "M5"
+  ],
+  "junction": "J19",
+  "operator": "Welcome Break",
+  "postcode": "BS20 7XG",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 51.4766,
+  "lng": -2.7095,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "KFC",
+     "Starbucks",
+     "Subway",
+     "Krispy Kreme",
+     "Waitrose",
+     "WHSmith",
+     "Chopstix",
+     "Ramada"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass bank at back of car park; picnic tables"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Off-junction single site at J19 (Portbury). Little Waitrose."
+ },
+ {
+  "id": "grantham-north",
+  "name": "Grantham North",
+  "aka": null,
+  "road": "A1",
+  "roads": [
+   "A1"
+  ],
+  "junction": "Gonerby Moor",
+  "operator": "Moto",
+  "postcode": "NG32 2AB",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 52.9477,
+  "lng": -0.6788,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "KFC",
+     "WHSmith",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Small grass area at back of car park and next to hotel"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single site at the Gonerby Moor grade-separated junction (no number); BP forecourt"
+ },
+ {
+  "id": "gretna-green",
+  "name": "Gretna Green",
+  "aka": null,
+  "road": "A74(M)",
+  "roads": [
+   "A74(M)"
+  ],
+  "junction": "J21-22",
+  "operator": "Welcome Break",
+  "postcode": "DG16 5HQ",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 55.0083,
+  "lng": -3.0852,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "KFC",
+     "Starbucks",
+     "Krispy Kreme",
+     "Waitrose",
+     "WHSmith",
+     "Days Inn",
+     "Costa",
+     "Chopstix"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass lawn and picnic tables by the coach park (right of building)"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single site between junctions accessible from both carriageways. Little Waitrose shop; Costa is Costa Express on the MFG/BP forecourt. Also The Good Breakfast, Canny Scot Shop. EV: Applegreen, GRIDSERVE, Tesla, IONITY."
+ },
+ {
+  "id": "hamilton",
+  "name": "Hamilton",
+  "aka": null,
+  "road": "M74",
+  "roads": [
+   "M74"
+  ],
+  "junction": "J5-6",
+  "operator": "Roadchef",
+  "postcode": "ML3 6JW",
+  "layout": "single",
+  "linked": null,
+  "oneWay": "N",
+  "lat": 55.78856,
+  "lng": -4.03628,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Costa",
+     "McDonald's",
+     "WHSmith",
+     "Days Inn",
+     "Starbucks"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Large grass areas across site with picnic area"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "NORTHBOUND ONLY: one-sided site between J6 and J5, no access from southbound (Bothwell is the southbound counterpart a few miles north). Side dir set to N rather than 'both' deliberately. Starbucks is Starbucks on the Go on the Esso/ASDA Express forecourt. Costa Drive Thru. GRIDSERVE HPC chargers."
+ },
+ {
+  "id": "harthill",
+  "name": "Harthill",
+  "aka": "Heart of Scotland",
+  "road": "M8",
+  "roads": [
+   "M8"
+  ],
+  "junction": "J4A-5",
+  "operator": "BP",
+  "postcode": "ML7 5TT",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 55.8634,
+  "lng": -3.7583,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "E",
+    "label": "eastbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "M&S",
+     "Wild Bean Cafe"
+    ]
+   },
+   {
+    "dir": "W",
+    "label": "westbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "M&S",
+     "Wild Bean Cafe"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Wild meadows around the site, largest under the bridge and towards the vehicle exit"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Formerly Harthill (Roadchef). Now BP Connect forecourt-only sites on each carriageway, linked by a pedestrian footbridge; only buildings are two forecourt shops (M&S Food, Wild Bean Cafe). Both sides refurbished 2021. bp pulse chargers (4 eastbound, 6 westbound)."
+ },
+ {
+  "id": "hartshead-moor",
+  "name": "Hartshead Moor",
+  "aka": null,
+  "road": "M62",
+  "roads": [
+   "M62"
+  ],
+  "junction": "J25-26",
+  "operator": "Welcome Break",
+  "postcode": "HD6 4JX",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 53.71342,
+  "lng": -1.74553,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "E",
+    "label": "eastbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Starbucks",
+     "Subway",
+     "Krispy Kreme",
+     "WHSmith",
+     "Burger King",
+     "Chopstix",
+     "Days Inn"
+    ]
+   },
+   {
+    "dir": "W",
+    "label": "westbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Starbucks",
+     "Subway",
+     "Krispy Kreme",
+     "WHSmith",
+     "KFC",
+     "Waitrose"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass areas behind the buildings"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sites linked by pedestrian footbridge. Days Inn eastbound only."
+ },
+ {
+  "id": "heston",
+  "name": "Heston",
+  "aka": null,
+  "road": "M4",
+  "roads": [
+   "M4"
+  ],
+  "junction": "J2-3",
+  "operator": "Moto",
+  "postcode": "TW5 9NB",
+  "layout": "split",
+  "linked": false,
+  "oneWay": null,
+  "lat": 51.4877,
+  "lng": -0.392,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "E",
+    "label": "eastbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "Krispy Kreme",
+     "WHSmith",
+     "Travelodge"
+    ]
+   },
+   {
+    "dir": "W",
+    "label": "westbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "Krispy Kreme",
+     "WHSmith",
+     "Travelodge",
+     "KFC",
+     "M&S"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 0,
+   "text": "Very little grass space"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sites, no public connection. BP forecourts both sides (Greggs, Costa Express). Coord is midpoint of the two entrance markers on motorwayservices.uk map page."
+ },
+ {
+  "id": "hilton-park",
+  "name": "Hilton Park",
+  "aka": null,
+  "road": "M6",
+  "roads": [
+   "M6"
+  ],
+  "junction": "J10A-11",
+  "operator": "Moto",
+  "postcode": "WV11 2AT",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 52.6427,
+  "lng": -2.0591,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "KFC",
+     "Pret"
+    ]
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "KFC",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [
+   "Burger King",
+   "Costa",
+   "Greggs",
+   "Krispy Kreme",
+   "M&S",
+   "WHSmith",
+   "WYE"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Northbound: very small grass patch by entrance. Southbound: small picnic area (reportedly one table left)"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sites connected by an internal bridge"
+ },
+ {
+  "id": "hopwood-park",
+  "name": "Hopwood Park",
+  "aka": null,
+  "road": "M42",
+  "roads": [
+   "M42"
+  ],
+  "junction": "J2",
+  "operator": "Welcome Break",
+  "postcode": "B48 7AU",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 52.3721,
+  "lng": -1.9477,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Chopstix",
+     "KFC",
+     "Starbucks",
+     "Subway",
+     "Krispy Kreme",
+     "Waitrose",
+     "WHSmith"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 3,
+   "text": "Nature reserve with grass at back of car park, outdoor exercise area, children's play area, public footpath (used for dog walks)"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Off-junction site at M42 J2, also from A441. Little Waitrose; Starbucks Drive Thru"
+ },
+ {
+  "id": "keele",
+  "name": "Keele",
+  "aka": null,
+  "road": "M6",
+  "roads": [
+   "M6"
+  ],
+  "junction": "J15-16",
+  "operator": "Welcome Break",
+  "postcode": "ST5 5HG",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 52.9939,
+  "lng": -2.2905,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Chopstix",
+     "KFC",
+     "Starbucks",
+     "Subway",
+     "Taco Bell",
+     "Krispy Kreme",
+     "Waitrose",
+     "WHSmith",
+     "WYE"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Tiny grass verge in far corner of car parks"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sides linked by a restaurant bridge over the motorway (motorwayservices.uk calls it a single site built upon the motorway); fast food on the bridge, so treated as serving both directions"
+ },
+ {
+  "id": "killington-lake",
+  "name": "Killington Lake",
+  "aka": null,
+  "road": "M6",
+  "roads": [
+   "M6"
+  ],
+  "junction": "J36-37",
+  "operator": "Roadchef",
+  "postcode": "LA8 0NW",
+  "layout": "single",
+  "linked": null,
+  "oneWay": "S",
+  "lat": 54.3152,
+  "lng": -2.6358,
+  "coordConfidence": "medium",
+  "sides": [
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Costa",
+     "McDonald's",
+     "Krispy Kreme",
+     "WHSmith",
+     "Days Inn",
+     "Wild Bean Cafe"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 3,
+   "text": "Large grass area around building, picnic area, Killington Lake views"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "SOUTHBOUND ONLY: one-sided site, designed to pair with Tebay northbound (sides entry uses dir S rather than both)"
+ },
+ {
+  "id": "kinross",
+  "name": "Kinross",
+  "aka": null,
+  "road": "M90",
+  "roads": [
+   "M90"
+  ],
+  "junction": "J6",
+  "operator": "Moto",
+  "postcode": "KY13 0NQ",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 56.2096,
+  "lng": -3.4393,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Large grass area next to car park; picnic area"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Off-junction site at M90 J6, also accessible from A977. BP forecourt. A dog groomer operates from an outbuilding. GRIDSERVE HPC chargers."
+ },
+ {
+  "id": "knutsford",
+  "name": "Knutsford",
+  "aka": null,
+  "road": "M6",
+  "roads": [
+   "M6"
+  ],
+  "junction": "J18-19",
+  "operator": "Moto",
+  "postcode": "WA16 0TL",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 53.2996,
+  "lng": -2.4014,
+  "coordConfidence": "medium",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "KFC",
+     "Pret",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 0,
+   "text": "Very little green space"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sides linked by a two-storey bridge building with restaurant and shop; treated as serving both directions. Costa Drive Thru northbound only"
+ },
+ {
+  "id": "lancaster",
+  "name": "Lancaster",
+  "aka": "Forton",
+  "road": "M6",
+  "roads": [
+   "M6"
+  ],
+  "junction": "J32-33",
+  "operator": "Moto",
+  "postcode": "LA2 9DU",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 53.9606,
+  "lng": -2.7589,
+  "coordConfidence": "medium",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": []
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": []
+   }
+  ],
+  "shared": [
+   "Burger King",
+   "Costa",
+   "Greggs",
+   "KFC",
+   "Pret",
+   "Krispy Kreme",
+   "M&S",
+   "WHSmith",
+   "WYE",
+   "Travelodge"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Northbound: children's play area and small grass area by hotel. Southbound: small grass area at back of car park"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sites connected by an internal bridge (Forton tower)"
+ },
+ {
+  "id": "leeds-skelton-lake",
+  "name": "Leeds Skelton Lake",
+  "aka": null,
+  "road": "M1",
+  "roads": [
+   "M1"
+  ],
+  "junction": "J45",
+  "operator": "Extra",
+  "postcode": "LS9 0AS",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 53.7727,
+  "lng": -1.4719,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Chopstix",
+     "Greggs",
+     "KFC",
+     "McDonald's",
+     "Nando's",
+     "Starbucks",
+     "M&S",
+     "WHSmith",
+     "Spar",
+     "Ramada"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 3,
+   "text": "Walkway behind building into Skelton Country Park (lake), RSPB bird viewing platform, children's play area"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single site at J45 (also A63); opened 2020; Texaco/Spar forecourt run by Jos Richardson & Son; Wikipedia article title is 'Skelton Lake services'"
+ },
+ {
+  "id": "leeming-bar",
+  "name": "Leeming Bar",
+  "aka": null,
+  "road": "A1(M)",
+  "roads": [
+   "A1(M)"
+  ],
+  "junction": "J51",
+  "operator": "Moto",
+  "postcode": "DL8 1DT",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 54.29913,
+  "lng": -1.56683,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Costa",
+     "McDonald's"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Picnic tables only, no grass area"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Officially a rest area, just over a mile from the junction, also reached from the A684. Minimal facilities: Costa, McDonald's drive-thru (leased), BP forecourt shop. Motel being demolished (announced Oct 2024). GRIDSERVE chargers."
+ },
+ {
+  "id": "leicester-forest-east",
+  "name": "Leicester Forest East",
+  "aka": null,
+  "road": "M1",
+  "roads": [
+   "M1"
+  ],
+  "junction": "J21-21a",
+  "operator": "Welcome Break",
+  "postcode": "LE3 3GB",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 52.6192,
+  "lng": -1.206,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": []
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": []
+   }
+  ],
+  "shared": [
+   "Burger King",
+   "Chopstix",
+   "KFC",
+   "Starbucks",
+   "Subway",
+   "Taco Bell",
+   "Krispy Kreme",
+   "Waitrose",
+   "WHSmith",
+   "Days Inn"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Tiny amount of grass space at back of car parks"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "motorwayservices.uk calls it a single site built on the motorway: separate car parks each side joined by the bridge restaurant over the M1, so treated as split and linked; facilities listed unsided"
+ },
+ {
+  "id": "leigh-delamere",
+  "name": "Leigh Delamere",
+  "aka": null,
+  "road": "M4",
+  "roads": [
+   "M4"
+  ],
+  "junction": "J17-18",
+  "operator": "Moto",
+  "postcode": "SN14 6LB",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 51.5115,
+  "lng": -2.1595,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "E",
+    "label": "eastbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "KFC",
+     "Pret",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "Travelodge",
+     "Chow",
+     "Cotton Traders"
+    ]
+   },
+   {
+    "dir": "W",
+    "label": "westbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "KFC",
+     "Pret",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "Travelodge",
+     "Chow",
+     "Tanners"
+    ]
+   }
+  ],
+  "shared": [
+   "Greggs"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Small amount of greenery by the hotel; small field by the eastbound hotel; children's play areas"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Sides linked by pedestrian footbridge. Westbound also has a Burger King drive-thru. BP forecourt with Greggs/Costa Express (side not stated)."
+ },
+ {
+  "id": "london-gateway",
+  "name": "London Gateway",
+  "aka": null,
+  "road": "M1",
+  "roads": [
+   "M1"
+  ],
+  "junction": "J2-4",
+  "operator": "Welcome Break",
+  "postcode": "NW7 3HU",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 51.6311,
+  "lng": -0.2639,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Starbucks",
+     "Subway",
+     "Krispy Kreme",
+     "Waitrose",
+     "WHSmith",
+     "Ramada"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass area next to the main building"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single site on the west side of the M1 with access from both carriageways; Ramada hotel on site"
+ },
+ {
+  "id": "lymm",
+  "name": "Lymm",
+  "aka": null,
+  "road": "M6/M56",
+  "roads": [
+   "M6",
+   "M56"
+  ],
+  "junction": "M6 J20 / M56 J9",
+  "operator": "Moto",
+  "postcode": "WA13 0SP",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 53.3595,
+  "lng": -2.506,
+  "coordConfidence": "medium",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Costa",
+     "Greggs",
+     "KFC",
+     "McDonald's",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass verge by hotel"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Off-junction truckstop at the M6 J20 / M56 J9 interchange, also from A50. Warrington M6 Motel on site; McDonald's Drive Thru"
+ },
+ {
+  "id": "magor",
+  "name": "Magor",
+  "aka": null,
+  "road": "M4",
+  "roads": [
+   "M4"
+  ],
+  "junction": "J23A",
+  "operator": "Roadchef",
+  "postcode": "NP26 3YL",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 51.5882,
+  "lng": -2.8387,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Costa",
+     "Leon",
+     "McDonald's",
+     "Krispy Kreme",
+     "Chozen Noodle",
+     "WHSmith",
+     "Days Inn",
+     "Chaiiwala",
+     "The Breakfast Kitchen"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass area at back of car park"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Off-junction single site. Forecourt by Rontec (Esso, Shop'N Drive, West Cornwall Pasty Co.)."
+ },
+ {
+  "id": "maidstone",
+  "name": "Maidstone",
+  "aka": null,
+  "road": "M20",
+  "roads": [
+   "M20"
+  ],
+  "junction": "J8",
+  "operator": "Roadchef (MFG/Esso forecourt)",
+  "postcode": "ME17 1SS",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 51.26694,
+  "lng": 0.61417,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Chozen Noodle",
+     "Costa",
+     "Leon",
+     "McDonald's",
+     "Krispy Kreme",
+     "WHSmith",
+     "Days Inn"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Small grass area to the side of the building"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single site at a junction. McDonald's and a Costa are drive-thrus."
+ },
+ {
+  "id": "markham-vale",
+  "name": "Markham Vale",
+  "aka": "Chesterfield",
+  "road": "M1",
+  "roads": [
+   "M1"
+  ],
+  "junction": "J29A",
+  "operator": "EG Group",
+  "postcode": "S44 5HS",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 53.24418,
+  "lng": -1.33402,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "KFC",
+     "McDonald's",
+     "Starbucks",
+     "Greggs",
+     "Subway",
+     "Chesters",
+     "ASDA Express",
+     "Pub"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Small grass verges, children's play area at the pub, public footpath connections"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Listed on motorwayservices.uk as Markham Vale, not Chesterfield. Cluster of drive-thrus and a Marston's pub plus Esso/Asda Express forecourt off J29A (A6192); not signposted in advance. EV Point, InstaVolt and Osprey chargers; GRIDSERVE hub under construction."
+ },
+ {
+  "id": "medway",
+  "name": "Medway",
+  "aka": null,
+  "road": "M2",
+  "roads": [
+   "M2"
+  ],
+  "junction": "J4-5",
+  "operator": "Moto (BP forecourt)",
+  "postcode": "ME8 8PQ",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 51.3406,
+  "lng": 0.6073,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "E",
+    "label": "eastbound",
+    "lat": null,
+    "lng": null,
+    "brands": []
+   },
+   {
+    "dir": "W",
+    "label": "westbound",
+    "lat": null,
+    "lng": null,
+    "brands": []
+   }
+  ],
+  "shared": [
+   "Burger King",
+   "Costa",
+   "Greggs",
+   "KFC",
+   "Krispy Kreme",
+   "M&S",
+   "WHSmith",
+   "Travelodge"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Westbound: small grass area by hotel car park. Eastbound: fenced grass area by entrance. Patios at both entrances and a few picnic tables"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Buildings on each side connected by an overbridge (Wikipedia); motorwayservices.uk calls it a single site built upon the motorway. Showers on eastbound side."
+ },
+ {
+  "id": "membury",
+  "name": "Membury",
+  "aka": null,
+  "road": "M4",
+  "roads": [
+   "M4"
+  ],
+  "junction": "J14-15",
+  "operator": "Welcome Break",
+  "postcode": "RG17 7TZ",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 51.4807,
+  "lng": -1.5569,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "E",
+    "label": "eastbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "KFC",
+     "Starbucks",
+     "Krispy Kreme",
+     "WHSmith",
+     "Subway",
+     "Waitrose",
+     "Chopstix"
+    ]
+   },
+   {
+    "dir": "W",
+    "label": "westbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "KFC",
+     "Starbucks",
+     "Krispy Kreme",
+     "WHSmith",
+     "Taco Bell",
+     "Waitrose",
+     "Days Inn",
+     "Chopstix"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass areas to the side of main buildings"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Sides linked by pedestrian footbridge. Westbound has Little Waitrose, eastbound Waitrose. Sides staggered by ~500m per motorwayservices.uk map markers."
+ },
+ {
+  "id": "michaelwood",
+  "name": "Michaelwood",
+  "aka": null,
+  "road": "M5",
+  "roads": [
+   "M5"
+  ],
+  "junction": "J13-14",
+  "operator": "Welcome Break",
+  "postcode": "GL11 6DD",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 51.6567,
+  "lng": -2.4291,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "KFC",
+     "Starbucks",
+     "Krispy Kreme",
+     "Subway",
+     "Days Inn"
+    ]
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "KFC",
+     "Starbucks",
+     "Krispy Kreme"
+    ]
+   }
+  ],
+  "shared": [
+   "Waitrose",
+   "WHSmith",
+   "M&S",
+   "Wild Bean Cafe"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Northbound: grass lawn around hotel. Southbound: grass verge across the zebra crossing. Site sits in a small strip of woodland"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Linked by pedestrian footbridge (rebuilt 2022). BP forecourts with M&S Food and Wild Bean Cafe."
+ },
+ {
+  "id": "newport-pagnell",
+  "name": "Newport Pagnell",
+  "aka": null,
+  "road": "M1",
+  "roads": [
+   "M1"
+  ],
+  "junction": "J14-15",
+  "operator": "Welcome Break",
+  "postcode": "MK16 8DS",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 52.0831,
+  "lng": -0.7485,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Chopstix",
+     "KFC",
+     "Starbucks",
+     "Subway",
+     "Taco Bell",
+     "Krispy Kreme",
+     "Ramada"
+    ]
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Chopstix",
+     "KFC",
+     "Starbucks",
+     "Taco Bell",
+     "Krispy Kreme"
+    ]
+   }
+  ],
+  "shared": [
+   "Waitrose",
+   "WHSmith"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Safe grass area behind the hotel (northbound); southbound only a small grass strip by the entry, not suitable for children"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sites linked by an internal footbridge (steps only); Ramada hotel and Starbucks drive-thru northbound; Texaco forecourts"
+ },
+ {
+  "id": "northampton",
+  "name": "Northampton",
+  "aka": null,
+  "road": "M1",
+  "roads": [
+   "M1"
+  ],
+  "junction": "J15a",
+  "operator": "Roadchef",
+  "postcode": "NN4 9QS",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 52.2092,
+  "lng": -0.9448,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Coco di Mama",
+     "Costa",
+     "McDonald's",
+     "Krispy Kreme",
+     "WHSmith",
+     "Leon",
+     "Co-op"
+    ]
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Coco di Mama",
+     "Costa",
+     "McDonald's",
+     "Krispy Kreme",
+     "WHSmith"
+    ]
+   }
+  ],
+  "shared": [
+   "Wild Bean Cafe"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 0,
+   "text": "No grass space"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sites within J15a (also serves A43) connected by a one-mile public road; the footbridge does not connect the sides; BP forecourts"
+ },
+ {
+  "id": "norton-canes",
+  "name": "Norton Canes",
+  "aka": null,
+  "road": "M6 Toll",
+  "roads": [
+   "M6 Toll"
+  ],
+  "junction": "T6-T7",
+  "operator": "Roadchef",
+  "postcode": "WS11 9UX",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 52.6643,
+  "lng": -1.9688,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Chozen Noodle",
+     "Costa",
+     "Leon",
+     "McDonald's",
+     "Krispy Kreme",
+     "Co-op",
+     "WHSmith",
+     "Days Inn",
+     "Wild Bean Cafe"
+    ]
+   }
+  ],
+  "shared": [
+   "Coco di Mama"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 3,
+   "text": "Nature walk through woodland and around Air Pulse memorial next to hotel; public footpath connections; picnic areas"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single site between junctions with access from both carriageways. BP forecourt. Only services on the M6 Toll"
+ },
+ {
+  "id": "oxford",
+  "name": "Oxford",
+  "aka": null,
+  "road": "M40",
+  "roads": [
+   "M40"
+  ],
+  "junction": "J8A",
+  "operator": "Welcome Break",
+  "postcode": "OX33 1LJ",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 51.7391,
+  "lng": -1.096,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Chopstix",
+     "KFC",
+     "Pret",
+     "Starbucks",
+     "Subway",
+     "Taco Bell",
+     "Krispy Kreme",
+     "Waitrose",
+     "WHSmith",
+     "WYE",
+     "PizzaExpress",
+     "Ramada"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Grass area by outdoor terrace and pond, picnic area, outdoor exercise area"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Off-junction site at M40 J8A, also from A40/A418. Little Waitrose; BP forecourt"
+ },
+ {
+  "id": "pease-pottage",
+  "name": "Pease Pottage",
+  "aka": null,
+  "road": "M23",
+  "roads": [
+   "M23"
+  ],
+  "junction": "J11",
+  "operator": "Moto (BP forecourt)",
+  "postcode": "RH11 9YA",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 51.0834,
+  "lng": -0.1996,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Small picnic area at the back of the car park; public footpath connections"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single site at the end of the M23 (J11, also A23/A264). No hotel."
+ },
+ {
+  "id": "peterborough",
+  "name": "Peterborough",
+  "aka": null,
+  "road": "A1(M)",
+  "roads": [
+   "A1(M)"
+  ],
+  "junction": "J17",
+  "operator": "Extra",
+  "postcode": "PE7 3UQ",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 52.5317,
+  "lng": -0.3221,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Chopstix",
+     "Costa",
+     "KFC",
+     "McDonald's",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "Days Inn",
+     "West Cornwall Pasty Co."
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass areas at back of car park, picnic area, children's play area"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single site at J17 (also A1, A605, A1139); Shell forecourt"
+ },
+ {
+  "id": "pont-abraham",
+  "name": "Pont Abraham",
+  "aka": null,
+  "road": "M4",
+  "roads": [
+   "M4"
+  ],
+  "junction": "J49",
+  "operator": "Roadchef",
+  "postcode": "SA4 0FU",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 51.7463,
+  "lng": -4.0654,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Costa",
+     "McDonald's",
+     "Krispy Kreme",
+     "WHSmith",
+     "ASDA Express"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass bank around building"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Off-junction single site at the western end of the M4. Forecourt Esso / ASDA Express."
+ },
+ {
+  "id": "reading",
+  "name": "Reading",
+  "aka": null,
+  "road": "M4",
+  "roads": [
+   "M4"
+  ],
+  "junction": "J11-12",
+  "operator": "Moto",
+  "postcode": "RG30 3UQ",
+  "layout": "split",
+  "linked": false,
+  "oneWay": null,
+  "lat": 51.4233,
+  "lng": -1.033,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "E",
+    "label": "eastbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "M&S",
+     "WHSmith",
+     "Travelodge",
+     "Tanners"
+    ]
+   },
+   {
+    "dir": "W",
+    "label": "westbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "M&S",
+     "WHSmith",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [
+   "Burger King",
+   "Costa",
+   "Greggs",
+   "KFC",
+   "Pret",
+   "Krispy Kreme",
+   "Chow",
+   "Wild Bean Cafe"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Large grass area behind each hotel; children's play area (westbound)"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sites, no public connection. Catering listed without sides (likely mostly both sides). BP forecourt."
+ },
+ {
+  "id": "rivington",
+  "name": "Rivington",
+  "aka": null,
+  "road": "M61",
+  "roads": [
+   "M61"
+  ],
+  "junction": "J6-8",
+  "operator": "EG On The Move (BP forecourt)",
+  "postcode": "BL6 5UZ",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 53.6005,
+  "lng": -2.573,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Greggs",
+     "Starbucks",
+     "Subway"
+    ]
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Greggs",
+     "Starbucks",
+     "Subway"
+    ]
+   }
+  ],
+  "shared": [
+   "Spar"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Grass areas around the car park, dog walking area, children's play area, public footpath connection (West Pennine Moors nearby)"
+  },
+  "dogArea": true,
+  "ev": true,
+  "notes": "Two sites linked by pedestrian footbridge. 'Bolton West' in the task list is the same site: Rivington was called Bolton West services under First Motorway Services and renamed Rivington in July 2009, so no separate entry was written. Rivington Lodge hotel closed 2025 and demolished. eHGV charger southbound."
+ },
+ {
+  "id": "ross-spur",
+  "name": "Ross Spur",
+  "aka": null,
+  "road": "M50/A449",
+  "roads": [
+   "M50",
+   "A449"
+  ],
+  "junction": null,
+  "operator": "EG Group / Asda Express",
+  "postcode": "HR9 7QJ",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 51.92822,
+  "lng": -2.56789,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Starbucks",
+     "Greggs",
+     "Subway",
+     "ASDA Express"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass verges only, with public footpath connections"
+  },
+  "dogArea": false,
+  "ev": null,
+  "notes": "At the Traveller's Rest roundabout where the M50 ends, on the A449 near Ross-on-Wye. Esso forecourt (Asda Express since Feb 2024), Burger King and Starbucks drive-thrus. Current facilities are on the south-westbound side of the A449 but the site is reachable from both directions."
+ },
+ {
+  "id": "rotherham",
+  "name": "Rotherham",
+  "aka": null,
+  "road": "M1",
+  "roads": [
+   "M1"
+  ],
+  "junction": "J33",
+  "operator": "Welcome Break",
+  "postcode": "S60 4EQ",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 53.39989,
+  "lng": -1.35251,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "KFC",
+     "Pret",
+     "Starbucks",
+     "Krispy Kreme",
+     "Waitrose",
+     "WHSmith",
+     "Chopstix"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Picnic tables, outdoor exercise area and grass verge around the car park"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Opened 17 January 2025. Single junction site also reachable from the A630; separate HGV amenity building linked to the main building by an underpass. Waitrose is a Little Waitrose. Starbucks drive-thru too. Applegreen Electric 350kW and Tesla Superchargers."
+ },
+ {
+  "id": "rownhams",
+  "name": "Rownhams",
+  "aka": null,
+  "road": "M27",
+  "roads": [
+   "M27"
+  ],
+  "junction": "J3-4",
+  "operator": "Roadchef",
+  "postcode": "SO16 8AP",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 50.9573,
+  "lng": -1.4491,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "E",
+    "label": "eastbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Costa",
+     "McDonald's",
+     "Krispy Kreme",
+     "WHSmith"
+    ]
+   },
+   {
+    "dir": "W",
+    "label": "westbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Costa",
+     "McDonald's",
+     "Krispy Kreme",
+     "WHSmith",
+     "Leon",
+     "Pret",
+     "Co-op",
+     "Days Inn"
+    ]
+   }
+  ],
+  "shared": [
+   "Wild Bean Cafe"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass area to the side of both buildings; picnic area"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Sides called north-eastbound (E) and south-westbound (W) by source. Linked by pedestrian subway/walkway. BP forecourts."
+ },
+ {
+  "id": "rugby",
+  "name": "Rugby",
+  "aka": null,
+  "road": "M6",
+  "roads": [
+   "M6"
+  ],
+  "junction": "J1",
+  "operator": "Moto",
+  "postcode": "CV23 0EZ",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 52.4081,
+  "lng": -1.2457,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "KFC",
+     "Pret",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Large grass bank beside main building, picnic area, children's play area, outdoor courtyard seating by Costa"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Off-junction site at M6 J1, also reached from the A426. Costa Drive Thru; BP forecourt; Tesla Supercharger and GRIDSERVE HPC"
+ },
+ {
+  "id": "sandbach",
+  "name": "Sandbach",
+  "aka": null,
+  "road": "M6",
+  "roads": [
+   "M6"
+  ],
+  "junction": "J16-17",
+  "operator": "Roadchef",
+  "postcode": "CW11 2FZ",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 53.1399,
+  "lng": -2.3367,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Costa",
+     "McDonald's",
+     "Krispy Kreme",
+     "Coco di Mama"
+    ]
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Costa",
+     "McDonald's",
+     "Krispy Kreme",
+     "Chozen Noodle",
+     "Chaiiwala",
+     "WHSmith"
+    ]
+   }
+  ],
+  "shared": [
+   "Wild Bean Cafe"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Small grass area by building entrances"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sites connected by a pedestrian footbridge; BP forecourts"
+ },
+ {
+  "id": "sarn-park",
+  "name": "Sarn Park",
+  "aka": null,
+  "road": "M4",
+  "roads": [
+   "M4"
+  ],
+  "junction": "J36",
+  "operator": "Welcome Break",
+  "postcode": "CF32 9SY",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 51.5349,
+  "lng": -3.5768,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Subway",
+     "Starbucks",
+     "Krispy Kreme",
+     "WHSmith",
+     "Days Inn"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Picnic area and grass bank next to drive-thru; large grass lawn around hotel"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Off-junction single site."
+ },
+ {
+  "id": "sawtry",
+  "name": "Sawtry",
+  "aka": null,
+  "road": "A1(M)",
+  "roads": [
+   "A1(M)"
+  ],
+  "junction": "J15",
+  "operator": "Moto",
+  "postcode": "PE28 5XW",
+  "layout": "single",
+  "linked": null,
+  "oneWay": "N",
+  "lat": 52.42714,
+  "lng": -0.27127,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "Pret",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Children's play area, small verge at the back of the car park, public footpath connection"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Opened 31 March 2025. Designed for and signposted only to northbound traffic; southbound drivers can reach it via a roughly two-mile detour. BP forecourt. GRIDSERVE Electric Highway chargers."
+ },
+ {
+  "id": "scotch-corner",
+  "name": "Scotch Corner",
+  "aka": null,
+  "road": "A1(M)",
+  "roads": [
+   "A1(M)"
+  ],
+  "junction": "J53",
+  "operator": "Moto",
+  "postcode": "DL10 6PQ",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 54.4434,
+  "lng": -1.6666,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "KFC",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass area by petrol station (care needed)"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single site at J53 Scotch Corner interchange (A66/A6108); Esso/ASDA Express forecourt"
+ },
+ {
+  "id": "sedgemoor",
+  "name": "Sedgemoor",
+  "aka": null,
+  "road": "M5",
+  "roads": [
+   "M5"
+  ],
+  "junction": "J21-22",
+  "operator": "Welcome Break (N) / Roadchef (S)",
+  "postcode": "BS24 0JL (N) / BS26 2UF (S)",
+  "layout": "split",
+  "linked": false,
+  "oneWay": null,
+  "lat": 51.2693,
+  "lng": -2.9215,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": 51.268,
+    "lng": -2.9232,
+    "brands": [
+     "Burger King",
+     "Starbucks",
+     "Subway",
+     "Krispy Kreme",
+     "WHSmith",
+     "Days Inn",
+     "Chopstix"
+    ]
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": 51.2706,
+    "lng": -2.9198,
+    "brands": [
+     "Costa",
+     "Leon",
+     "McDonald's",
+     "Krispy Kreme",
+     "WHSmith",
+     "Chozen Noodle",
+     "Cornish Bakery",
+     "Sedgemoor Farm Shop"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Northbound: grass area around hotel and overflow car park, picnic tables. Southbound: fenced grass picnic area at back of car park"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sites with different operators, no public connection. Site coord from Wikipedia (51.2689,-2.9215, adjusted to midpoint of sides); side coords from motorwayservices.uk per-side map pages. Southbound forecourt Shell."
+ },
+ {
+  "id": "severn-view",
+  "name": "Severn View",
+  "aka": null,
+  "road": "M48",
+  "roads": [
+   "M48"
+  ],
+  "junction": "J1",
+  "operator": "Moto",
+  "postcode": "BS35 4BH",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 51.6028,
+  "lng": -2.6195,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "WHSmith",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 3,
+   "text": "Small dog walking area at front of building; public footpaths to the Severn Bridge and estuary bank with a large field"
+  },
+  "dogArea": true,
+  "ev": true,
+  "notes": "Off-junction single site at M48 J1 by the old Severn Bridge. BP forecourt."
+ },
+ {
+  "id": "south-mimms",
+  "name": "South Mimms",
+  "aka": null,
+  "road": "M25/A1(M)",
+  "roads": [
+   "M25",
+   "A1(M)"
+  ],
+  "junction": "M25 J23 / A1(M) J1",
+  "operator": "Welcome Break (BP forecourt)",
+  "postcode": "EN6 3QQ",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 51.6869,
+  "lng": -0.223,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "KFC",
+     "Pret",
+     "Starbucks",
+     "Subway",
+     "Taco Bell",
+     "Krispy Kreme",
+     "Waitrose",
+     "WHSmith",
+     "M&S",
+     "Wild Bean Cafe",
+     "PizzaExpress",
+     "Ramada"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Grass area by the hotel; gate gives access to Wash Lane Common Nature Reserve"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single off-junction site serving both roads. Waitrose is 'Little Waitrose'; M&S Food and Wild Bean Cafe are in the BP forecourt. Separate HGV-only truckstop. Hotel is Ramada (ex Days Inn)."
+ },
+ {
+  "id": "southwaite",
+  "name": "Southwaite",
+  "aka": null,
+  "road": "M6",
+  "roads": [
+   "M6"
+  ],
+  "junction": "J41-42",
+  "operator": "Moto",
+  "postcode": "CA4 0NT",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 54.7986,
+  "lng": -2.8708,
+  "coordConfidence": "medium",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "Krispy Kreme",
+     "KFC"
+    ]
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "Krispy Kreme"
+    ]
+   }
+  ],
+  "shared": [
+   "M&S",
+   "WHSmith",
+   "Travelodge"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Picnic area and grass area to the side of each building"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sites connected by covered pedestrian footbridge"
+ },
+ {
+  "id": "stafford",
+  "name": "Stafford",
+  "aka": null,
+  "road": "M6",
+  "roads": [
+   "M6"
+  ],
+  "junction": "J14-15",
+  "operator": "Moto (N) / Roadchef (S)",
+  "postcode": "ST15 0EU (N) / ST15 0XE (S)",
+  "layout": "split",
+  "linked": false,
+  "oneWay": null,
+  "lat": 52.8794,
+  "lng": -2.1681,
+  "coordConfidence": "medium",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": 52.8841,
+    "lng": -2.1719,
+    "brands": [
+     "Burger King",
+     "Chozen Noodle",
+     "Costa",
+     "Greggs",
+     "KFC",
+     "Pret",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "Travelodge",
+     "Wild Bean Cafe"
+    ]
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": 52.8746,
+    "lng": -2.1643,
+    "brands": [
+     "Chozen Noodle",
+     "Costa",
+     "McDonald's",
+     "Pret",
+     "Krispy Kreme",
+     "WHSmith",
+     "Days Inn"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 3,
+   "text": "Northbound: large field behind car park, picnic area and lake walk behind hotel (northbound only). Southbound: grass area around hotel only"
+  },
+  "dogArea": true,
+  "ev": true,
+  "notes": "Two separate staggered sites run by different operators, no public connection. Southbound has Garden Square Deli and Asda Express/Esso forecourt (Starbucks on the Go)"
+ },
+ {
+  "id": "stirling",
+  "name": "Stirling",
+  "aka": null,
+  "road": "M9/M80",
+  "roads": [
+   "M9",
+   "M80"
+  ],
+  "junction": "J9",
+  "operator": "Moto",
+  "postcode": "FK7 8EU",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 56.0762,
+  "lng": -3.9216,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "KFC",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass banks around site; picnic tables"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Off-junction site at M9 J9 / end of M80 (Pirnhall), also accessible from A91/A872. BP forecourt. GRIDSERVE HPC chargers."
+ },
+ {
+  "id": "strensham",
+  "name": "Strensham",
+  "aka": null,
+  "road": "M5",
+  "roads": [
+   "M5"
+  ],
+  "junction": "J7-8",
+  "operator": "Roadchef",
+  "postcode": "WR8 0BZ",
+  "layout": "split",
+  "linked": false,
+  "oneWay": null,
+  "lat": 52.0615,
+  "lng": -2.1489,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": 52.0645,
+    "lng": -2.1544,
+    "brands": [
+     "Costa",
+     "Leon",
+     "McDonald's",
+     "Pret",
+     "Krispy Kreme",
+     "Cornish Bakery",
+     "Chozen Noodle",
+     "Days Inn",
+     "ASDA Express"
+    ]
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": 52.0584,
+    "lng": -2.1433,
+    "brands": [
+     "Costa",
+     "Leon",
+     "McDonald's",
+     "Pret",
+     "Krispy Kreme",
+     "Cornish Bakery",
+     "Chopstix",
+     "Co-op",
+     "Wild Bean Cafe"
+    ]
+   }
+  ],
+  "shared": [
+   "WHSmith",
+   "Cotton Traders"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Northbound: large grass area and picnic tables. Southbound: woodland and dog walking at back of far left car park"
+  },
+  "dogArea": true,
+  "ev": true,
+  "notes": "Sites staggered ~0.5 mile apart, no public connection. Side coords from motorwayservices.uk map markers, matched to sides using Wikipedia grid refs (NB SO893409 is further north). BP forecourts both sides; southbound rejoined Roadchef Oct 2026. Wikipedia infobox coord 52.0573,-2.1417 is the southbound site."
+ },
+ {
+  "id": "sutton-scotney",
+  "name": "Sutton Scotney",
+  "aka": null,
+  "road": "A34",
+  "roads": [
+   "A34"
+  ],
+  "junction": null,
+  "operator": "Roadchef",
+  "postcode": "SO21 3JY",
+  "layout": "split",
+  "linked": false,
+  "oneWay": null,
+  "lat": 51.1567,
+  "lng": -1.3452,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Costa",
+     "McDonald's",
+     "Krispy Kreme",
+     "Chaiiwala"
+    ]
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Costa",
+     "McDonald's",
+     "Krispy Kreme",
+     "Days Inn"
+    ]
+   }
+  ],
+  "shared": [
+   "WHSmith"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass areas around buildings"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sites, no public connection. Shell forecourts. Northbound Days Inn closed Sept 2026."
+ },
+ {
+  "id": "swansea",
+  "name": "Swansea",
+  "aka": null,
+  "road": "M4",
+  "roads": [
+   "M4"
+  ],
+  "junction": "J47",
+  "operator": "Moto",
+  "postcode": "SA4 9GT",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 51.6788,
+  "lng": -3.9965,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "WHSmith",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 3,
+   "text": "Grass area next to hotel; access to Penllergaer Forest adjacent to the services"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Signed as Swansea West (Penllergaer), off-junction single site at J47. BP forecourt."
+ },
+ {
+  "id": "tamworth",
+  "name": "Tamworth",
+  "aka": null,
+  "road": "M42",
+  "roads": [
+   "M42"
+  ],
+  "junction": "J10",
+  "operator": "Moto",
+  "postcode": "B77 5PS",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 52.6074,
+  "lng": -1.6404,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "KFC",
+     "Pret",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Large grass behind hotel; public footpath connections"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Off-junction site at M42 J10, also from A5. Esso/Asda Express forecourt"
+ },
+ {
+  "id": "taunton-deane",
+  "name": "Taunton Deane",
+  "aka": null,
+  "road": "M5",
+  "roads": [
+   "M5"
+  ],
+  "junction": "J25-26",
+  "operator": "Roadchef",
+  "postcode": "TA3 7PF",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 50.9769,
+  "lng": -3.1468,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Costa",
+     "McDonald's",
+     "Krispy Kreme",
+     "Chozen Noodle",
+     "Cornish Bakery",
+     "Jumbo Jacket Co."
+    ]
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Costa",
+     "McDonald's",
+     "Krispy Kreme",
+     "Chozen Noodle",
+     "Cornish Bakery",
+     "Pret",
+     "Days Inn"
+    ]
+   }
+  ],
+  "shared": [
+   "WHSmith"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Picnic areas both sides; northbound grass areas and trees all around car park; southbound grass at entrance, larger under footbridge"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Linked by pedestrian footbridge. Shell forecourts. Chozen, Cornish Bakery and Jumbo Jacket are seasonal."
+ },
+ {
+  "id": "tebay",
+  "name": "Tebay",
+  "aka": null,
+  "road": "M6",
+  "roads": [
+   "M6"
+  ],
+  "junction": "J38-39",
+  "operator": "Westmorland",
+  "postcode": "CA10 3SB",
+  "layout": "split",
+  "linked": false,
+  "oneWay": null,
+  "lat": 54.4508,
+  "lng": -2.6074,
+  "coordConfidence": "medium",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": []
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": []
+   }
+  ],
+  "shared": [],
+  "farmShop": true,
+  "independent": true,
+  "outdoor": {
+   "rating": 3,
+   "text": "Duck pond with outdoor dining terrace and grass, picnic area, dog walking area; fell views"
+  },
+  "dogArea": true,
+  "ev": true,
+  "notes": "Two separate sites, no public connection. Farm shop, butcher, kitchen on both sides; Westmorland Hotel and caravan park. Esso forecourt"
+ },
+ {
+  "id": "telford",
+  "name": "Telford",
+  "aka": null,
+  "road": "M54",
+  "roads": [
+   "M54"
+  ],
+  "junction": "J4",
+  "operator": "Welcome Break",
+  "postcode": "TF11 8TG",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 52.6762,
+  "lng": -2.4008,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Starbucks",
+     "Krispy Kreme",
+     "Waitrose",
+     "Days Inn"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Large grass area next to hotel; picnic area at bottom of car park"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Off-junction site at M54 J4, also from A464. Shell forecourt"
+ },
+ {
+  "id": "thurrock",
+  "name": "Thurrock",
+  "aka": null,
+  "road": "M25",
+  "roads": [
+   "M25"
+  ],
+  "junction": "J30-31",
+  "operator": "Moto (MFG/Esso forecourt)",
+  "postcode": "RM16 3BG",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 51.49222,
+  "lng": 0.27222,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "KFC",
+     "Subway",
+     "M&S",
+     "WHSmith"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Only a grass area at the car park entrance"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single off-junction site (signed J30 southbound/anticlockwise, J31 northbound/clockwise). Subway is in the Esso/Londis forecourt. Hotel (ex Travelodge/Ibis Budget) is closed and empty."
+ },
+ {
+  "id": "tibshelf",
+  "name": "Tibshelf",
+  "aka": null,
+  "road": "M1",
+  "roads": [
+   "M1"
+  ],
+  "junction": "J28-29",
+  "operator": "Roadchef",
+  "postcode": "DE55 5TZ",
+  "layout": "split",
+  "linked": false,
+  "oneWay": null,
+  "lat": 53.1371,
+  "lng": -1.3318,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Coco di Mama",
+     "Costa",
+     "McDonald's",
+     "Krispy Kreme",
+     "WHSmith",
+     "Co-op",
+     "Days Inn"
+    ]
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Coco di Mama",
+     "Costa",
+     "McDonald's",
+     "Krispy Kreme",
+     "WHSmith",
+     "Chaiiwala"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Grass areas at back of car parks; near Tibshelf Ponds and the Five Pits Trail, which some use as an unofficial walk"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sites with no public connection; Shell forecourts (Extra-owned)"
+ },
+ {
+  "id": "toddington",
+  "name": "Toddington",
+  "aka": null,
+  "road": "M1",
+  "roads": [
+   "M1"
+  ],
+  "junction": "J11a-12",
+  "operator": "Moto",
+  "postcode": "LU5 6HR",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 51.9478,
+  "lng": -0.5021,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "KFC",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "Travelodge",
+     "Pret"
+    ]
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "KFC",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Picnic tables; grass verge beside northbound building (care needed); grass area by the southbound hotel"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sites linked by a pedestrian footbridge; Pret, Tanners and WYE northbound only; BP forecourt"
+ },
+ {
+  "id": "todhills",
+  "name": "Todhills",
+  "aka": null,
+  "road": "M6",
+  "roads": [
+   "M6"
+  ],
+  "junction": "J44-45",
+  "operator": "Shell (N) / Moto (S)",
+  "postcode": "CA6 4HA",
+  "layout": "split",
+  "linked": false,
+  "oneWay": null,
+  "lat": 54.95128,
+  "lng": -2.97925,
+  "coordConfidence": "medium",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": []
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Costa",
+     "Wild Bean Cafe",
+     "M&S",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Small grass area at the back of the car park"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Officially a rest area on the former A74 stretch now part of the M6, north of Carlisle. Northbound is forecourt only (Shell, Select, Deli by Shell); its restaurant building has been closed since Moto left in 2023. Southbound has Costa (Moto), BP forecourt with Wild Bean Cafe and M&S Food, Travelodge, GRIDSERVE and Tesla chargers. No public link between sides."
+ },
+ {
+  "id": "trowell",
+  "name": "Trowell",
+  "aka": null,
+  "road": "M1",
+  "roads": [
+   "M1"
+  ],
+  "junction": "J25-26",
+  "operator": "Moto",
+  "postcode": "NG9 3PL",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 52.9632,
+  "lng": -1.266,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Travelodge"
+    ]
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": []
+   }
+  ],
+  "shared": [
+   "Burger King",
+   "Costa",
+   "Greggs",
+   "KFC",
+   "Krispy Kreme",
+   "M&S",
+   "WHSmith"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Grass area behind northbound hotel; very small grass area and picnic tables southbound"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sites linked by an internal bridge; Travelodge northbound only; BP forecourts"
+ },
+ {
+  "id": "warwick",
+  "name": "Warwick",
+  "aka": null,
+  "road": "M40",
+  "roads": [
+   "M40"
+  ],
+  "junction": "J12-13",
+  "operator": "Welcome Break",
+  "postcode": "CV35 0AA",
+  "layout": "split",
+  "linked": false,
+  "oneWay": null,
+  "lat": 52.2186,
+  "lng": -1.5029,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Waitrose",
+     "WHSmith"
+    ]
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Waitrose",
+     "WHSmith",
+     "WYE"
+    ]
+   }
+  ],
+  "shared": [
+   "Burger King",
+   "Chopstix",
+   "KFC",
+   "Pret",
+   "Starbucks",
+   "Subway",
+   "Krispy Kreme",
+   "Days Inn"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Northbound: small grass area by hotel plus larger area across entry road (caution). Southbound: large grass area by hotel"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two separate sites, no public connection; Little Waitrose both sides; Applegreen chargers southbound only"
+ },
+ {
+  "id": "washington",
+  "name": "Washington",
+  "aka": null,
+  "road": "A1(M)",
+  "roads": [
+   "A1(M)"
+  ],
+  "junction": "J64-65",
+  "operator": "Moto",
+  "postcode": "DH3 2SJ",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 54.89,
+  "lng": -1.5591,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Travelodge"
+    ]
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "KFC",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [
+   "Burger King",
+   "Costa",
+   "Greggs",
+   "WHSmith"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Picnic tables; small grass verge at back of southbound car park"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sites linked by an internal bridge (public footbridge reopened 3 Sept 2025 after RAAC closure); separate Travelodges each side; BP forecourts"
+ },
+ {
+  "id": "watford-gap",
+  "name": "Watford Gap",
+  "aka": null,
+  "road": "M1",
+  "roads": [
+   "M1"
+  ],
+  "junction": "J16-17",
+  "operator": "Roadchef",
+  "postcode": "NN6 7UZ",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 52.3069,
+  "lng": -1.1226,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Chozen Noodle",
+     "Costa",
+     "McDonald's",
+     "Krispy Kreme",
+     "Chaiiwala",
+     "Coco di Mama"
+    ]
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Chozen Noodle",
+     "Costa",
+     "McDonald's",
+     "Krispy Kreme",
+     "Leon",
+     "Days Inn"
+    ]
+   }
+  ],
+  "shared": [
+   "WHSmith",
+   "Wild Bean Cafe"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "No grass northbound; tiny grass space to left of southbound building"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sites linked by a pedestrian footbridge; Days Inn southbound; BP forecourts"
+ },
+ {
+  "id": "wetherby",
+  "name": "Wetherby",
+  "aka": null,
+  "road": "A1(M)",
+  "roads": [
+   "A1(M)"
+  ],
+  "junction": "J46",
+  "operator": "Moto",
+  "postcode": "LS22 5GT",
+  "layout": "single",
+  "linked": null,
+  "oneWay": null,
+  "lat": 53.947,
+  "lng": -1.368,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "both",
+    "label": "both directions",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Chopstix",
+     "Costa",
+     "Greggs",
+     "KFC",
+     "Pret",
+     "Krispy Kreme",
+     "M&S",
+     "WHSmith",
+     "Days Inn"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 1,
+   "text": "Small amount of greenery behind hotel; public footpath connection"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Single site at J46; BP forecourt with M&S Food"
+ },
+ {
+  "id": "winchester",
+  "name": "Winchester",
+  "aka": null,
+  "road": "M3",
+  "roads": [
+   "M3"
+  ],
+  "junction": "J8-9",
+  "operator": "Moto",
+  "postcode": "SO21 1PP",
+  "layout": "split",
+  "linked": false,
+  "oneWay": null,
+  "lat": 51.1181,
+  "lng": -1.2542,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "Krispy Kreme",
+     "M&S"
+    ]
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "Krispy Kreme",
+     "M&S",
+     "Pret",
+     "Days Inn"
+    ]
+   }
+  ],
+  "shared": [
+   "M&S",
+   "WHSmith",
+   "Wild Bean Cafe"
+  ],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Children's play areas both sides; northbound large grass area to right of building; southbound small grass areas"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sites, no public connection. BP forecourts run by Extra."
+ },
+ {
+  "id": "woodall",
+  "name": "Woodall",
+  "aka": null,
+  "road": "M1",
+  "roads": [
+   "M1"
+  ],
+  "junction": "J30-31",
+  "operator": "Welcome Break",
+  "postcode": "S26 7XR",
+  "layout": "split",
+  "linked": true,
+  "oneWay": null,
+  "lat": 53.3152,
+  "lng": -1.2813,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Chopstix",
+     "KFC",
+     "Starbucks",
+     "Subway",
+     "Krispy Kreme",
+     "WHSmith"
+    ]
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Chopstix",
+     "KFC",
+     "Starbucks",
+     "Subway",
+     "Krispy Kreme",
+     "WHSmith",
+     "Waitrose",
+     "Days Inn"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Large grass space behind northbound building; grass area next to southbound building"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sites linked by a footbridge (southbound access via a second exit and winding path); Waitrose and Days Inn southbound only"
+ },
+ {
+  "id": "woolley-edge",
+  "name": "Woolley Edge",
+  "aka": null,
+  "road": "M1",
+  "roads": [
+   "M1"
+  ],
+  "junction": "J38-39",
+  "operator": "Moto",
+  "postcode": "WF4 4LQ",
+  "layout": "split",
+  "linked": false,
+  "oneWay": null,
+  "lat": 53.6226,
+  "lng": -1.5494,
+  "coordConfidence": "high",
+  "sides": [
+   {
+    "dir": "N",
+    "label": "northbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "WHSmith",
+     "Travelodge"
+    ]
+   },
+   {
+    "dir": "S",
+    "label": "southbound",
+    "lat": null,
+    "lng": null,
+    "brands": [
+     "Burger King",
+     "Costa",
+     "Greggs",
+     "KFC",
+     "M&S",
+     "WHSmith",
+     "Travelodge"
+    ]
+   }
+  ],
+  "shared": [],
+  "farmShop": false,
+  "independent": false,
+  "outdoor": {
+   "rating": 2,
+   "text": "Large lawn behind southbound building; only small grass around site edges northbound"
+  },
+  "dogArea": false,
+  "ev": true,
+  "notes": "Two sites with no public connection (an overgrown footpath from Bramley Lane reaches both); BP forecourts"
+ }
+]

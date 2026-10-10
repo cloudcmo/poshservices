@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Posh Services | Find the good motorway services on your journey</title>
+<meta name="description" content="Plan your motorway stops before you set off. Farm shops, Waitrose, M&S and somewhere green to walk the dog, timed for when you'll want a break.">
+<meta property="og:title" content="Posh Services">
+<meta property="og:description" content="Plan your motorway stops before you set off: the good food, the green space, the dog walks.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<link rel="stylesheet" href="/styles.css">
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js" defer></script>
+<script src="/app.js" defer></script>
+</head>
+<body class="app">
+
+<header class="masthead">
+  <a class="wordmark" href="/" aria-label="Posh Services home"><span class="wm-posh">Posh</span> <span class="wm-services">Services</span></a>
+  <nav class="topnav"><a href="/" aria-current="page">Plan a journey</a><a href="/services">All services</a></nav>
+</header>
+
+<main class="planner">
+  <aside class="panel" id="panel">
+    <div class="intro" id="intro">
+      <h1 class="hero">Find the good services on your way.</h1>
+      <p class="lede">A farm shop, a Waitrose, somewhere green for the dog. Pick your stops before you set off, timed for when you'll want a break.</p>
+    </div>
+
+    <form id="plan-form" class="plan-form" autocomplete="off">
+      <div class="where">
+        <div class="field combo">
+          <label for="from">From</label>
+          <div class="combo-row">
+            <input id="from" name="from" type="text" placeholder="Town or postcode" role="combobox" aria-expanded="false" aria-controls="from-list" aria-autocomplete="list" required>
+            <button type="button" class="icon-btn" id="locate" title="Use my location" aria-label="Use my location"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm9 3h-2.1A7 7 0 0 0 13 5.1V3h-2v2.1A7 7 0 0 0 5.1 11H3v2h2.1a7 7 0 0 0 5.9 5.9V21h2v-2.1a7 7 0 0 0 5.9-5.9H21v-2Zm-9 6a5 5 0 1 1 0-10 5 5 0 0 1 0 10Z"/></svg></button>
+          </div>
+          <ul id="from-list" class="suggest" role="listbox" hidden></ul>
+        </div>
+        <button type="button" class="swap" id="swap" title="Swap" aria-label="Swap start and destination"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 3 3 7h3v7h2V7h3L7 3Zm10 18 4-4h-3v-7h-2v7h-3l4 4Z"/></svg></button>
+        <div class="field combo">
+          <label for="to">To</label>
+          <input id="to" name="to" type="text" placeholder="Town or postcode" role="combobox" aria-expanded="false" aria-controls="to-list" aria-autocomplete="list" required>
+          <ul id="to-list" class="suggest" role="listbox" hidden></ul>
+        </div>
+      </div>
+
+      <fieldset class="chips">
+        <legend>Worth stopping for <span class="hint">any of these</span></legend>
+        <label class="chip"><input type="checkbox" name="want" value="farm"><span>Farm shop</span></label>
+        <label class="chip"><input type="checkbox" name="want" value="waitrose"><span>Waitrose</span></label>
+        <label class="chip"><input type="checkbox" name="want" value="ms"><span>M&amp;S</span></label>
+        <label class="chip"><input type="checkbox" name="want" value="pret"><span>Pret</span></label>
+      </fieldset>
+
+      <fieldset class="chips">
+        <legend>Must have</legend>
+        <label class="chip"><input type="checkbox" name="need" value="dog"><span>Grass for the dog</span></label>
+        <label class="chip"><input type="checkbox" name="need" value="ev"><span>EV charging</span></label>
+      </fieldset>
+
+      <div class="field inline">
+        <label for="every">Stop roughly every</label>
+        <select id="every" name="every">
+          <option value="60">hour</option>
+          <option value="75">1h 15m</option>
+          <option value="90" selected>1h 30m</option>
+          <option value="105">1h 45m</option>
+          <option value="120">2 hours</option>
+          <option value="150">2h 30m</option>
+          <option value="0">I'll pick my own</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-go" id="go">Find my stops</button>
+    </form>
+
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+
+    <section id="results" class="results" hidden>
+      <div class="results-head">
+        <p id="summary" class="summary"></p>
+        <div class="results-actions">
+          <button type="button" class="btn btn-quiet" id="share">Share this plan</button>
+          <a class="btn btn-quiet" id="gmaps" target="_blank" rel="noopener">Open in Google Maps</a>
+        </div>
+        <p id="picked-note" class="picked-note" hidden>You've picked these stops yourself. <button type="button" class="linkish" id="reset-picks">Go back to suggestions</button></p>
+      </div>
+      <ol id="itinerary" class="itinerary"></ol>
+      <details id="all-wrap" class="all-wrap">
+        <summary id="all-summary"></summary>
+        <ul id="all-list" class="all-list"></ul>
+      </details>
+    </section>
+
+    <footer class="panel-foot">
+      <p>Routes by <a href="https://project-osrm.org/" target="_blank" rel="noopener">OSRM</a> using OpenStreetMap data. Places from <a href="https://postcodes.io" target="_blank" rel="noopener">postcodes.io</a>. Facilities change, so check before you rely on one. Last checked October 2026.</p>
+    </footer>
+  </aside>
+
+  <section class="mapwrap" aria-label="Map">
+    <div id="map"></div>
+  </section>
+</main>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
