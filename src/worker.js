@@ -1,6 +1,7 @@
 import SERVICES from './services.json';
 import { matchServices, simplify, poshScore, dogScore } from './match.js';
 import { servicePage, listPage, notFoundPage } from './pages.js';
+import { nearby } from './nearby.js';
 
 const OSRM_DEFAULT = 'https://router.project-osrm.org';
 const PC = 'https://api.postcodes.io';
@@ -164,6 +165,24 @@ export default {
       }
       if (path === '/api/plan') {
         return json(await plan(url, env, ctx), 200, { 'cache-control': 'public, max-age=3600' });
+      }
+      if (path === '/api/nearby') {
+        const lat = +url.searchParams.get('lat'), lng = +url.searchParams.get('lng');
+        if (!(lat > 49 && lat < 61 && lng > -9 && lng < 3)) return json({ error: 'Bad location' }, 400);
+        // Cache by position rounded to ~100m, for 30 days
+        const key = new Request(`https://cache.poshservices/nearby/${lat.toFixed(3)},${lng.toFixed(3)}`);
+        const hit = await caches.default.match(key);
+        if (hit) return new Response(hit.body, hit);
+        let data;
+        try {
+          data = await nearby(lat, lng, env.OSRM_URL || OSRM_DEFAULT);
+        } catch (e) {
+          console.error('nearby', String(e));
+          return json({ error: 'Could not look up places near this exit right now. Try again in a minute.' }, 503);
+        }
+        const res = json(data, 200, { 'cache-control': 'public, max-age=2592000' });
+        ctx.waitUntil(caches.default.put(key, res.clone()));
+        return res;
       }
       if (path === '/api/services') {
         return json(SUMMARY, 200, { 'cache-control': 'public, max-age=3600' });

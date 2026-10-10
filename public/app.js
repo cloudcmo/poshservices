@@ -297,6 +297,7 @@
           <p>${esc(s.road)}${s.junction ? `, ${esc(s.junction)}` : ''}. ${esc(sideNote)}</p>
           ${s.outdoor?.text ? `<p class="outdoor">${esc(s.outdoor.text)}</p>` : ''}
           <p class="stop-links"><a href="/services/${s.id}" target="_blank" rel="noopener">See what's there</a><button type="button" class="linkish" data-remove="${s.id}">Remove this stop</button></p>
+          <details class="nearby" data-lat="${s.lat}" data-lng="${s.lng}"><summary>Off the motorway nearby</summary><div class="nearby-body"></div></details>
         </div>
       </li>`;
       prev = s.t;
@@ -377,11 +378,43 @@
     }
   }
 
+  // ── Off the motorway nearby (loaded only when opened) ─────────
+  async function loadNearby(det) {
+    if (det.dataset.loaded) return;
+    det.dataset.loaded = '1';
+    const body = det.querySelector('.nearby-body');
+    body.innerHTML = '<p class="nb-note">Looking near the exit…</p>';
+    try {
+      const r = await fetch(`/api/nearby?lat=${det.dataset.lat}&lng=${det.dataset.lng}`);
+      const d = await r.json();
+      if (!r.ok || d.error) throw new Error(d.error || 'Could not look that up.');
+      if (!d.junction) { body.innerHTML = '<p class="nb-note">No motorway exit close to this stop.</p>'; return; }
+      const jn = d.junction.ref ? `junction ${esc(d.junction.ref)}` : esc(d.junction.name || 'the nearest exit');
+      let html = `<p class="nb-head">Within 5 minutes of ${jn}:</p>`;
+      html += d.places.length
+        ? '<ul class="nb-list">' + d.places.map(p => `<li><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.name)}</a> <span>${esc(p.kind)}, ${p.mins} min from the exit${p.notes.length ? '. ' + esc(p.notes.join(', ')) : ''}</span></li>`).join('') + '</ul>'
+        : '<p class="nb-note">No independent pubs or cafés that close.</p>';
+      html += d.fuel
+        ? `<p class="nb-fuel">Fuel: <a href="${esc(d.fuel.url)}" target="_blank" rel="noopener">${esc(d.fuel.name)}</a>, ${d.fuel.mins} min from the exit${d.fuel.supermarket ? '. Supermarket fuel is usually cheaper than services' : ''}.</p>`
+        : '<p class="nb-fuel">No petrol station within 5 minutes of this exit.</p>';
+      html += '<p class="nb-small">Nearest, not rated. From OpenStreetMap, so check opening times before you turn off.</p>';
+      body.innerHTML = html;
+    } catch (e) {
+      det.dataset.loaded = '';
+      body.innerHTML = `<p class="nb-note">${esc(e.message)}</p>`;
+    }
+  }
+
   // ── Wiring ────────────────────────────────────────────────────
   function wire() {
     combo('from'); combo('to');
 
     $('plan-form').addEventListener('submit', e => { e.preventDefault(); runPlan(); });
+
+    // <details> toggle doesn't bubble, so listen in the capture phase
+    document.addEventListener('toggle', e => {
+      if (e.target.matches?.('details.nearby') && e.target.open) loadNearby(e.target);
+    }, true);
 
     $('swap').addEventListener('click', () => {
       [state.from, state.to] = [state.to, state.from];

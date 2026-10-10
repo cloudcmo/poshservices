@@ -200,6 +200,19 @@ fieldset { border: 0; padding: 0; margin: 0; }
 .stop-meta .outdoor { color: var(--ink); }
 .stop-links { display: flex; gap: 16px; margin-top: 6px !important; }
 
+.nearby { margin-top: 6px; }
+.nearby summary { cursor: pointer; color: var(--blue); font-size: 14px; width: fit-content; }
+.nearby[open] summary { margin-bottom: 6px; }
+.nearby-body { border-left: 3px solid var(--line); padding: 2px 0 2px 12px; }
+.nearby-body p { margin: 0 0 6px; }
+.nb-head { color: var(--ink); font-weight: 700; }
+.nb-list { list-style: none; padding: 0; margin: 0 0 8px; }
+.nb-list li { margin-bottom: 5px; color: var(--ink); }
+.nb-list a, .nb-fuel a { font-weight: 700; }
+.nb-list span { color: var(--muted); }
+.nb-fuel { color: var(--ink); }
+.nb-small { font-size: 12.5px; }
+
 .all-wrap { margin-top: 22px; border-top: 1px solid var(--line); padding-top: 14px; }
 .all-wrap summary { cursor: pointer; font-weight: 700; color: var(--blue); }
 .all-list { list-style: none; padding: 0; margin: 10px 0 0; }
