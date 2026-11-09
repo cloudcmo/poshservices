@@ -2,7 +2,7 @@
 (() => {
   const $ = id => document.getElementById(id);
   const MAP_STYLE = 'https://tiles.openfreemap.org/styles/positron';
-  const BLUE = '#1b4f9c';
+  const BLUE = '#1f4a3a';
   const GOOD = ['Waitrose', 'M&S', 'Pret'];
   const DOG_TEXT = ['Car park only', 'A bit of grass', 'Good for a dog walk', 'Lovely walk'];
 
@@ -189,8 +189,8 @@
       id: 'all', type: 'circle', source: 'all',
       paint: {
         'circle-radius': ['interpolate', ['linear'], ['get', 'posh'], 0, 3.5, 5, 8],
-        'circle-color': ['case', ['>=', ['get', 'posh'], 3], '#c9a227', BLUE],
-        'circle-stroke-color': '#fff', 'circle-stroke-width': 1.5,
+        'circle-color': ['case', ['>=', ['get', 'posh'], 3], '#b8903a', BLUE],
+        'circle-stroke-color': '#f6f0e4', 'circle-stroke-width': 1.5,
         'circle-opacity': 0.9,
       },
     });
@@ -213,7 +213,7 @@
     if (map.getSource('route')) map.getSource('route').setData(line);
     else {
       map.addSource('route', { type: 'geojson', data: line });
-      map.addLayer({ id: 'route-casing', type: 'line', source: 'route', paint: { 'line-color': '#fff', 'line-width': 8 }, layout: { 'line-cap': 'round', 'line-join': 'round' } });
+      map.addLayer({ id: 'route-casing', type: 'line', source: 'route', paint: { 'line-color': '#f6f0e4', 'line-width': 8 }, layout: { 'line-cap': 'round', 'line-join': 'round' } });
       map.addLayer({ id: 'route', type: 'line', source: 'route', paint: { 'line-color': BLUE, 'line-width': 4.5 }, layout: { 'line-cap': 'round', 'line-join': 'round' } });
     }
     markers.forEach(m => m.remove());
