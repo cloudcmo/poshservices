@@ -11,7 +11,7 @@ const SESSION_DAYS = 365;
 const LINK_MINUTES = 20;
 const COOKIE = 'ps_session';
 const SITE = 'https://poshservices.carlosfandango.net';
-const FROM = 'Posh Services <signin@updates.carlosfandango.net>';
+const FROM = 'Posh Services <signin@updates.cloudcmo.co.uk>';
 const EMAIL_RE = /^[^\s@<>()]{1,64}@[^\s@<>()]{1,190}\.[a-z]{2,24}$/i;
 
 const enc = new TextEncoder();

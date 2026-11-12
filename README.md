@@ -31,7 +31,7 @@ The Worker works out which services your route actually passes (on the road you 
 | `scripts/stats-schema.sql` | Tables for the `poshservices-stats` D1 database |
 | `src/accounts.js` | Email sign-in links, saved journeys and the feedback button |
 | `scripts/users-schema.sql` | Tables for the `poshservices` D1 database (accounts, journeys, feedback) |
-| `scripts/resend-dns.zone` | DNS records for sending sign-in emails from updates.carlosfandango.net |
+| `scripts/resend-dns.zone` | (unused since 12 Nov 2026: sign-in emails now go from updates.cloudcmo.co.uk) DNS records for updates.carlosfandango.net |
 | `public/site.js` | Shared by every page: themes, account box, saved journeys, feedback box, home screen nudge |
 | `public/guffbot.js` | GuffBot's road notes: landmarks along the route and his remarks |
 | `public/theme.js` | Applies the colour theme before the page draws |
@@ -61,7 +61,7 @@ npm run deploy     # publish to Cloudflare
 ## Accounts, saved journeys and feedback
 
 - Recent and favourite journeys are saved on each device automatically (browser storage).
-- Signing in is by email link (Resend, from signin@updates.carlosfandango.net, secret `RESEND_API_KEY`). Signed-in favourites sync to the `poshservices` D1 database.
+- Signing in is by email link (Resend, from signin@updates.cloudcmo.co.uk, secret `RESEND_API_KEY`). Signed-in favourites sync to the `poshservices` D1 database.
 - Feedback goes into the same database and shows on the stats site. If the `GITHUB_TOKEN` secret is set (fine-grained token, Issues read and write on this repo), each message with words in it also opens a GitHub issue. Email addresses never go to GitHub.
 - For local testing, `EMAIL_DEV=1` in `.dev.vars` returns the sign-in link instead of emailing it.
 
