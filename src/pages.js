@@ -108,7 +108,7 @@ ${masthead()}
       </dl>
       ${s.notes ? `<p class="notes">${esc(s.notes)}</p>` : ''}
       <p class="checked">Facilities change. This page was last checked in ${CHECKED}.</p>
-      <p class="actions"><a class="btn" href="/?from=${encodeURIComponent(s.name + ' services')}&fll=${s.lat},${s.lng}">Plan a journey from here</a> <a class="btn btn-quiet" href="${gmaps}" target="_blank" rel="noopener">Open in Google Maps</a></p>
+      <p class="actions"><a class="btn" rel="nofollow" href="/?from=${encodeURIComponent(s.name + ' services')}&fll=${s.lat},${s.lng}">Plan a journey from here</a> <a class="btn btn-quiet" href="${gmaps}" target="_blank" rel="noopener">Open in Google Maps</a></p>
     </div>
     <div id="mini-map" class="mini-map" aria-label="Map of ${esc(s.name)} services"></div>
   </div>
