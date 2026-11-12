@@ -5,10 +5,15 @@
   "compatibility_date": "2025-09-01",
   "assets": {
     "directory": "./public",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
+    "run_worker_first": true
   },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "poshservices-stats", "database_id": "9885c5ef-7aac-4bf4-bd43-eec20919f715" }
+  ],
   "observability": { "enabled": true },
   "routes": [
-    { "pattern": "poshservices.carlosfandango.net", "custom_domain": true }
+    { "pattern": "poshservices.carlosfandango.net", "custom_domain": true },
+    { "pattern": "servicesstats.carlosfandango.net", "custom_domain": true }
   ]
 }

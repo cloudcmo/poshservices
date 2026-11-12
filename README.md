@@ -26,6 +26,9 @@ The Worker works out which services your route actually passes (on the road you 
 | `scripts/test-match.mjs` | Offline checks of the matching logic (`npm test`) |
 | `public/nearby-data.json` | "Off the motorway nearby" pubs, cafés and fuel per services (generated) |
 | `scripts/fetch-nearby.mjs` | Refreshes that file from OpenStreetMap (`npm run nearby`, 10 to 20 minutes) |
+| `src/stats.js` | Anonymous usage counting (`/api/e`) and the private stats site |
+| `public/track.js` | Sends the anonymous counts from each page |
+| `scripts/stats-schema.sql` | Tables for the `poshservices-stats` D1 database |
 
 ## Updating a service area
 
@@ -43,6 +46,14 @@ npm test           # check the matching logic
 npm run nearby     # refresh the off-motorway pubs, cafés and fuel (a couple of times a year)
 npm run deploy     # publish to Cloudflare
 ```
+
+## Stats
+
+Usage stats are at https://servicesstats.carlosfandango.net (same Worker, picked by hostname). Log in with name `carl` and the `STATS_PIN` secret (`npx wrangler secret put STATS_PIN` to change it).
+
+Counting is anonymous: no cookies, no IP addresses kept, journeys stored as place names with postcodes cut to the first half. Open the site once with `?nocount=1` on the end to stop counting your own visits on that device (`?nocount=0` to undo).
+
+The Worker runs before static files (`run_worker_first`) so the stats hostname doesn't get the planner page.
 
 Future ideas and feedback are tracked in `IDEAS.md`.
 

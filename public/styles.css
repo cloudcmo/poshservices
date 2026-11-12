@@ -254,6 +254,21 @@ fieldset { border: 0; padding: 0; margin: 0; }
 .pop strong { font-size: 16px; }
 .pop span { color: var(--muted); }
 
+/* Choosing a place by clicking the map */
+.pick-pop { gap: 9px; }
+.pick-pop .pick-where { color: var(--ink); font-weight: 700; font-size: 15px; padding-right: 14px; }
+.pick-pop .pick-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+.pick-pop .btn-small { padding: 7px 12px; }
+.pick-pop .btn-small[data-set="from"] { background: var(--blue); color: #fff; }
+.pick-pop .btn-small[data-set="from"]:hover { background: var(--blue-deep); }
+.map-hint {
+  position: absolute; left: 12px; top: 12px; z-index: 2; margin: 0; max-width: calc(100% - 70px);
+  background: rgba(255, 253, 248, .94); color: var(--ink); border: 1px solid var(--line);
+  padding: 7px 12px; border-radius: 999px; font-size: 14px; box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+  pointer-events: none;
+}
+@media (max-width: 899px) { .map-hint { font-size: 13px; padding: 5px 10px; left: 10px; top: 10px; } }
+
 .toast {
   position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 50;
   background: var(--blue-deep); color: #fff; padding: 10px 16px; border-radius: var(--radius-ui); font-size: 15px;

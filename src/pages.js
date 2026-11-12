@@ -23,6 +23,7 @@ function head(title, desc, extra = '') {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
+<script src="/track.js" defer></script>
 ${extra}
 </head>`;
 }

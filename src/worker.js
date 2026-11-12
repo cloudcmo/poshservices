@@ -1,6 +1,7 @@
 import SERVICES from './services.json';
 import { matchServices, simplify, poshScore, dogScore } from './match.js';
 import { servicePage, listPage, notFoundPage } from './pages.js';
+import { collect, statsSite } from './stats.js';
 
 const OSRM_DEFAULT = 'https://router.project-osrm.org';
 const PC = 'https://api.postcodes.io';
@@ -100,6 +101,21 @@ async function geocode(text, ll, ctx) {
   throw new UserError(`Couldn't find "${t}". Try a town name or a postcode.`);
 }
 
+// Name a point someone clicked on the map, from the nearest postcode
+async function reverse(lat, lng, ctx) {
+  if (!Number.isFinite(lat) || !Number.isFinite(lng) || Math.abs(lat) > 90 || Math.abs(lng) > 180) throw new UserError('That point is not on the map.');
+  const at = `lon=${lng.toFixed(4)}&lat=${lat.toFixed(4)}`;
+  let r = await cachedJson(`${PC}/postcodes?${at}&radius=2000&limit=1`, ctx, 30 * 86400);
+  if (!r.result?.length) r = await cachedJson(`${PC}/postcodes?${at}&widesearch=true&limit=1`, ctx, 30 * 86400);
+  const p = r.result?.[0];
+  if (!p) return { label: 'Point on the map', lat, lng };
+  const district = p.admin_district || '';
+  let area = (p.parish || '').replace(/,? unparished area$/i, '').trim();
+  if (!area || area === district) area = p.admin_ward || '';
+  const label = area && area !== district ? `${area}, ${district}` : district || p.outcode || 'Point on the map';
+  return { label, lat, lng };
+}
+
 class UserError extends Error {}
 class UpstreamError extends Error {}
 
@@ -158,7 +174,18 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname.replace(/\/+$/, '') || '/';
 
+    // Private stats site (servicesstats.carlosfandango.net)
+    if (url.hostname.startsWith('servicesstats.')) {
+      if (/^\/(favicon\.svg|favicon-32\.png|apple-touch-icon\.png)$/.test(path)) return env.ASSETS.fetch(request);
+      return statsSite(request, env, SERVICES);
+    }
+    if (path === '/api/e') return collect(request, env, ctx);
+
     try {
+      if (path === '/api/reverse') {
+        const res = await reverse(parseFloat(url.searchParams.get('lat')), parseFloat(url.searchParams.get('lng')), ctx);
+        return json(res, 200, { 'cache-control': 'public, max-age=86400' });
+      }
       if (path === '/api/suggest') {
         return json(await suggest(url.searchParams.get('q') || '', ctx), 200, { 'cache-control': 'public, max-age=86400' });
       }

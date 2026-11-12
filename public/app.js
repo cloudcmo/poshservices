@@ -29,6 +29,9 @@
     return `<span class="pips" role="img" aria-label="Posh score ${score} out of 5">${s}</span>`;
   };
 
+  const track = (n, d) => { try { window.psTrack && window.psTrack(n, d); } catch { /* ignore */ } };
+  const coarse = window.matchMedia('(pointer: coarse)').matches;
+
   function toast(msg) {
     const t = $('toast');
     t.textContent = msg; t.hidden = false;
@@ -122,6 +125,8 @@
       input.value = it.label;
       state[key] = { label: it.label, lat: it.lat, lng: it.lng };
       close();
+      track('pick', { x: 'suggestion' });
+      showPending();
     };
     const render = () => {
       list.innerHTML = items.map((it, i) =>
@@ -175,6 +180,75 @@
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
     mapReady = new Promise(res => map.on('load', res));
     mapReady.then(showOverview);
+    map.on('click', onMapClick);
+    updateHint();
+  }
+
+  // ── Choosing a place by clicking the map ──────────────────────
+  let pickPopup = null, pending = [];
+
+  function updateHint() {
+    const h = $('map-hint');
+    if (!h || !map) return;
+    const verb = coarse ? 'Tap' : 'Click';
+    h.textContent = !state.from ? `${verb} the map to set your start`
+      : !state.to ? `${verb} the map to set your destination`
+      : `${verb} the map to change start or destination`;
+    h.hidden = !!state.data;
+  }
+
+  function onMapClick(e) {
+    const t = e.originalEvent && e.originalEvent.target;
+    if (t && t.closest && t.closest('.maplibregl-marker, .maplibregl-popup')) return;
+    if (map.getLayer('all') && map.getLayoutProperty('all', 'visibility') !== 'none' &&
+        map.queryRenderedFeatures(e.point, { layers: ['all'] }).length) return;
+    const lat = +e.lngLat.lat.toFixed(5), lng = +e.lngLat.lng.toFixed(5);
+    const place = { label: 'Point on the map', lat, lng };
+    if (pickPopup) pickPopup.remove();
+    const el = document.createElement('div');
+    el.className = 'pop pick-pop';
+    el.innerHTML = '<span class="pick-where">Finding this place…</span>' +
+      '<span class="pick-btns"><button type="button" class="btn btn-small" data-set="from">Start here</button>' +
+      '<button type="button" class="btn btn-small" data-set="to">Go here</button></span>';
+    const popup = pickPopup = new maplibregl.Popup({ offset: 6, maxWidth: '260px' }).setLngLat([lng, lat]).setDOMContent(el).addTo(map);
+    const named = fetch(`/api/reverse?lat=${lat}&lng=${lng}`)
+      .then(r => (r.ok ? r.json() : null))
+      .then(r => { if (r && r.label) place.label = r.label; })
+      .catch(() => {})
+      .then(() => { el.querySelector('.pick-where').textContent = place.label; });
+    el.addEventListener('click', async ev => {
+      const b = ev.target.closest('[data-set]');
+      if (!b) return;
+      el.querySelectorAll('button').forEach(x => { x.disabled = true; });
+      await named;
+      popup.remove();
+      setPlace(b.dataset.set, place, 'map');
+    });
+  }
+
+  function setPlace(key, place, how) {
+    state[key] = { label: place.label, lat: place.lat, lng: place.lng };
+    $(key).value = place.label;
+    $('status').textContent = '';
+    track('pick', { x: how });
+    if (state.from && state.to) { runPlan({ via: how === 'map' ? 'map' : 'form' }); return; }
+    showPending();
+    toast(key === 'from' ? 'Start set. Now choose where you\'re going.' : 'Destination set. Now choose where you\'re starting from.');
+  }
+
+  // A and B pins for places chosen before a route is drawn
+  function showPending() {
+    updateHint();
+    if (!map || !window.maplibregl || state.data) return;
+    pending.forEach(m => m.remove());
+    pending = [];
+    for (const [key, txt, cls] of [['from', 'A', 'mk-start'], ['to', 'B', 'mk-finish']]) {
+      const p = state[key];
+      if (!p) continue;
+      const el = document.createElement('div');
+      el.className = `mk-end ${cls}`; el.textContent = txt;
+      pending.push(new maplibregl.Marker({ element: el }).setLngLat([p.lng, p.lat]).addTo(map));
+    }
   }
 
   async function showOverview() {
@@ -218,6 +292,9 @@
     }
     markers.forEach(m => m.remove());
     markers = [];
+    pending.forEach(m => m.remove());
+    pending = [];
+    if (pickPopup) pickPopup.remove();
 
     const add = (lngLat, el, popupHtml) => {
       const mk = new maplibregl.Marker({ element: el }).setLngLat(lngLat);
@@ -359,15 +436,21 @@
 
   function toggleStop(id) {
     const cur = currentStops().map(s => s.id);
-    state.picks = cur.includes(id) ? cur.filter(x => x !== id) : [...cur, id];
+    const removing = cur.includes(id);
+    state.picks = removing ? cur.filter(x => x !== id) : [...cur, id];
+    track(removing ? 'remove_stop' : 'add_stop', { p: id });
     render();
   }
 
   // ── Planning ──────────────────────────────────────────────────
-  async function runPlan({ keepPicks = false } = {}) {
+  async function runPlan({ keepPicks = false, via = 'form' } = {}) {
     const fromText = $('from').value.trim(), toText = $('to').value.trim();
-    if (!fromText || !toText) { $('status').textContent = 'Enter where you are starting from and where you are going.'; return; }
+    if (!fromText || !toText) { $('status').textContent = 'Enter where you are starting from and where you are going, or choose them on the map.'; return; }
     if (!keepPicks) state.picks = null;
+    if (via === 'form') {
+      if (!(state.from && state.from.label === fromText)) track('pick', { x: 'typed' });
+      if (!(state.to && state.to.label === toText)) track('pick', { x: 'typed' });
+    }
     const p = new URLSearchParams({ from: fromText, to: toText });
     if (state.from && state.from.label === fromText) p.set('fll', `${state.from.lat},${state.from.lng}`);
     if (state.to && state.to.label === toText) p.set('tll', `${state.to.lat},${state.to.lng}`);
@@ -382,10 +465,13 @@
       state.data = data;
       state.from = data.from; state.to = data.to;
       $('from').value = data.from.label; $('to').value = data.to.label;
+      track('plan', { p: `${data.from.label} to ${data.to.label}`, m: miles(data.distance), x: via });
       render();
+      updateHint();
       if (!window.matchMedia('(min-width: 900px)').matches) $('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
     } catch (e) {
       $('status').textContent = e.message;
+      track('plan_fail', { x: e.message });
     } finally {
       $('go').disabled = false;
       $('go').textContent = 'Find my stops';
@@ -433,27 +519,31 @@
 
     // <details> toggle doesn't bubble, so listen in the capture phase
     document.addEventListener('toggle', e => {
-      if (e.target.matches?.('details.nearby') && e.target.open) loadNearby(e.target);
+      if (e.target.matches?.('details.nearby') && e.target.open) { track('nearby', { p: e.target.dataset.id }); loadNearby(e.target); }
     }, true);
 
     $('swap').addEventListener('click', () => {
       [state.from, state.to] = [state.to, state.from];
       [$('from').value, $('to').value] = [$('to').value, $('from').value];
-      if (state.data) runPlan();
+      track('swap');
+      if (state.data) runPlan({ via: 'swap' });
+      else showPending();
     });
 
     $('locate').addEventListener('click', () => {
       if (!navigator.geolocation) { toast('Your browser can\'t share its location.'); return; }
       $('from').value = 'Finding you…';
       navigator.geolocation.getCurrentPosition(pos => {
-        state.from = { label: 'My location', lat: pos.coords.latitude, lng: pos.coords.longitude };
-        $('from').value = 'My location';
+        setPlace('from', { label: 'My location', lat: pos.coords.latitude, lng: pos.coords.longitude }, 'location');
       }, () => { $('from').value = ''; toast('Location not available. Type a town or postcode instead.'); }, { timeout: 10000 });
     });
 
     // Changing filters or interval re-plans instantly (no new route needed)
     document.querySelectorAll('input[name="want"], input[name="need"], #every').forEach(el =>
-      el.addEventListener('change', () => { if (state.data) { state.picks = null; render(); } }));
+      el.addEventListener('change', () => {
+        track('filters', { x: el.id === 'every' ? `every ${el.value}` : `${el.checked ? '+' : '-'}${el.value}` });
+        if (state.data) { state.picks = null; render(); }
+      }));
 
     const setMore = open => {
       $('want-extra').hidden = !open;
@@ -463,9 +553,12 @@
     $('want-more').addEventListener('click', () => setMore($('want-extra').hidden));
     wire.setMore = setMore;
 
-    $('reset-picks').addEventListener('click', () => { state.picks = null; render(); });
+    $('reset-picks').addEventListener('click', () => { state.picks = null; track('reset_picks'); render(); });
+    $('gmaps').addEventListener('click', () => track('gmaps'));
 
     document.addEventListener('click', e => {
+      const svc = e.target.closest('a[href^="/services/"]');
+      if (svc) track('details', { p: svc.getAttribute('href').split('/')[2] });
       const t = e.target.closest('[data-toggle-id]');
       if (t) { toggleStop(t.dataset.toggleId); return; }
       const r = e.target.closest('[data-remove]');
@@ -483,6 +576,7 @@
       // Pin the current stops into the link so it opens exactly as you see it
       state.picks = currentStops().map(s => s.id);
       render();
+      track('share');
       const url = location.href;
       const title = `Stops from ${state.data.from.label} to ${state.data.to.label}`;
       if (navigator.share && window.matchMedia('(pointer: coarse)').matches) {
@@ -497,7 +591,10 @@
     wire();
     const hasTrip = readUrl();
     if (checked('want').some(w => EXTRA_WANT.includes(w))) wire.setMore(true);
+    const hint = coarse ? 'Town, postcode or tap the map' : 'Town, postcode or click the map';
+    $('from').placeholder = hint; $('to').placeholder = hint;
     initMap();
-    if (hasTrip) runPlan({ keepPicks: true });
+    showPending();
+    if (hasTrip) runPlan({ keepPicks: true, via: 'shared' });
   });
 })();
