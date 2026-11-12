@@ -29,6 +29,13 @@ The Worker works out which services your route actually passes (on the road you 
 | `src/stats.js` | Anonymous usage counting (`/api/e`) and the private stats site |
 | `public/track.js` | Sends the anonymous counts from each page |
 | `scripts/stats-schema.sql` | Tables for the `poshservices-stats` D1 database |
+| `src/accounts.js` | Email sign-in links, saved journeys and the feedback button |
+| `scripts/users-schema.sql` | Tables for the `poshservices` D1 database (accounts, journeys, feedback) |
+| `scripts/resend-dns.zone` | DNS records for sending sign-in emails from updates.carlosfandango.net |
+| `public/site.js` | Shared by every page: themes, account box, saved journeys, feedback box, home screen nudge |
+| `public/guffbot.js` | GuffBot's road notes: landmarks along the route and his remarks |
+| `public/theme.js` | Applies the colour theme before the page draws |
+| `public/add-to-home.html` | How to put the site on your home screen |
 
 ## Updating a service area
 
@@ -46,6 +53,21 @@ npm test           # check the matching logic
 npm run nearby     # refresh the off-motorway pubs, cafés and fuel (a couple of times a year)
 npm run deploy     # publish to Cloudflare
 ```
+
+## GuffBot
+
+`public/guffbot.js` holds a list of landmarks you can see from the road (Stonehenge, the Angel of the North, Stott Hall Farm and so on), each with how close the route has to pass. When a route goes near one, GuffBot mentions it, with roughly when and which side. To add one, copy a line in the list and change the name, position, distance and words. Keep him fond and never rude about anyone's journey.
+
+## Accounts, saved journeys and feedback
+
+- Recent and favourite journeys are saved on each device automatically (browser storage).
+- Signing in is by email link (Resend, from signin@updates.carlosfandango.net, secret `RESEND_API_KEY`). Signed-in favourites sync to the `poshservices` D1 database.
+- Feedback goes into the same database and shows on the stats site. If the `GITHUB_TOKEN` secret is set (fine-grained token, Issues read and write on this repo), each message with words in it also opens a GitHub issue. Email addresses never go to GitHub.
+- For local testing, `EMAIL_DEV=1` in `.dev.vars` returns the sign-in link instead of emailing it.
+
+## SEO
+
+The site serves its own `/sitemap.xml` (planner, list, and every services page) and `/robots.txt`. carlosfandango.net's sitemap can't list another subdomain's pages, so add poshservices.carlosfandango.net in Google Search Console and submit `https://poshservices.carlosfandango.net/sitemap.xml`.
 
 ## Stats
 

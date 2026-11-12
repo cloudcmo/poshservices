@@ -13,7 +13,8 @@
 const TZ = 'Europe/London';
 const EVENTS = new Set([
   'view', 'plan', 'plan_fail', 'pick', 'share', 'gmaps', 'add_stop', 'remove_stop', 'reset_picks',
-  'nearby', 'filters', 'swap', 'details',
+  'nearby', 'filters', 'swap', 'details', 'fav_add', 'fav_remove', 'history_open', 'account_open', 'signin_start',
+  'signin', 'signout', 'account_delete', 'feedback_open', 'feedback', 'theme', 'a2hs',
 ]);
 const BOT = /bot|crawl|spider|slurp|preview|monitor|headless|lighthouse|pingdom|uptime|curl|wget|python|java\/|go-http/i;
 const SESSION_DAYS = 30;
@@ -150,7 +151,7 @@ export async function statsSite(request, env, services = []) {
   if (path !== '/') return new Response(null, { status: 303, headers: { Location: '/' } });
   const days = [7, 30, 90, 365].includes(+url.searchParams.get('days')) ? +url.searchParams.get('days') : 30;
   const names = new Map(services.map((s) => [s.id, `${s.name} (${s.road})`]));
-  return dashboard(db, days, names);
+  return dashboard(db, days, names, env.USERS);
 }
 
 function loginPage(msg, status = 200) {
@@ -166,12 +167,18 @@ const FEATURE = {
   share: 'Shared a plan', gmaps: 'Opened the route in Google Maps', add_stop: 'Added a stop by hand', remove_stop: 'Removed a stop',
   reset_picks: 'Went back to the suggestions', nearby: 'Opened "Off the motorway nearby"', filters: 'Changed what they want or the interval',
   swap: 'Swapped start and destination', details: 'Clicked through to a services page',
+  fav_add: 'Saved a favourite journey', fav_remove: 'Removed a favourite', history_open: 'Reopened a saved or recent journey',
+  account_open: 'Opened the account box', signin_start: 'Asked for a sign-in link', signin: 'Signed in', signout: 'Signed out',
+  account_delete: 'Deleted their account', feedback_open: 'Opened the feedback box', feedback: 'Sent feedback',
+  theme: 'Changed the colour theme', a2hs: 'Home screen: tapped the prompt or the how-to',
 };
+const THEME = { linen: 'Linen', motorway: 'Motorway', night: 'Night drive', seventies: 'Seventies' };
+const FBKIND = { wrong: 'Something\'s wrong', idea: 'Idea', thanks: 'Thank you' };
 const PICK = { suggestion: 'Picked from the suggestions', typed: 'Typed it and pressed Find', location: 'Used my location', map: 'Clicked the map' };
-const HOW = { form: 'Planned it themselves', map: 'Planned it from the map', shared: 'Opened a shared link', swap: 'Swapped direction' };
+const HOW = { form: 'Planned it themselves', map: 'Planned it from the map', shared: 'Opened a shared link', swap: 'Swapped direction', saved: 'Reopened a saved or recent journey' };
 const PAGE = { planner: 'Journey planner', list: 'All services list', service: 'A services page', other: 'Other' };
 
-async function dashboard(db, days, names) {
+async function dashboard(db, days, names, users) {
   const now = Date.now();
   const today = londonParts(now).day;
   const start = londonParts(now - (days - 1) * 86400e3).day;
@@ -200,6 +207,21 @@ async function dashboard(db, days, names) {
     q(`SELECT ts, name, page, place, extra, device, num FROM events ORDER BY ts DESC, id DESC LIMIT 40`),
     q(`SELECT COUNT(*) AS n, MIN(day) AS first FROM events`),
   ])).map((r) => r.results);
+  const themes = (await q(`SELECT extra, COUNT(*) AS n FROM events WHERE ${R} AND name='theme' GROUP BY extra ORDER BY n DESC`, start).all()).results;
+
+  // accounts and feedback live in the site's own database
+  let fbRows = [], fbCounts = [], acct = { n: 0, active: 0 };
+  if (users) {
+    try {
+      const startMs = now - days * 86400e3;
+      const [a, b, c] = await users.batch([
+        users.prepare('SELECT COUNT(*) AS n, SUM(last_seen > ?) AS active FROM users').bind(now - 30 * 86400e3),
+        users.prepare('SELECT ts, kind, message, page, service, email, device, issue_url FROM feedback ORDER BY ts DESC LIMIT 40'),
+        users.prepare('SELECT kind, COUNT(*) AS n FROM feedback WHERE ts > ? GROUP BY kind').bind(startMs),
+      ]);
+      acct = a.results[0] || acct; fbRows = b.results; fbCounts = c.results;
+    } catch (e) { /* tables not there yet */ }
+  }
 
   const T = tday[0] || {}, RG = range[0] || {};
   const visitorDays = RG.vd || 0;
@@ -308,6 +330,18 @@ ${total[0] && total[0].n ? '' : '<p class="panel note">No visits counted yet. Co
 <section class="panel"><h2>Where visitors came from</h2>${refs.length ? bars(refs, (r) => esc(r.ref), (r) => r.n) : '<p class="none">No links from other sites yet. Most visits are typed, bookmarked or from shared links in messages.</p>'}</section>
 <section class="panel"><h2>Plans that failed</h2>${fails.length ? bars(fails, (r) => esc(r.extra || 'unknown'), (r) => r.n) : '<p class="none">No failed plans recorded.</p>'}</section>
 </div>
+
+<div class="grid">
+<section class="panel"><h2>Accounts</h2>
+<p class="kv"><span>People with an account</span><b>${acct.n || 0}</b></p>
+<p class="kv"><span>Used it in the last 30 days</span><b>${acct.active || 0}</b></p>
+<p class="note">Everyone else's favourites and recent journeys are kept on their own device only.</p></section>
+<section class="panel"><h2>Colour themes picked</h2>${themes.length ? bars(themes, (r) => esc(THEME[r.extra] || r.extra || 'unknown'), (r) => r.n) : '<p class="none">Nobody has changed the theme yet.</p>'}</section>
+</div>
+
+<section class="panel"><h2>Feedback</h2>
+${fbCounts.length ? `<p class="note" style="margin:0 0 10px">${fbCounts.map((r) => `${esc(FBKIND[r.kind] || r.kind)}: <b>${r.n}</b>`).join(' · ')} in this period</p>` : ''}
+<div class="recent">${fbRows.length ? fbRows.map((r) => `<div><time>${esc(time(r.ts))}</time><span><b>${esc(FBKIND[r.kind] || r.kind)}</b>${r.message ? `: ${esc(r.message)}` : ' <small>(no message)</small>'}${r.service ? ` <small>on ${esc(svcName(r.service))}</small>` : ''}${r.email ? ` <small>reply to <a href="mailto:${esc(r.email)}">${esc(r.email)}</a></small>` : ''}${r.issue_url ? ` <small><a href="${esc(r.issue_url)}" target="_blank" rel="noopener">GitHub issue</a></small>` : ''}</span><small>${esc(r.device || '')}</small></div>`).join('') : '<p class="none">No feedback yet.</p>'}</div></section>
 
 <section class="panel"><h2>Latest activity</h2><div class="recent">${recent.length ? recent.map((r) =>
     `<div><time>${esc(time(r.ts))}</time><span>${recentLine(r)}</span><small>${esc(r.device || '')}</small></div>`).join('') : '<p class="none">Nothing yet.</p>'}</div></section>

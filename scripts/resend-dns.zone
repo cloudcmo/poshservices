@@ -1,0 +1,6 @@
+; DNS records for sending Posh Services sign-in emails from updates.carlosfandango.net (Resend).
+; Import in Cloudflare: carlosfandango.net > DNS > Records > Import and Export > Import, with "Proxy imported DNS records" UNTICKED.
+resend._domainkey.updates.carlosfandango.net. 1 IN TXT "p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCk7nL92At2RgdVzkFDn/CORaC5ag0azW30uTXn7JBhMAQjE/Iy1ZO3xNY5nqqrk7v16I8WGzv6sIsjcM2W2d+2EKdr3Z/dIMZ1o7lnM+13Sct5+WEm+bynxChFttNa0JvSqoJljD8FUFVkTOOuaBeuRUvhQR/LUiHBN7ZJ4aubbwIDAQAB"
+send.updates.carlosfandango.net. 1 IN MX 10 feedback-smtp.eu-west-1.amazonses.com.
+send.updates.carlosfandango.net. 1 IN TXT "v=spf1 include:amazonses.com ~all"
+rsend.updates.carlosfandango.net. 1 IN CNAME send.forge.rmta.net.

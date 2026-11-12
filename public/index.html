@@ -13,6 +13,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#1f4a3a">
+<script src="/theme.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -20,13 +21,15 @@
 <link rel="stylesheet" href="/styles.css">
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js" defer></script>
 <script src="/track.js" defer></script>
+<script src="/guffbot.js" defer></script>
+<script src="/site.js" defer></script>
 <script src="/app.js" defer></script>
 </head>
 <body class="app">
 
 <header class="masthead">
   <a class="wordmark" href="/" aria-label="Posh Services home"><span class="wm-posh">Posh</span> <span class="wm-services">Services</span></a>
-  <nav class="topnav"><a href="/" aria-current="page">Plan a journey</a><a href="/services">All services</a></nav>
+  <nav class="topnav"><a href="/" aria-current="page"><span class="nav-long">Plan a journey</span><span class="nav-short">Plan</span></a><a href="/services"><span class="nav-long">All services</span><span class="nav-short">Services</span></a></nav>
 </header>
 
 <main class="planner">
@@ -34,6 +37,7 @@
     <div class="intro" id="intro">
       <h1 class="hero">Find the good services on your way.</h1>
       <p class="lede">A farm shop, a Waitrose, somewhere green for the dog. Pick your stops before you set off, timed for when you'll want a break.</p>
+      <div class="gb-bubble gb-intro"><img src="/guffbot.webp" alt="GuffBot" width="52" height="52"><p id="gb-intro">Hello, I'm GuffBot. Pop your journey in and I'll find the services worth pulling in for.</p></div>
     </div>
 
     <form id="plan-form" class="plan-form" autocomplete="off">
@@ -91,15 +95,27 @@
       <button type="submit" class="btn btn-go" id="go">Find my stops</button>
     </form>
 
+    <details id="journeys" class="journeys" hidden>
+      <summary>Your journeys</summary>
+      <div class="jr-tabs" role="tablist">
+        <button type="button" role="tab" id="jr-tab-favs" aria-selected="true" data-jr-tab="favs">Favourites</button>
+        <button type="button" role="tab" id="jr-tab-history" aria-selected="false" data-jr-tab="history">Recent</button>
+      </div>
+      <ul id="jr-list" class="jr-list"></ul>
+      <p id="jr-note" class="jr-note"></p>
+    </details>
+
     <div id="status" class="status" role="status" aria-live="polite"></div>
 
     <section id="results" class="results" hidden>
       <div class="results-head">
         <p id="summary" class="summary"></p>
         <div class="results-actions">
+          <button type="button" class="btn btn-quiet" id="fav" aria-pressed="false"><span aria-hidden="true" class="star">☆</span> <span class="fav-label">Save to favourites</span></button>
           <button type="button" class="btn btn-quiet" id="share">Share this plan</button>
           <a class="btn btn-quiet" id="gmaps" target="_blank" rel="noopener">Open in Google Maps</a>
         </div>
+        <div id="gb-journey" class="gb-bubble gb-journey" hidden><img src="/guffbot.webp" alt="GuffBot" width="52" height="52"><div class="gb-lines"><p class="gb-name">GuffBot's road notes</p><ul id="gb-lines"></ul></div></div>
         <p id="picked-note" class="picked-note" hidden>You've picked these stops yourself. <button type="button" class="linkish" id="reset-picks">Go back to suggestions</button></p>
       </div>
       <ol id="itinerary" class="itinerary"></ol>
@@ -107,10 +123,14 @@
         <summary id="all-summary"></summary>
         <ul id="all-list" class="all-list"></ul>
       </details>
+      <p class="report-line">Spotted something out of date? <button type="button" class="linkish" data-feedback="wrong">Tell me</button> and I'll fix it.</p>
+      <div id="home-slot"></div>
     </section>
 
     <footer class="panel-foot">
-      <p>Routes by <a href="https://project-osrm.org/" target="_blank" rel="noopener">OSRM</a> using OpenStreetMap data. Places from <a href="https://postcodes.io" target="_blank" rel="noopener">postcodes.io</a>. Facilities change, so check before you rely on one. Last checked October 2026.</p>
+      <p class="hobby"><strong>A hobby project.</strong> Posh Services is made for fun, and facilities change. If a particular stop really matters to you, phone ahead to check what's open.</p>
+      <p class="foot-links"><button type="button" class="linkish" data-feedback>Send feedback</button><a class="a2hs-link" href="/add-to-home">Add to your home screen</a></p>
+      <p>Routes by <a href="https://project-osrm.org/" target="_blank" rel="noopener">OSRM</a> using OpenStreetMap data. Places from <a href="https://postcodes.io" target="_blank" rel="noopener">postcodes.io</a>. Services last checked October 2026. Made by <a href="https://carlosfandango.net" rel="noopener">Carlos Fandango</a>.</p>
     </footer>
   </aside>
 

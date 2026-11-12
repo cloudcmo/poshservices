@@ -3,6 +3,7 @@
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 export const CHECKED = 'October 2026';
+export const CHECKED_ISO = '2026-10-31';
 
 function head(title, desc, extra = '') {
   return `<!doctype html>
@@ -19,11 +20,14 @@ function head(title, desc, extra = '') {
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#1f4a3a">
+<script src="/theme.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 <script src="/track.js" defer></script>
+<script src="/guffbot.js" defer></script>
+<script src="/site.js" defer></script>
 ${extra}
 </head>`;
 }
@@ -34,8 +38,15 @@ const mapLibs = `<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.
 function masthead() {
   return `<header class="masthead">
   <a class="wordmark" href="/" aria-label="Posh Services home"><span class="wm-posh">Posh</span> <span class="wm-services">Services</span></a>
-  <nav class="topnav"><a href="/">Plan a journey</a><a href="/services">All services</a></nav>
+  <nav class="topnav"><a href="/"><span class="nav-long">Plan a journey</span><span class="nav-short">Plan</span></a><a href="/services"><span class="nav-long">All services</span><span class="nav-short">Services</span></a></nav>
 </header>`;
+}
+
+function siteFoot() {
+  return `<footer class="site-foot">
+  <p class="hobby"><strong>A hobby project.</strong> Posh Services is made for fun, and facilities change. If a particular stop really matters to you, phone ahead to check what's open.</p>
+  <p class="foot-links"><button type="button" class="linkish" data-feedback>Send feedback</button><a class="a2hs-link" href="/add-to-home">Add to your home screen</a><a href="https://carlosfandango.net">Made by Carlos Fandango</a></p>
+</footer>`;
 }
 
 export function pips(score, label = 'Posh score') {
@@ -109,13 +120,15 @@ ${masthead()}
       </dl>
       ${s.notes ? `<p class="notes">${esc(s.notes)}</p>` : ''}
       <p class="checked">Facilities change. This page was last checked in ${CHECKED}.</p>
+      <p class="report-line">Something wrong or out of date here? <button type="button" class="linkish" data-feedback="wrong" data-service="${esc(s.id)}">Report a problem with this page</button></p>
       <p class="actions"><a class="btn" rel="nofollow" href="/?from=${encodeURIComponent(s.name + ' services')}&fll=${s.lat},${s.lng}">Plan a journey from here</a> <a class="btn btn-quiet" href="${gmaps}" target="_blank" rel="noopener">Open in Google Maps</a></p>
     </div>
     <div id="mini-map" class="mini-map" aria-label="Map of ${esc(s.name)} services"></div>
   </div>
 </main>
+${siteFoot()}
 <script>
-  const m = new maplibregl.Map({ container: 'mini-map', style: 'https://tiles.openfreemap.org/styles/liberty', center: [${s.lng}, ${s.lat}], zoom: 14, cooperativeGestures: true });
+  const m = new maplibregl.Map({ container: 'mini-map', style: 'https://tiles.openfreemap.org/styles/' + (document.documentElement.getAttribute('data-theme') === 'night' ? 'dark' : 'liberty'), center: [${s.lng}, ${s.lat}], zoom: 14, cooperativeGestures: true });
   m.addControl(new maplibregl.NavigationControl({ showCompass: false }));
   const el = document.createElement('div'); el.className = 'mk mk-on'; el.textContent = 'S';
   new maplibregl.Marker({ element: el }).setLngLat([${s.lng}, ${s.lat}]).addTo(m);
@@ -155,6 +168,7 @@ ${masthead()}
   <ul id="rows" class="rows">${rows}</ul>
   <p class="checked">Facilities change. Last checked in ${CHECKED}.</p>
 </main>
+${siteFoot()}
 <script>
   const q = document.getElementById('q'), sort = document.getElementById('sort'), list = document.getElementById('rows');
   const items = [...list.children];
@@ -172,7 +186,7 @@ ${masthead()}
 
 export function notFoundPage() {
   return `${head('Not found | Posh Services', 'Page not found')}
-<body class="page">${masthead()}<main class="listing"><h1>No services by that name</h1><p><a href="/services">See all services</a></p></main></body></html>`;
+<body class="page">${masthead()}<main class="listing"><h1>No services by that name</h1><p>GuffBot has looked under every bench. <a href="/services">See all services</a></p></main>${siteFoot()}</body></html>`;
 }
 
 function dogIcon() {

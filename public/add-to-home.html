@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add Posh Services to your home screen</title>
+<meta name="description" content="Put Posh Services on your phone's home screen so it opens like an app. Ten seconds, no app store.">
+<link rel="canonical" href="https://poshservices.carlosfandango.net/add-to-home">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1f4a3a">
+<script src="/theme.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<script src="/track.js" defer></script>
+<script src="/guffbot.js" defer></script>
+<script src="/site.js" defer></script>
+</head>
+<body class="page">
+<header class="masthead">
+  <a class="wordmark" href="/" aria-label="Posh Services home"><span class="wm-posh">Posh</span> <span class="wm-services">Services</span></a>
+  <nav class="topnav"><a href="/"><span class="nav-long">Plan a journey</span><span class="nav-short">Plan</span></a><a href="/services"><span class="nav-long">All services</span><span class="nav-short">Services</span></a></nav>
+</header>
+
+<main class="a2hs">
+  <h1>Add it to your home screen</h1>
+  <p class="lede">Posh Services will sit on your phone like an app and open full screen, ready for the next trip. It takes about ten seconds. No app store, nothing to pay.</p>
+
+  <p id="a2hs-already" class="a2hs-done" hidden>You're already using it from your home screen. Splendid.</p>
+  <p id="a2hs-now" hidden><button type="button" class="btn btn-go" data-install>Add Posh Services now</button></p>
+
+  <div class="a2hs-tabs" role="tablist" aria-label="Your device">
+    <button type="button" role="tab" id="tab-ios" aria-controls="panel-ios" aria-selected="true">iPhone or iPad</button>
+    <button type="button" role="tab" id="tab-android" aria-controls="panel-android" aria-selected="false">Android</button>
+    <button type="button" role="tab" id="tab-desktop" aria-controls="panel-desktop" aria-selected="false">Computer</button>
+  </div>
+
+  <ol class="a2hs-steps" id="panel-ios" role="tabpanel" aria-labelledby="tab-ios">
+    <li><b>Open Posh Services in Safari</b><span>Go to <strong>poshservices.carlosfandango.net</strong>. (In Chrome on an iPhone, the Share button is at the top right instead.)</span></li>
+    <li><b>Tap the Share button</b><span>The square with an arrow pointing up, at the bottom of the screen <span class="kbd" aria-hidden="true">⬆︎</span>.</span></li>
+    <li><b>Choose "Add to Home Screen"</b><span>Scroll down the list if you can't see it, then tap <span class="kbd">Add</span> in the top corner.</span></li>
+  </ol>
+  <ol class="a2hs-steps" id="panel-android" role="tabpanel" aria-labelledby="tab-android" hidden>
+    <li><b>Open Posh Services in Chrome</b><span>Go to <strong>poshservices.carlosfandango.net</strong>.</span></li>
+    <li><b>Tap the menu</b><span>The three dots <span class="kbd" aria-hidden="true">⋮</span> at the top right.</span></li>
+    <li><b>Choose "Add to Home screen" or "Install app"</b><span>Then tap <span class="kbd">Add</span> or <span class="kbd">Install</span>.</span></li>
+  </ol>
+  <ol class="a2hs-steps" id="panel-desktop" role="tabpanel" aria-labelledby="tab-desktop" hidden>
+    <li><b>In Chrome or Edge</b><span>Look for the little install icon at the right-hand end of the address bar, or open the menu and choose <span class="kbd">Install Posh Services</span>.</span></li>
+    <li><b>In Safari on a Mac</b><span>Choose <span class="kbd">File</span> then <span class="kbd">Add to Dock</span>.</span></li>
+    <li><b>Or just bookmark it</b><span>Old-fashioned, reliable, like a Thermos.</span></li>
+  </ol>
+
+  <div class="gb-bubble"><img src="/guffbot.webp" alt="GuffBot" width="52" height="52"><p>Once it's on your home screen, I'll be right there whenever you need a decent flapjack. I promise not to send notifications. I wouldn't know how.</p></div>
+
+  <p><a class="btn" href="/">Plan a journey</a></p>
+</main>
+
+<footer class="site-foot">
+  <p class="hobby"><strong>A hobby project.</strong> Posh Services is made for fun, and facilities change. If a particular stop really matters to you, phone ahead to check what's open.</p>
+  <p class="foot-links"><button type="button" class="linkish" data-feedback>Send feedback</button><a href="https://carlosfandango.net">Made by Carlos Fandango</a></p>
+</footer>
+
+<script>
+  (function () {
+    var tabs = ['ios', 'android', 'desktop'];
+    function show(name) {
+      tabs.forEach(function (t) {
+        document.getElementById('tab-' + t).setAttribute('aria-selected', String(t === name));
+        document.getElementById('panel-' + t).hidden = t !== name;
+      });
+    }
+    tabs.forEach(function (t) { document.getElementById('tab-' + t).addEventListener('click', function () { show(t); }); });
+    var ua = navigator.userAgent;
+    var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    show(ios ? 'ios' : /Android/.test(ua) ? 'android' : /Mobi/.test(ua) ? 'ios' : 'desktop');
+    if (window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true) document.getElementById('a2hs-already').hidden = false;
+    document.addEventListener('ps-installable', function () { document.getElementById('a2hs-now').hidden = false; });
+  })();
+</script>
+</body>
+</html>

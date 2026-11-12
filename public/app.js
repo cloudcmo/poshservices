@@ -2,7 +2,11 @@
 (() => {
   const $ = id => document.getElementById(id);
   const MAP_STYLE = 'https://tiles.openfreemap.org/styles/positron';
-  const BLUE = '#1f4a3a';
+  const MAP_STYLE_DARK = 'https://tiles.openfreemap.org/styles/dark';
+  const theme = () => document.documentElement.getAttribute('data-theme') || 'linen';
+  const styleFor = t => (t === 'night' ? MAP_STYLE_DARK : MAP_STYLE);
+  const cssVar = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const colours = () => ({ route: cssVar('--map-route') || '#1f4a3a', posh: cssVar('--map-posh') || '#b8903a', rim: cssVar('--map-rim') || '#f6f0e4' });
   const GOOD = ['Waitrose', 'M&S', 'Pret'];
   const DOG_TEXT = ['Car park only', 'A bit of grass', 'Good for a dog walk', 'Lovely walk'];
 
@@ -173,13 +177,23 @@
   function initMap() {
     if (!window.maplibregl) { $('map').innerHTML = '<p class="map-fail">The map could not load. Your stops are still listed.</p>'; return; }
     map = new maplibregl.Map({
-      container: 'map', style: MAP_STYLE,
+      container: 'map', style: styleFor(theme()),
       bounds: [[-5.8, 50.0], [1.8, 56.6]], fitBoundsOptions: { padding: 20 },
       attributionControl: { compact: true },
     });
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
     mapReady = new Promise(res => map.on('load', res));
     mapReady.then(showOverview);
+    let styleNow = styleFor(theme());
+    document.addEventListener('ps-theme', async () => {
+      await mapReady;
+      const want = styleFor(theme());
+      if (want !== styleNow) {
+        styleNow = want;
+        map.once('style.load', () => { addOverview(); if (state.data) drawRoute(currentStops(), { fit: false }); });
+        map.setStyle(want, { diff: false });
+      } else repaint();
+    });
     map.on('click', onMapClick);
     updateHint();
   }
@@ -251,10 +265,27 @@
     }
   }
 
+  function repaint() {
+    const c = colours();
+    if (map.getLayer('all')) {
+      map.setPaintProperty('all', 'circle-color', ['case', ['>=', ['get', 'posh'], 3], c.posh, c.route]);
+      map.setPaintProperty('all', 'circle-stroke-color', c.rim);
+    }
+    if (map.getLayer('route')) map.setPaintProperty('route', 'line-color', c.route);
+    if (map.getLayer('route-casing')) map.setPaintProperty('route-casing', 'line-color', c.rim);
+  }
+
+  let overviewWired = false;
   async function showOverview() {
     try {
       overview = await (await fetch('/api/services')).json();
     } catch { return; }
+    addOverview();
+  }
+
+  function addOverview() {
+    if (!overview || map.getSource('all')) return;
+    const c = colours();
     map.addSource('all', {
       type: 'geojson',
       data: { type: 'FeatureCollection', features: overview.map(s => ({ type: 'Feature', properties: { id: s.id, name: s.name, road: s.road, posh: s.posh }, geometry: { type: 'Point', coordinates: [s.lng, s.lat] } })) },
@@ -263,11 +294,14 @@
       id: 'all', type: 'circle', source: 'all',
       paint: {
         'circle-radius': ['interpolate', ['linear'], ['get', 'posh'], 0, 3.5, 5, 8],
-        'circle-color': ['case', ['>=', ['get', 'posh'], 3], '#b8903a', BLUE],
-        'circle-stroke-color': '#f6f0e4', 'circle-stroke-width': 1.5,
+        'circle-color': ['case', ['>=', ['get', 'posh'], 3], c.posh, c.route],
+        'circle-stroke-color': c.rim, 'circle-stroke-width': 1.5,
         'circle-opacity': 0.9,
       },
     });
+    if (state.data) map.setLayoutProperty('all', 'visibility', 'none');
+    if (overviewWired) return;
+    overviewWired = true;
     map.on('click', 'all', e => {
       const f = e.features[0].properties;
       new maplibregl.Popup({ offset: 8 }).setLngLat(e.lngLat)
@@ -275,10 +309,9 @@
     });
     map.on('mouseenter', 'all', () => (map.getCanvas().style.cursor = 'pointer'));
     map.on('mouseleave', 'all', () => (map.getCanvas().style.cursor = ''));
-    if (state.data) map.setLayoutProperty('all', 'visibility', 'none');
   }
 
-  async function drawRoute(stops) {
+  async function drawRoute(stops, { fit = true } = {}) {
     if (!map) return;
     await mapReady;
     const d = state.data;
@@ -287,8 +320,9 @@
     if (map.getSource('route')) map.getSource('route').setData(line);
     else {
       map.addSource('route', { type: 'geojson', data: line });
-      map.addLayer({ id: 'route-casing', type: 'line', source: 'route', paint: { 'line-color': '#f6f0e4', 'line-width': 8 }, layout: { 'line-cap': 'round', 'line-join': 'round' } });
-      map.addLayer({ id: 'route', type: 'line', source: 'route', paint: { 'line-color': BLUE, 'line-width': 4.5 }, layout: { 'line-cap': 'round', 'line-join': 'round' } });
+      const c = colours();
+      map.addLayer({ id: 'route-casing', type: 'line', source: 'route', paint: { 'line-color': c.rim, 'line-width': 8 }, layout: { 'line-cap': 'round', 'line-join': 'round' } });
+      map.addLayer({ id: 'route', type: 'line', source: 'route', paint: { 'line-color': c.route, 'line-width': 4.5 }, layout: { 'line-cap': 'round', 'line-join': 'round' } });
     }
     markers.forEach(m => m.remove());
     markers = [];
@@ -321,6 +355,7 @@
       });
     }
 
+    if (!fit) return;
     const b = new maplibregl.LngLatBounds();
     d.line.forEach(c => b.extend(c));
     const wide = window.matchMedia('(min-width: 900px)').matches;
@@ -423,7 +458,81 @@
     $('results').hidden = false;
     $('intro').hidden = true;
     writeUrl();
+    renderGuffBot(stops);
+    paintFav();
+    if (window.PS && !$('home-card')) $('home-slot').innerHTML = PS.homeCard();
     drawRoute(stops);
+  }
+
+  // ── GuffBot's road notes ──────────────────────────────────────
+  function renderGuffBot(stops) {
+    if (!window.GuffBot) return;
+    try {
+      const { lines } = GuffBot.journey(state.data, stops, { need: checked('need') });
+      $('gb-lines').innerHTML = lines.map(l => `<li>${esc(l)}</li>`).join('');
+      $('gb-journey').hidden = !lines.length;
+    } catch (e) { $('gb-journey').hidden = true; }
+  }
+
+  // ── Favourites and recent journeys ────────────────────────────
+  const tripNow = (withStops) => {
+    const p = new URLSearchParams(location.search);
+    if (!withStops) p.delete('stops');
+    const d = state.data;
+    return {
+      from: { label: d.from.label, lat: d.from.lat, lng: d.from.lng },
+      to: { label: d.to.label, lat: d.to.lat, lng: d.to.lng },
+      q: p.toString().replace(/%2C/g, ','), miles: miles(d.distance),
+    };
+  };
+  function paintFav() {
+    if (!window.PS || !state.data) return;
+    const on = PS.journeys.isFav(tripNow());
+    $('fav').setAttribute('aria-pressed', String(on));
+    $('fav').querySelector('.star').textContent = on ? '★' : '☆';
+    $('fav').querySelector('.fav-label').textContent = on ? 'In your favourites' : 'Save to favourites';
+  }
+  let jrTab = 'favs';
+  function renderJourneys() {
+    if (!window.PS) return;
+    const J = PS.journeys;
+    const wrap = $('journeys');
+    if (!J.favs.length && !J.history.length) { wrap.hidden = true; return; }
+    if (wrap.hidden) { wrap.hidden = false; wrap.open = !state.data; }
+    if (jrTab === 'favs' && !J.favs.length) jrTab = 'history';
+    document.querySelectorAll('[data-jr-tab]').forEach(b => {
+      const k = b.dataset.jrTab;
+      b.setAttribute('aria-selected', String(k === jrTab));
+      b.textContent = `${k === 'favs' ? 'Favourites' : 'Recent'} (${J[k].length})`;
+    });
+    const items = J[jrTab];
+    $('jr-list').innerHTML = items.length ? items.map(t => {
+      const k = J.keyOf(t);
+      return `<li><button type="button" class="jr-go" data-jr-load="${esc(k)}"><span class="jr-route">${esc(t.from.label)} <span aria-hidden="true">→</span><span class="sr-only">to</span> ${esc(t.to.label)}</span>${t.miles ? `<small>${t.miles} miles</small>` : ''}</button>
+        <button type="button" class="jr-x" data-jr-remove="${esc(k)}" aria-label="Remove ${esc(t.from.label)} to ${esc(t.to.label)}">&times;</button></li>`;
+    }).join('') : `<li class="jr-empty">${jrTab === 'favs' ? 'No favourites yet. Plan a journey and tap "Save to favourites".' : 'Nothing here yet.'}</li>`;
+    const signedIn = PS.account.user;
+    $('jr-note').innerHTML = jrTab === 'history'
+      ? `Kept on this device${signedIn ? ' and in your account' : ''}. <button type="button" class="linkish" data-jr-clear>Clear recent</button>`
+      : signedIn ? 'Kept in your account, on every device you sign in on.'
+        : 'Saved on this device. <button type="button" class="linkish" data-signin>Sign in</button> to keep them on all your devices.';
+  }
+  function loadTrip(k) {
+    const J = PS.journeys;
+    const t = [...J.favs, ...J.history].find(x => J.keyOf(x) === k);
+    if (!t) return;
+    // back to the default options, then apply the saved ones
+    document.querySelectorAll('input[name="want"]').forEach(i => { i.checked = DEFAULT_WANT.includes(i.value); });
+    document.querySelectorAll('input[name="need"]').forEach(i => { i.checked = false; });
+    $('every').value = '90';
+    state.picks = null; state.from = null; state.to = null;
+    const q = t.q || new URLSearchParams({ from: t.from.label, fll: `${t.from.lat},${t.from.lng}`, to: t.to.label, tll: `${t.to.lat},${t.to.lng}` }).toString();
+    history.replaceState(null, '', `/?${q.replace(/^\?/, '')}`);
+    readUrl();
+    if (checked('want').some(w => EXTRA_WANT.includes(w))) wire.setMore(true);
+    track('history_open', { x: J.favs.includes(t) ? 'fav' : 'recent' });
+    $('journeys').open = false;
+    runPlan({ keepPicks: true, via: 'saved' });
   }
 
   function googleUrl(stops) {
@@ -468,6 +577,7 @@
       track('plan', { p: `${data.from.label} to ${data.to.label}`, m: miles(data.distance), x: via });
       render();
       updateHint();
+      if (window.PS) PS.journeys.addHistory(tripNow());
       if (!window.matchMedia('(min-width: 900px)').matches) $('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
     } catch (e) {
       $('status').textContent = e.message;
@@ -554,6 +664,20 @@
     wire.setMore = setMore;
 
     $('reset-picks').addEventListener('click', () => { state.picks = null; track('reset_picks'); render(); });
+    $('fav').addEventListener('click', () => {
+      if (!window.PS || !state.data) return;
+      const on = PS.journeys.toggleFav(tripNow(true));
+      PS.toast(PS.guff(window.GuffBot ? GuffBot.react(on ? 'saved' : 'unsaved') : (on ? 'Saved.' : 'Removed.')));
+    });
+    $('journeys').addEventListener('click', e => {
+      const tab = e.target.closest('[data-jr-tab]');
+      if (tab) { jrTab = tab.dataset.jrTab; renderJourneys(); return; }
+      const go = e.target.closest('[data-jr-load]');
+      if (go) { loadTrip(go.dataset.jrLoad); return; }
+      const x = e.target.closest('[data-jr-remove]');
+      if (x) { PS.journeys.remove(jrTab, x.dataset.jrRemove); return; }
+      if (e.target.closest('[data-jr-clear]')) PS.journeys.clearHistory();
+    });
     $('gmaps').addEventListener('click', () => track('gmaps'));
 
     document.addEventListener('click', e => {
@@ -593,8 +717,10 @@
     if (checked('want').some(w => EXTRA_WANT.includes(w))) wire.setMore(true);
     const hint = coarse ? 'Town, postcode or tap the map' : 'Town, postcode or click the map';
     $('from').placeholder = hint; $('to').placeholder = hint;
+    if (window.GuffBot) $('gb-intro').textContent = GuffBot.intro();
     initMap();
     showPending();
+    if (window.PS) { PS.journeys.onChange(() => { renderJourneys(); paintFav(); }); renderJourneys(); }
     if (hasTrip) runPlan({ keepPicks: true, via: 'shared' });
   });
 })();

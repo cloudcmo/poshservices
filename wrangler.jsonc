@@ -9,7 +9,8 @@
     "run_worker_first": true
   },
   "d1_databases": [
-    { "binding": "DB", "database_name": "poshservices-stats", "database_id": "9885c5ef-7aac-4bf4-bd43-eec20919f715" }
+    { "binding": "DB", "database_name": "poshservices-stats", "database_id": "9885c5ef-7aac-4bf4-bd43-eec20919f715" },
+    { "binding": "USERS", "database_name": "poshservices", "database_id": "d2a37f0d-79f1-4f4e-8318-1eb84e3f8055" }
   ],
   "observability": { "enabled": true },
   "routes": [

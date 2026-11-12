@@ -2,6 +2,8 @@ import SERVICES from './services.json';
 import { matchServices, simplify, poshScore, dogScore } from './match.js';
 import { servicePage, listPage, notFoundPage } from './pages.js';
 import { collect, statsSite } from './stats.js';
+import { accounts } from './accounts.js';
+import { CHECKED_ISO } from './pages.js';
 
 const OSRM_DEFAULT = 'https://router.project-osrm.org';
 const PC = 'https://api.postcodes.io';
@@ -169,6 +171,18 @@ const SUMMARY = SERVICES.map(s => {
   };
 });
 
+// Every page worth finding: the planner, the list, and a page per services
+function sitemap(origin) {
+  const urls = [
+    `<url><loc>${origin}/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>`,
+    `<url><loc>${origin}/services</loc><lastmod>${CHECKED_ISO}</lastmod><priority>0.8</priority></url>`,
+    `<url><loc>${origin}/add-to-home</loc><priority>0.3</priority></url>`,
+    ...SERVICES.map(s => `<url><loc>${origin}/services/${s.id}</loc><lastmod>${CHECKED_ISO}</lastmod><priority>0.6</priority></url>`),
+  ];
+  return new Response(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`,
+    { headers: { 'content-type': 'application/xml; charset=utf-8', 'cache-control': 'public, max-age=86400' } });
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -180,6 +194,18 @@ export default {
       return statsSite(request, env, SERVICES);
     }
     if (path === '/api/e') return collect(request, env, ctx);
+    if (path === '/robots.txt') return new Response(`User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /auth\nSitemap: https://${url.host}/sitemap.xml\n`, { headers: { 'content-type': 'text/plain; charset=utf-8', 'cache-control': 'public, max-age=86400' } });
+    if (path === '/sitemap.xml') return sitemap(`https://${url.host}`);
+    if (path === '/auth' || path.startsWith('/api/auth/') || path === '/api/me' || path.startsWith('/api/me/') || path === '/api/feedback') {
+      try {
+        const res = await accounts(request, env, ctx, path);
+        if (res) return res;
+      } catch (e) {
+        console.error(e);
+        return json({ error: 'Something went wrong. Please try again.' }, 500);
+      }
+      return json({ error: 'Not found.' }, 404);
+    }
 
     try {
       if (path === '/api/reverse') {
