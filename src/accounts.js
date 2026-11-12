@@ -96,7 +96,7 @@ function cleanData(d) {
 // ── Pages for the email link ──────────────────────────────────
 function smallPage(title, body, status = 200, headers = {}) {
   return new Response(`<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex"><title>${esc(title)} | Posh Services</title><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="robots" content="noindex"><title>${esc(title)} | Posh Services</title><link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
 <script src="/theme.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css"></head><body class="page"><header class="masthead"><a class="wordmark" href="/" aria-label="Posh Services home"><span class="wm-posh">Posh</span> <span class="wm-services">Services</span></a></header>

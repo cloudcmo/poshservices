@@ -287,7 +287,7 @@
   // a small card after a plan, on phones only, until it's dismissed or done
   function homeCard() {
     if (standalone() || device === 'computer' || store.get('ps-a2hs-done', false)) return '';
-    return `<div class="home-card" id="home-card"><img src="/apple-touch-icon.png" alt="" width="40" height="40"><p><b>Add Posh Services to your home screen</b><br>It'll open like an app, ready for next time.</p>
+    return `<div class="home-card" id="home-card"><img src="/apple-touch-icon.png?v=2" alt="" width="40" height="40"><p><b>Add Posh Services to your home screen</b><br>It'll open like an app, ready for next time.</p>
       <span class="home-card-btns"><button type="button" class="btn btn-small" data-install>${installEvent ? 'Add it' : 'Show me how'}</button><button type="button" class="linkish" data-home-dismiss>No thanks</button></span></div>`;
   }
 
